@@ -32,7 +32,7 @@ def second_option():
     second_age_bracket = [each_age for each_age in age if each_age>=34 and each_age<=66]
     third_age_bracket = [each_age for each_age in age if each_age>=66 and each_age<=99]
     print("age range of 1-33: ",first_age_bracket)
-    print("age range of 34-66: ",second_age_bracket)
+    print("age range of 34-66: ",second_age_bracket) 
     print("age range of 67-99: ",third_age_bracket)
 
 second_option()
