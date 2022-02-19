@@ -10,18 +10,18 @@ for i in range(1, 98):
 
 
 def age():
-    first_age = []
-    second_age = []
-    third_age = []
+    first_age_group = []
+    second_age_group = []
+    third_age_group = []
     for numbers in age_range:
         if numbers >= 0 and numbers <= 33:
-            first_age.append(numbers)
+            first_age_group.append(numbers)
         elif numbers <= 66:
-            second_age.append(numbers)
+            second_age_group.append(numbers)
         else:
-            third_age.append(numbers)
+            third_age_group.append(numbers)
 
-    return[first_age, second_age, third_age]
+    return[first_age_group, second_age_group, third_age_group]
 
 
 result = age()
