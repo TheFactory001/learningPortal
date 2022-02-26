@@ -11,7 +11,11 @@ customer_details = [
     {"name": "Joyce", "age": 26, "phone_number": "08102914941"},
     {"name": "Mariam", "age": 30, "phone_number": "09035358581"}
 ]
-
+customer_details.sort(key=lambda age_gap: age_gap["age"])
+oldest_customer = (customer_details[-1])["age"]
+print("The oldest_customer is: ", oldest_customer)
+youngest_customer = (customer_details[0])["age"]
+print("The youngest customer is: ", youngest_customer)
 # using sorted and lambda to print list sorted
 # by age in descending order (oldest to youngest)
 print("The list of customer details from the oldest to youngest: ")
