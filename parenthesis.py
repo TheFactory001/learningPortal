@@ -2,11 +2,16 @@ def parethesis_validator(s):
     if len(s) % 2 == 1:
         return False
     
+    validParen = "(){}[]"
+    for i in s:
+        if i not in validParen: return "input must contain just vaild paren..s []{}()"
+    
     paren = {')': '(', 
             '}' : '{', 
             ']' : '['}
     stack = []
     for i in s:
+        # if i not in validParen: return "input must contain just vaild paren..s []{}()"
         if i not in paren:
             # keep adding opening parenthesis to the stack
             stack.append(i)
@@ -24,7 +29,7 @@ def parethesis_validator(s):
     return not stack
 
 def main():
-    s = "{}[](()))"
+    s = "{}[](()))*"
     print(parethesis_validator(s))
     return 0 
 
