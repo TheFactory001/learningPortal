@@ -86,12 +86,15 @@
       background-color:#fff;
   }
 }
-.social-icon  {
-  color:blue;
-  transition: color 0.2s;
-  text-decoration: none;
-  margin: 0 10px;
+.instagram {
+  color: red;
+  font-size: 64px;
 }
-.social-icon:hover{
-  color: #333;
+.twitter  {
+  color: blue;
+  font-size: 64px;
+}
+.facebook {
+  color: blue;
+  font-size: 64px;
 }
