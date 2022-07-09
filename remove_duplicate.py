@@ -1,0 +1,1 @@
+#Write a Python program to remove duplicate elements from a list (1, 3, 4, 4, 8, 3)
