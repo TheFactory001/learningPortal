@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Information</title>
+    <link rel="stylesheet" href="./contactstyle.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="contact-parent">
+         <div class="contact-child child1">
+          <h2>Contact Us</h2>
+            <p>
+               <i class="fas fa-map-marker-alt"></i> Address <br />
+               <span>THE FACTORY
+                <br>
+                Office Block 1B, Ikeja, Lagos
+               <br />
+              Nigeria
+               </span>
+            </p>
+            <p>
+               <i class="fas fa-phone-alt"></i> Call us <br />
+               <span> 080XXXX5000</span>
+            </p>
+            <p>
+               <i class=" far fa-envelope"></i> Send us a mail<br />
+               <span>factoryt30@gmail.com</span>
+            <!---Social media page-------->   
+            <h2>Our social media page</h2>
+            <a class="instagram" href="https://instagram.com" target="_blank">
+              <ion-icon name="logo-instagram"></ion-icon>
+            </a>
+            <a class="twitter" href="https://twitter.com" target="_blank">
+              <ion-icon name="logo-twitter"></ion-icon>
+            </a>
+            <a class="facebook" href="https://facebook.com" target="_blank">
+              <ion-icon name="logo-facebook"></ion-icon>
+            </a>
+            <!---Social media page-------->   
+         </div>
+         <div class="contact-child child2">
+            <div class="inside-contact">
+               <h3>
+                  <span id="confirm">
+               </h3>
+               <p>Name *</p>
+               <input id="txt_name" type="text" Required="required">
+               <p>Email *</p>
+               <input id="txt_email" type="text" Required="required">
+               <p>Phone *</p>
+               <input id="txt_phone" type="text" Required="required">
+               <p>Subject *</p>
+               <input id="txt_subject" type="text" Required="required">
+               <p>Message *</p>
+               <textarea id="txt_message" rows="4" cols="20" Required="required" ></textarea>
+               <input type="submit" id="btn_send" value="SEND">
+            </div>
+         </div>
+      </div>
+   </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
