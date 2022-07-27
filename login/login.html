@@ -12,46 +12,73 @@
                     <li><a href="">Home</a></li>
                     <li><a href="">About Us</a></li>
                     <li><a href="">Programs</a></li>
-                    <li><a href="">Product</a></li>
+                    <li><a href="">Product  </a></li>
                     <li><a href="login.html" >Login</a></li>
                 </ul>
             </div>
             
         </nav>
     <div class="bg">
-        <div class="centered">
-            <form class ="form" onsubmit="return is_valid()"  action="" >
-                <table>
-                    <tr>
-                        <td><label for=""> Username:</label> </td>
-                        <td><input type="text" id="username" oninput="username_input()" placeholder="username"></td>
-                    </tr>
-                   
-                    <tr>
-                        <td><label for=""> Email:</label> </td>
-                        <td><input type="text" id="email" oninput="email_validator()" placeholder="email"></td>
-                    </tr>
-                    
-                    <tr>
-                        <td><label for=""> Mobile Number</label> </td>
-                        <td><input type="text" id="mobile_number" oninput="mobile_number_validator()" placeholder="mobile number"></td>
-                    </tr>
         
-                    <tr>
-                        <td><label for=""> Password:</label></td>
-                        <td><input type="password" id="password" placeholder="password" oninput="passwordvalidation()"></td>
-                        <td><label id="password_validation" style="color: red; visibility: hidden;" for="">Hey</label></td>
-                    </tr>
-    
-                    <tr>
-                        <td><label  for="">Confirm Password:</label> </td>
-                        <td><input type="password" id="password2" placeholder="retype password" oninput="password_retype_check()"></td>
-                        <td> <label id="passworderror" style="color: red; visibility: hidden;" for="">password not the same</label></td>
-                    </tr>
+        <div class="centered">
+            <h1 class="registrationForm"> Registration Form</h1>
+            <div class="main">
+            <form class ="form"  onsubmit="return is_valid()" action="" >
+                <div class="item_container">
+                <div class="item">
+                    
+                    <h2 class="name">Name</h2>
+                    
+                    <div class=" name_inputs">
+                        <div class="firstName">
+                            <input type="text" class="firstName"><br>
+                            <label class="firstNameLabel" for="firstName">First Name</label>
+                        </div>
+                        <div class="lastName">
+                            <input class="lastName" type="text" ><br>
+                            <label class="lastNameLabel" for="LastName">Last Name</label>
+                        </div>
                         
-                </table>
-                <button type="submit" id="submit" >Submit</button>
+                    </div>
+                </div>
+                    <div class="item">
+                        <h2 class="name"> Username</h2>
+                        <input class="common_input" type="text" id="username" oninput="username_input()" placeholder="username">
+                   
+                    </div>
+                
+                    <div class="item">
+                        <h2> Email</h2> 
+                        <input class="common_input" type="text" id="email" oninput="email_validator()" placeholder="email">
+                    </div>
+                    
+                    <div class="item">
+                        <h2>Mobile Number</h2> 
+                        <input class="common_input" id="mobile_number" oninput="mobile_number_validator()" placeholder="mobile number">
+                    </div>
+        
+                    <div class="item">
+                        <h2>Password</h2> 
+                        <div class="password">
+                            <input class="common_input"  type="password" id="password" placeholder="password" oninput="passwordvalidation()"><br>
+                            <label id="password_validation" style="color: red; visibility: hidden;" for="">Hey</label>
+                        </div>
+                    </div>
+    
+                        <div class="item">
+                        <h2>Confirm Password</h2> 
+                        <div class="password">
+                            <input class="common_input"  type="password" id="password2" placeholder="retype password" oninput="password_retype_check()"><br>
+                            <label class="name" id="passworderror" style="color: red; visibility: hidden;" for="">password not the same</label>
+                        </div>
+                        </div>
+                        <div class="item">
+                            <button type="submit" id="submit" onclick="get_box_details()" >Submit</button>
+                        </div>
+                
+            </div>
             </form>
+        </div>
         </div>
     </div>
     <footer>
