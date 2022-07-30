@@ -177,6 +177,10 @@ a{
     color:#a1c4cf
 }
 
+.foot .foot-items .foot-link p{
+ color:black;
+}
+
 .foot .social{
     padding: 1.4rem 0;
 }
