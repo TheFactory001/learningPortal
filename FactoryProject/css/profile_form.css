@@ -1,0 +1,132 @@
+:root{
+    --input-border-radius: 0.5rem
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+    padding: 0;
+
+}
+nav{
+    background-color:#F2F2F2 ;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 5;
+}
+
+.nav-container
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 5rem;
+}
+
+.nav-items
+{
+    text-align: left;
+    white-space: nowrap;
+}
+
+.nav-items li
+{
+    display: inline-block;
+    margin-left: 4rem;
+    
+}
+body, html
+{
+    height: 100%;
+}
+
+.container
+{
+    width: 85%;
+    margin: auto;
+}
+/* .bg
+{
+    width: 98%;
+    background-image: url("/assets/back1.jpg");
+    height: 98%;
+    margin: auto;
+    background-size: cover;
+} */
+.body-details{
+    margin-top:6rem ;
+}
+.display_image
+{
+    margin-left: 10% ;
+    width: 60%;
+    text-align: center;
+}
+.form-item
+{
+    margin-bottom: 1rem;
+}
+
+.form-item label
+{
+    display: inline-block;
+    color: black;
+    width: 10%;
+
+}
+.form-item input[type ="text"],
+.photo_container
+{
+    line-height: 2rem;
+    border-radius: var(--input-border-radius);
+    width: 50%;
+    padding: 0.2rem 0.5rem;
+    outline: 0;
+    transition: 300ms;
+    margin-left: 5rem
+}
+.photo_container{
+    display: inline-block;
+    text-align: center;
+}
+.form-item input[type = "file"]
+{
+    color: gold;
+}
+
+
+.half_item input,
+.half_item select
+{
+    width: 35%;
+    border-radius: var(--input-border-radius);
+    padding: 0.2rem 0.5rem;
+    margin-left: 5rem;
+    line-height: 2rem;
+    outline: 0;
+}
+/* select{
+    display: inline-block;
+    height: 100%;
+} */
+
+.half_item select{
+    display: inline-block;
+    height: 3rem;
+    border-width: 2px;
+    border-style: inset;
+    border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+    border-image: initial;
+
+}
+/* .gender{
+    display: inline-block;
+    width: 100%;
+    margin-left: 15%;
+    height: 3rem;
+} */
+
+
