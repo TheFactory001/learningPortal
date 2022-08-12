@@ -18,61 +18,95 @@
             </div>
             
         </nav>
+
     <div class="bg">
         
         <div class="centered">
-            <h1 class="registrationForm"> Registration Form</h1>
-            <div class="main">
-            <form class ="form"  onsubmit="return is_valid()" action="" >
-                <div class="item_container">
-                    <div class="item">
-                        <h2>Name</h2>
-                        <div class="name-container">
-                            <input class ="name_input" type="text" id="firstName" placeholder="First Name">
-                            <input class ="name_input" type="text" id="lastName" placeholder="Last Name">
-                        </div>
-                    </div>
-                   
-                    <div class="item">
-                            <h2 class="name"> Username</h2>
-                            <input class="common_input" type="text" id="username" oninput="username_input()"  placeholder="username">
-                    
-                    </div>
+            <h1 id="FormTitle"  class="registrationForm"> Registration Form</h1>
+
+            <div class="form-container">
                 
-                    <div class="item">
-                        <h2> Email</h2> 
-                        <input class="common_input" type="text" id="email" oninput="email_validator()" placeholder="email">
-                    </div>
+                <!-- ----------------LogIn Form----------------------------- -->
+                <form style="visibility: hidden;" action="" id="LoginForm"  class="form">
+                    <p >Don't have an account? <Button class="switch_btn" id="SignUpSwitch" type="button" onclick="switch_reg_form()">Sign Up</Button></p>
                     
-                    <div class="item">
-                        <h2>Mobile Number</h2> 
-                        <input class="common_input" id="mobile_number" oninput="mobile_number_validator()" placeholder="mobile number">
+                    <div class="item item-first">
+                        <h2 class="name"> Username</h2>
+                        <input class="common_input" type="text" id="username_login" oninput="username_input()" placeholder="username">
+                
                     </div>
-        
+            
                     <div class="item">
                         <h2>Password</h2> 
                         <div class="item-password">
-                            <input class="password_input"  type="password" id="password" placeholder="password" oninput="passwordvalidation()"><br>
+                            <input class="password_input"  type="password" id="password_login" placeholder="password" oninput="passwordvalidation()"><br>
 
-                            <label id="password_validation" style="color: red; visibility: hidden;"  for=""></label>
+                            <label id="forgot_password" style="color: gold;" for="">Forgot password?</label>
                         </div>
                     </div>
-    
-                        <div class="item">
-                        <h2>Confirm Password</h2> 
-                        <div class="item-password">
-                            <input class="password_input"  type="password" id="password2" placeholder="retype password" oninput="password_retype_check()"><br>
-                            <label class="" id="passworderror" style="color: red; visibility: hidden;"  for="">Password does not match</label>
-                        </div>
-                            
-                        </div>
-                        <div class="item">
-                            <button type="submit" id="submit" onclick="get_box_details()" >Submit</button>
-                        </div>
+
+                    <div class="item">
+                        <button class="submit_btn" type="submit" id="submit" onclick="get_box_details()" >Login</button>
+                    </div>
+                    
+                </form>
+
                 
+                <form class ="form" id="RegForm" onsubmit="return is_valid()"   action="" >
+                    
+                    <p>Alread have an account? <Button class="switch_btn" id="LoginSwitch" type="button" onclick="switch_login_form()">Login</Button> </p>
+                    <div class="item_container">
+                        
+                        <div class="item item-first">
+                            <h2>Name</h2>
+                            <div class="name-container">
+                                <input class ="name_input" type="text" id="firstName" placeholder="First Name">
+                                <input class ="name_input" type="text" id="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+                       
+                        <div class="item">
+                            <h2 class="name"> Username</h2>
+                            <input class="common_input" type="text" id="username" oninput="username_input()" placeholder="username">
+                        
+                        </div>
+                    
+                        <div class="item">
+                            <h2> Email</h2> 
+                            <input class="common_input" type="text" id="email" oninput="email_validator()" placeholder="email">
+                        </div>
+                        
+                        <div class="item">
+                            <h2>Mobile Number</h2> 
+                            <input class="common_input" id="mobile_number" oninput="mobile_number_validator()" placeholder="mobile number">
+                        </div>
+            
+                        <div class="item">
+                            <h2>Password</h2> 
+                            <div class="item-password">
+                                <input class="password_input"  type="password" id="password" placeholder="password" oninput="passwordvalidation()"><br>
+    
+                                <label id="password_validation" style="color: red;visibility: hidden;" for="">Hey</label>
+                            </div>
+                        </div>
+        
+                        <div class="item">
+                            <h2>Confirm Password</h2> 
+                            <div class="item-password">
+                                <input class="password_input"  type="password" id="password2" placeholder="retype password" oninput="password_retype_check()"><br>
+                                <label class="" id="passworderror" style="color: red; visibility: hidden;" for="">password not the same</label>
+                            </div>
+                                
+                        </div>
+
+                        <div class="item btn-item">
+                            <button class="submit_btn" type="submit" id="submit" onclick="get_box_details()" >Sign Up</button>
+                        </div>
+                    
+                    </div>
+                </form>   
+            
             </div>
-            </form>
-        </div>
         </div>
     </div>
     <footer>
