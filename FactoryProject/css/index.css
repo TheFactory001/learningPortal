@@ -1,0 +1,133 @@
+/*:::::::::::THE NAVIGATION::::::::::*/
+
+
+.navDiv {
+    background: #f1f4f7;
+    height: 10%;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+}
+
+nav {
+    height: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    height: 100%;
+}
+
+.nav-items-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    list-style: none;
+    text-decoration: none;
+    margin-right: 5%;
+}
+
+.nav-items-container a {
+    font-size: 0.7rem;
+    transition: all 500ms ease;
+    text-decoration: none;
+}
+
+.nav-items-container a:hover {
+    font-size: 1rem;
+    color: black;
+}
+
+.bg {
+    width: 100%;
+    height: 85vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.foot {
+    background: #f1f4f7;
+    padding: 1rem 1rem;
+    color: #1659b500;
+    text-decoration: none;
+    height: 8%; 
+    width: 97%;
+}
+
+.foot-menu {
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.foot-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.foot-brand {
+    text-align: center;
+}
+
+.social {
+    margin-top: 1%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fas {
+    color: #1c2b33;
+}
+
+.fa-brands {
+    color: #1c2b33;
+}
+
+.welcome {
+    text-align: center;
+}
+
+.mainText {
+    text-align: center;
+    font-family: 'Amplitude';
+    font-weight: 300;
+    font-size: 1.0rem;
+}
+
+.imgDiv {
+    text-align: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.imgDiv img {
+    text-align: center;
+    object-fit: cover;
+    width: 95%;
+    height: 300;
+}
+
+.introText {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+}
+
+.box {
+    overflow-wrap: break-word;
+    text-align: center;
+    width: 100%;
+}
