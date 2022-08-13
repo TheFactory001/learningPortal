@@ -128,9 +128,9 @@ form {
     padding-top: 20px;
     width: 100%;
 }
-#LoginForm {
+/* #LoginForm {
     left: -100%;
-}
+} */
 
 form p{
     display: inline-block;
