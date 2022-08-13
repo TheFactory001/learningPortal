@@ -143,19 +143,19 @@ var reg_form = document.getElementById('RegForm');
 var form_title = document.getElementById('FormTitle');
 function switch_login_form(){
     
-    login_form.style.transform = "translateX(100%)"
-    reg_form.style.transform = "translateX(-100%)"
-    login_form.style.visibility="visible"
-    reg_form.style.visibility="hidden"
-    form_title.innerHTML="Login Form"
+//     login_form.style.transform = "translateX(100%)"
+//     reg_form.style.transform = "translateX(-100%)"
+    login_form.style.visibility="visible";
+    reg_form.style.visibility="hidden";
+    form_title.innerHTML="Login Form";
 
 }
 function switch_reg_form(){
-    login_form.style.transform = "translateX(0)"
-    reg_form.style.transform = "translateX(0)"
-    login_form.style.visibility="hidden"
-    reg_form.style.visibility="visible"
-    form_title.innerHTML="Registration Form"
+//     login_form.style.transform = "translateX(0)"
+//     reg_form.style.transform = "translateX(0)"
+    login_form.style.visibility="hidden";
+    reg_form.style.visibility="visible";
+    form_title.innerHTML="Registration Form";
 
 }
 
