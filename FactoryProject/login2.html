@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TheFactory</title>
+    <link rel="stylesheet" href="css/login2.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <h3>TheFactory</h3>
+            <ul class="nav-items-container">
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Programs</a></li>
+                <li><a href="">Product  </a></li>
+                <li><a href="login.html" >Login</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <div class="form-container account-form">
+        <div class="form-header">
+            <h2 onclick="switch_reg_form()">Sign Up</h2>
+            <h2 onclick="switch_login_form()">Login</h2>
+            <hr id="Selector">
+        </div>
+        
+        <form  id="RegForm" action="">
+            <p>Alread have an account? <Button class="switch_btn" id="LoginSwitch" type="button" onclick="switch_login_form()">Login</Button> </p>
+            <input type="text" placeholder="Full Name">
+    
+            <input type="text" required placeholder="Mobile Number">
+            <input type="email" required placeholder="Email">
+        
+            <input  id="Password" type="password" oninput="password_validation()" required placeholder="Password">
+            <label id="PasswordValidationMessage">HELLO</label>
+            <Button class="btn">Sign Up</Button>
+    
+
+        </form>
+        <form id="LoginForm" style="visibility: hidden;" action="">
+            <p >Don't have an account? <Button class="switch_btn" id="SignUpSwitch" type="button" onclick="switch_reg_form()">Sign Up</Button></p>
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <Button class="btn">Login</Button>
+
+        </form>
+       
+    </div>
+
+    <footer>
+        
+    </footer>
+    <script src="javaScript/login2.js"></script>
+</body>
+</html>
