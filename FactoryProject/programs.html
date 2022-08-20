@@ -3,73 +3,68 @@
   <head>
     <title>TheFactory</title>
     <link rel="stylesheet" href="./css/all.css" />
-    <link rel="stylesheet" href="./css/home_page.css" />
+    <link rel="stylesheet" href="./css/programs.css" />
   </head>
   <body>
-    <nav>
-      <div class="container nav-container">
-        <h3>TheFactory</h3>
-        <ul class="nav-items-container">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="aboutUs.html">About</a></li>
-          <li><a href="programs.html">Programs</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
-      </div>
-    </nav>
+    <div class="navDiv">
+      <nav>
+        <div class="nav-container">
+          <h3>TheFactory</h3>
+          <ul class="nav-items-container">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutUs.html">About</a></li>
+            <li><a href="programs.html">Programs</a></li>
+            <li><a href="login.html">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
 
-    <div class="programContainer">
-      <div class="programIntro">
-        We all have to start somewhere. The current program is designed to serve as an introduction to problem-solving in programming
-        at its simplest. With these basics, we can advance to more specific fields and streams. 
+    <div class="container">
+      <p class="intro"> 
+        We all have to start from somewhere. The current program is designed to serve as an introduction to problem-solving in programming
+        at its simplest. With these basics, we can advance to more specific fields and streams.  
+      </p>
+      <div class="about">
+        <div class="topics">
+          <div class="topic">
+              <h3 id="headers">Primary Stream</h3>
+          </div>
+        </div>
       </div>
-      <div class="centeredProgram">
-        <h2> Current Stream</h2>
-        <h4 class="streamHeader">General</h4>
-        <div class="stream1">
-          <div class="parallelogram">Intro to Python programming</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Tasks and Functions</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Relational databases in Python</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Project</div>
-        </div>
-        <h4 class="streamHeader">Cyber Security</h4>
-        <div class="stream1">
-          <div class="parallelogram">Intro to Python programming</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Tasks and Functions</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Relational databases in Python</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Introduction to Cyber Security in Python</div>
-          <span class="arrow">&#10230;</span>
-          <div class="parallelogram">Project</div>
-        </div>
+      <div class="streams">
+        <div class="stream">
+          <div class="circle"><p class="streamText">Basic Mathematics</p></div>
+          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
+          <div class="circle"><p class="streamText">Introduction to Programming</p></div>
+          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
+          <div class="circle"><p class="streamText">Mathematical functions</p></div>
+          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
+          <div class="pathDrop">
+            <div class="circle"><p class="streamText">Relational databases</p></div>
+            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
+            <div class="circle"><p class="streamText">Specialization</p></div>
+            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
+            <div class="circle"><p class="streamText">Project</p></div>
+            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
+            <div class="circle"><p class="streamText">Deployment</p></div>
+          </div>
+          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
+          <div class="circle"><p class="streamText">Project</p></div>
+        </div>  
       </div>
     </div>
     <footer class="foot">
-      <div class="container foot_container foot-menu flex-row">
+      <div class="foot-menu">
         <div class="foot-brand">
           <a href="#" class="text-gray"
             ><i class="fas fa-contact">Contact Us</i></a
           >
         </div>
-        <div>
-          <ul class="foot-items">
-            <li class="foot-link">
-              <a href="#"><i class="fas fa-location">Location</i></a>
-            </li>
-            <li class="foot-link">
-              <a href="#"><i class="fas fa-mail-alt">Email Address</i></a>
-            </li>
-            <li class="foot-link">
-              <a href="#"><i class="fas fa-phone">Call us</i></a>
-            </li>
-          </ul>
-        </div>
-        <div class="social text-gray">
+        <div class="social">
+          <a href="#"><i class="fas fa-location"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone"></i></a>
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-twitter"></i></a>

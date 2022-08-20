@@ -2,8 +2,6 @@
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 
@@ -13,35 +11,46 @@
 }
 
 body{
-    background-color: wheat;
+    background-color: white;
     /* background-color: azure; */
 }
 
 
 /* ::::::::::::::::::::::::nav-bar:::::::::::::::::::::::::::::: */
-nav{
-    background-color:#F2F2F2;
-    position: fixed;
+.navDiv {
+    background: #f1f4f7;
+    height: 20%;
+    position: relative;
     width: 100%;
-    top: 0;
+    list-style: none;
+    text-decoration: none;
 }
 
-.nav-container
-{
+nav {
+    height: 100%;
+}
+
+.nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 5rem;
+    padding: 15px;
+    height: 100%;
 }
 
-nav li{
-    display: inline-block;
-    margin-left: 3rem;
+.nav-items-container {
+    display: flex;
     align-items: center;
+    gap: 4rem;
+    list-style: none;
+    text-decoration: none;
+    margin-right: 5%;
 }
+
 .nav-items-container a {
     font-size: 0.7rem;
     transition: all 500ms ease;
+    text-decoration: none;
 }
 
 .nav-items-container a:hover {
@@ -52,11 +61,13 @@ nav li{
 /* :::::::::::::::::::::::::::FORM:::::::::::::::::::::::::::::::::::: */
 
 .form-container{
+    padding: 0;
+    margin: 0;
     margin: auto;
-    margin-top: 6rem;
+    margin-top: 3rem;
     width: 20rem;
     height: 30rem;
-    background-color: whitesmoke;
+    background-color: #f1f4f7;
     padding:20px 0;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
 }
@@ -72,11 +83,13 @@ nav li{
 }
 #Selector{
     border: none;
-    background: aqua;
+    background: slategray;
     height: 3px;
     width: 7rem;
     margin-top: 0.5rem;
     transform: translateX(2rem);
+    padding: 0;
+    margin: 0;
 }
 /* .item{
     display: flex;
@@ -110,7 +123,9 @@ nav li{
 }
 
 .account-form input{
-    font-size: medium;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 0.8rem;
     line-height: 2rem;
     border-radius: 0.5rem;
     width: 100%;
@@ -137,12 +152,12 @@ nav li{
     cursor: pointer;  
     border: 2px solid rgb(176, 166, 166) ;  
     transition: ease 200ms;
-    background-color: aqua;
+    background-color: slategray;
     margin: 1rem 0;
 }
 
 .account-form .btn:hover{
-   background-color:rgb(6, 123, 123) ;
+   background-color: #6495ED;
    color: whitesmoke;
 }
 

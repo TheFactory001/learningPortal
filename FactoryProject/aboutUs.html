@@ -2,31 +2,31 @@
 <html lang="en">
     <head>
         <title>TheFactory</title>
+        <link rel="stylesheet" href="./css/all.css" />
         <link rel="stylesheet" href="./css/aboutPage.css" />
     </head>
     <script src="./javaScript/about.js"></script>
     <body>
         <div class="main">
-            <div class="nav">
+            <div class="navDiv">
                 <nav>
-                    <div class="container nav-container">
-                        <h3>TheFactory</h3>
-                        <ul class="nav-items-container">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="aboutUs.html">About Us</a></li>
-                            <li><a href="programs.html">Programs</a></li>
-                            <li><a href="login.html">Login</a></li>
-                        </ul>
-                    </div>
+                  <div class="nav-container">
+                    <h3>TheFactory</h3>
+                    <ul class="nav-items-container">
+                      <li><a href="index.html">Home</a></li>
+                      <li><a href="aboutUs.html">About</a></li>
+                      <li><a href="programs.html">Programs</a></li>
+                      <li><a href="login.html">Login</a></li>
+                    </ul>
+                  </div>
                 </nav>
             </div>
             <div class="container">
                 <div class="about">
                     <p class="intro"> 
-                        What can be acheived from study and hardwork is immersuable, 
-                        The Factory seeks make continuous innovation a possibilty by working to solve the next problem.
-                        With Computer Science, Mathematics, and Physics as starting points, we will use the wealth of 
-                        knowlegde from these fields to create a solution and to make it better.
+                        Using resources available to us, we 
+                        will develop innovative systems and solutions. <br> 
+                        Our areas of focus include and is not limited to the following fields. 
                     </p>
                     <div class="topics">
                         <div class="topic">
@@ -35,43 +35,41 @@
                                 <p>
                                     Computational Math deals with the design of algorithms to perform mathematical calculations on a computer. 
                                     The goal of computational mathematics, put simply, is to find or develop algorithms that solve mathematical problems computationally.  
-                                </p><a id="myLink" href="#" onclick="h3Clicker();">Learn more</a>
+                                </p>
                             </div>
                         </div>
                         <div class="topic">
-                            <h3 id="headersML" onclick=h3ClickerML()>Machine Learning</h3>
+                            <h3 id="headers" onclick=h3ClickerML()>Machine Learning</h3>
                             <div class="defs">
                                 Machine learning (ML) is a branch of artificial intelligence (AI) that enables computers to “self-learn” from training data and improve over time, 
                                 without being explicitly programmed. 
                                 Machine learning algorithms are able to detect patterns in data and learn from them, in order to make their own predictions. 
                                 In short, machine learning algorithms and models learn through experience.
-                                <a id="myLink" href="#" onclick="h3ClickerML();">Learn more.</a>
                             </div>
                         </div>
                         <div class="topic">
-                            <h3 id="headersAI">Artificial Intelligence</h3>
+                            <h3 id="headers">Artificial Intelligence</h3>
                             <div class="defs">
-                                Artificial Intelligence is the ability of a digital computer or computer-controlled robot to perform tasks commonly associated with intelligent beings.
-                                <a id="myLink" href="#" onclick="h3ClickerAI();">Learn more.</a>
+                                Artificial Intelligence is the ability of a digital computer or computer-controlled robot to perform tasks commonly associated with 
+                                intelligent beings.
                             </div>
                         </div>
                         <div class="topic">
-                            <h3 id="headerSec">Cyber Security</h3>
+                            <h3 id="headers">Cyber Security</h3>
                             <div class="defs">
                                 Cybersecurity is the protection of internet-connected systems such as hardware, software and data from cyberthreats. 
                                 The practice is used by individuals and enterprises to protect against unauthorized access to data centers and other computerized systems.
-                                <a id="myLink" href="#" onclick="h3ClickerSec();">Learn more.</a>
                             </div>
                         </div>
                         <div class="topic">
-                            <h3>Data Analytics</h3>
+                            <h3 id="headers">Data Analytics</h3>
                             <div class="defs">
                                 Data Analytics refers to the techniques used to analyze data to enhance productivity and business gain. 
                                 Data is extracted from various sources and is cleaned and categorized to analyze various behavioral patterns
                             </div>
                         </div>
                         <div class="topic">
-                            <h3>Embedded Systems</h3>
+                            <h3 id="headers">Embedded Systems</h3>
                             <div class="defs">
                                 An embedded system is an electronic system that has a
                                 software and is embedded in computer hardware. It is programmable or nonprogrammable depending on the application. 
@@ -81,7 +79,7 @@
                             </div>
                         </div>
                         <div class="topic">
-                            <h3>Autonomous Robotics</h3>
+                            <h3 id="headers">Autonomous Robotics</h3>
                             <div class="defs">
                                 An introduction to computational fundamentals behind the design and control of autonomous robots. 
                                 Robots are considered to be autonomous when they make decisions in response to their environment 
@@ -92,27 +90,38 @@
                             </div>
                         </div>
                         <div class="topic">
-                            <h3>Computer Networking</h3>
+                            <h3 id="headers">Computer Networking</h3>
                             <div class="defs">Computer networking is a means by which computers are interconnected to share data and information, 
                                 resources, and all other network devices such as printers.
                             </div>
                         </div>
                         <div class="topic">
-                            <h3>Build Build Build</h3>
-                            <div>Think it, build it.</div>
+                            <h3 id="headers">Operating Systems.</h3>
+                        </div>
+                        <div class="topic">
+                            <h3 id="headers">Computational Finance.</h3>
                         </div>
                     </div>    
                 </div>
-                <div class="resources">
-                    <div class="resource">
-                        <h3>Resources</h3>
-                    </div>
-                    <div id="resourceTopic"></div>
-                    <div id="resourceContent">
-                        <ul id="list"></ul>
-                    </div>
-                </div>
             </div>
         </div>
+        <footer class="foot">
+            <div class="foot-menu">
+              <div class="foot-brand">
+                <a href="#" class="text-gray"
+                  ><i class="fas fa-contact">Contact Us</i></a
+                >
+              </div>
+              <div class="social">
+                <a href="#"><i class="fas fa-location"></i></a>
+                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="#"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </footer>
     </body>
 </html>
