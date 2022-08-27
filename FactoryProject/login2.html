@@ -26,12 +26,12 @@
             <hr id="Selector">
         </div>
         
-        <form  id="RegForm" action="">
+        <form  id="RegForm" onsubmit="get_sign_up_details()" action="">
             <p>Alread have an account? <Button class="switch_btn" id="LoginSwitch" type="button" onclick="switch_login_form()">Login</Button> </p>
-            <input type="text" placeholder="Full Name">
+            <input type="text" required id="FullName" placeholder="Full Name">
     
-            <input type="text" required placeholder="Mobile Number">
-            <input type="email" required placeholder="Email">
+            <input type="text" id="MobileNumber" required placeholder="Mobile Number">
+            <input type="email" id="Email" required placeholder="Email">
         
             <input  id="Password" type="password" oninput="password_validation()" required placeholder="Password">
             <label id="PasswordValidationMessage">HELLO</label>
@@ -41,8 +41,8 @@
         </form>
         <form id="LoginForm" style="visibility: hidden;" action="">
             <p >Don't have an account? <Button class="switch_btn" id="SignUpSwitch" type="button" onclick="switch_reg_form()">Sign Up</Button></p>
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Password">
+            <input id="LoginEmail" type="email" placeholder="Email">
+            <input id="LoginPassword" type="password" placeholder="Password">
             <Button class="btn">Login</Button>
 
         </form>
