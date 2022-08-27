@@ -19,12 +19,14 @@ function get_sign_up_details(){
 
 }
 function get_login_details(){
-    let email =document.getElementById("loginEmail");
-    let password =document.getElementById("loginPassword");
+    let email =document.getElementById("loginEmail").value;
+    let password =document.getElementById("loginPassword").value;
     let login_details={
         email:email,
         password:password
     };
+    console.log(login_details);
+    alert("open console")
 }
 
 
