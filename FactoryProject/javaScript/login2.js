@@ -16,8 +16,15 @@ function get_sign_up_details(){
     console.log(sign_up_details['mobile_number'])
     alert('done')
 
-    
 
+}
+function get_login_details(){
+    let email =document.getElementById("loginEmail");
+    let password =document.getElementById("loginPassword");
+    let login_details={
+        email:email,
+        password:password
+    };
 }
 
 
