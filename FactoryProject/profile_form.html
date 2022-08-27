@@ -21,88 +21,96 @@
      ></script>
 </head>
 <body>
-    <nav>
-        <div class="container nav-container">
-                <h3>TheFactory</h3>
-            <ul class="nav-items">
-                <li><a href="">Home</a></li>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Programs</a></li>
-                <li><a href="">Product  </a></li>
-                <li><a href="login.html" >Login</a></li>
-            </ul>
-        </div>
+    <div class="navDiv">
+        <nav>
+            <div class="container nav-container">
+                    <h3>TheFactory</h3>
+                <ul class="nav-items-container">
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Programs</a></li>
+                    <li><a href="">Product  </a></li>
+                    <li><a href="login2.html" >Login</a></li>
+                </ul>
+            </div>
         
-    </nav>
+        </nav>
+    </div>
     <div class="bg">
         <div class="container body-details">
         
-            <div class="centered">
-                <div class="display_image">
-                    <img src="assets/profileavatar.jpg" id="profileImage" width="150" height="auto" alt="">
+            <!-- <div class="centered"> -->
+                <div class="form-container">
+                    
+                    <div class="display_image">
+                        <img src="assets/profileavatar.jpg" id="profileImage" width="150" height="auto" alt="">
+                    </div> 
+                    <Button onclick="document.getElementById('profilePhoto').click()">Add Profile Photo</Button>               
+                    <form onsubmit="get_profile_details()" action="">
+
+                        
+                        <input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg" style="visibility: hidden;">
+                        <!-- <div class="form-item">
+                            <label for="">Add Photograph</label>
+                            <div class="photo-input"><input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg"></div>
+                        </div> -->
+                        
+                        <div class="form-item">
+                            <label for="address">Address</label>
+                            <input id="address" type="text" required>
+                        </div>
+    
+                        <!-- <div class="form-item">
+                            <label for="address2">Address Line2</label>
+                            <input id="address2" type="text">
+                        </div> -->
+    
+                        <div class="form-item">
+                            <label for="country">Country</label>
+                            <input id="country" type="text" required>
+                        </div>
+    
+                        <div class="form-item">
+                            <label for="city">City</label>
+                            <input id="city" type="text" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="interest">Interest</label>
+                            <input id="interest" type="text" list="topics" onclick="change_to_mail()" onblur="return_to_text()" multiple>
+                            <datalist id="topics">
+                                <option value="Cyber Security">Cyber Security</option>
+                                <option value="Artificial Intelligence">Artificial Intelligence</option>
+                                <option value="Embedded System">Embedded System</option>
+                                <option value="Web Design">Web Design</option>
+                                <option value="3D Design">3D Design</option>
+                                <option value="Mobile Applications">Mobile Applications</option>
+                                <option value="UI/UX">UI/UX</option>
+                                <option value="Python">Python</option>
+                                <option value="Java">Java</option>
+                                <option value="Data Science">Data Science</option>
+                            </datalist>
+                            
+                        </div>
+                        <div class="form-item">
+                            <label for="githubLink">GitHub Profile Link</label>
+                            <input id="githubLink" type="text" required>
+                        </div>
+                       
+                        <Button type="submit" class="btn">Submit</Button>
+                                           
+    
+    
+                    </form>
+
                 </div>
                 
-                <form action="">
-                    
-                    <div class="form-item">
-                        <label for="profile_photo">Add ProfilePhoto</label>
-                        <div class="photo_container">
-                            <input id="profile_photo" type="file" onchange="readURL(this)" accept="jpg png jpeg">
-                        </div>
-                    </div>
-                    
-                    <div class="form-item">
-                        <label for="address1">Address Line1</label>
-                        <input id="address1" type="text" required>
-                    </div>
+                
 
-                    <div class="form-item">
-                        <label for="address2">Address Line2</label>
-                        <input id="address2" type="text">
-                    </div>
-
-                    <div class="form-item">
-                        <label for="country">Country</label>
-                        <input id="country" type="text" required>
-                    </div>
-
-                    <div class="form-item">
-                        <label for="state">Province/State</label>
-                        <input id="state" type="text" required>
-                    </div>
-
-                    <div class="form-item">
-                        <label for="city">City</label>
-                        <input id="city" type="text" required>
-                    </div>
-
-                    <div class="form-item half_item">
-                        <label for="gender">Gender</label>
-                        
-                        <select name="gender" id="gender">
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Male" selected>Prefer not to say</option>
-                        </select>
-                       
-                        
-                    </div>
-                    <div class="form-item half_item">
-                        <label class="dob" for="">D.O.B:</label>
-                        <input type="date">
-                    </div> 
-
-                        
-                        
-                    
-                    
-
-                </form>
-
-            </div>
+            <!-- </div> -->
     </div>
 </div>
-<script src="script/profile_form.js"></script>
+<script src="javaScript/profile_form.js"></script>
+
 
 
 </body>
