@@ -1,36 +1,26 @@
-// function get_box_details(){
-//     let username= document.getElementById("username").value;
+function get_sign_up_details(){
+    let full_name= document.getElementById("FullName").value;
+    let mobile_number= document.getElementById("MobileNumber").value;
+    let email =document.getElementById('Email').value
+    let password = document.getElementById('Password').value
 
 
-//     let country= document.getElementById("country");
+    let sign_up_details={
+        full_name:full_name,
+        mobile_number:mobile_number,
+        email:email,
+        password:password
+    }
+    console.log(sign_up_details)
+    //alert(sign_up_details)
+    console.log(sign_up_details['mobile_number'])
+    alert('done')
+
+    
+
+}
 
 
-
-//     //let countryText = country.options[country.selectedIndex].text;
-//     let info={
-//         username: username, 
-//         country: countryText
-//     }
-//     alertu(username)
-//     console.log(info)
-
-// }
-
-
-
-
-// function password_retype_check(){
-//     let password1 = document.getElementById("password").value
-//     let password2 = document.getElementById("password2").value
-//     let unmatch_error = document.getElementById("passworderror")
-//     if (password1 !== password2){
-//         unmatch_error.style.visibility = "visible"
-//     }
-//     else {
-//         unmatch_error.style.visibility = "hidden"
-//         return true
-//     }
-// }
 
 function password_validation() {
     let password = document.getElementById("Password").value;
