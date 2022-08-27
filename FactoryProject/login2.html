@@ -39,10 +39,10 @@
     
 
         </form>
-        <form id="LoginForm" style="visibility: hidden;" action="">
+        <form id="LoginForm" onsubmit="get_login_details()" style="visibility: hidden;" action="">
             <p >Don't have an account? <Button class="switch_btn" id="SignUpSwitch" type="button" onclick="switch_reg_form()">Sign Up</Button></p>
-            <input id="LoginEmail" type="email" placeholder="Email">
-            <input id="LoginPassword" type="password" placeholder="Password">
+            <input id="loginEmail" type="email" placeholder="Email">
+            <input id="loginPassword" type="password" placeholder="Password">
             <Button class="btn">Login</Button>
 
         </form>
