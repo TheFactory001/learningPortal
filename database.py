@@ -3,6 +3,7 @@ import random
 import string
 import os
 from dotenv import load_dotenv
+from utilFunctions import *
 
 load_dotenv()
 
@@ -17,12 +18,6 @@ cursor = db.cursor()
 #cursor.execute("select * from TestImages")
 #print(cursor.fetchall())
 
-def convertToBinaryData(filename):
-    # Convert digital data to binary format
-    with open(filename, 'rb') as file:
-        binaryData = file.read()
-    return binaryData
-
 def insertImageIntoDatabase():
     sql = "INSERT INTO TestImages (`id`, `image`) VALUES (%s, %s)"
     imageBinaryData = convertToBinaryData("factory.jpg")
@@ -33,16 +28,8 @@ def insertImageIntoDatabase():
 
     db.commit()
 
-
-def write_file(data, filename):
-    # Convert binary data to proper format and write it on Hard Disk
-    with open(filename, 'wb') as file:
-        file.write(data)
-
 def getEncodedImage():
     cursor.execute("select * from TestImages")
     data = cursor.fetchall()
     binaryData = data[0][1] 
-    write_file(binaryData, "retreivedImage.jpg")
-
-#getEncodedImage()
+    write_file(binaryData, "result/retreivedImage.jpg")

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory|User Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile_page.css') }}" />
+</head>
+<body>
+    <span class="main_bg"></span>
+    <nav>
+        <div class="nav-container">
+            <h3>TheFactory</h3>
+            <ul class="nav-items-container">
+                <li><a href="">Home</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Programs</a></li>
+                <li><a href="">Product</a></li>
+                <li><a href="" >Sign Out</a></li>
+            </ul>
+        </div>
+        
+    </nav>
+    <div class="container">
+        <header class="header">
+
+        </header>
+        <section class="userProfile card">
+            <div class="profile">
+                <figure><img src="{{url_for('static', filename='img/profileavatar.jpg')}}" alt="profile picture"></figure>
+                
+            </div>
+
+        </section>
+        
+
+
+        <!--:::::::::::::: Work & Skills Section ::::::::::::::::-->
+        <section class="work_skills card">
+            <!--::::::::::::::::::Work::::::::::::::::::-->
+            <div class="work">
+                <h1 class="heading">work</h1>
+                <div class="primary">
+                    <h1>THE Factory</h1>
+                    <span>Primary</span>
+                    <p>The address, yeah long one <br> City and whatever here</p>
+                </div>
+            </div>
+            <div class="skills">
+                <h1 class="heading">Skills</h1>
+                <ul>
+                    <li style="--i:0">Your Skill 1</li>
+                    <li style="--i:1">Your Skill 2</li>
+                    <li style="--i:2">Your Skill 3</li>
+                    <li style="--i:3">Your Skill 4</li>
+
+                </ul>
+
+            </div>
+        </section>
+
+
+        <section class="userDetails card">
+            <div class="userName">
+                <h1 class="name">Myname Oryour</h1>
+                <div class="map">
+                    <i class="ri"><img src="{{url_for('static', filename='img/location.png')}}" alt=""></i>
+                    <span>CITY, CT</span>
+                </div>
+                <p>Professional Title/ Team Title</p>
+            </div>
+
+            <div class="rank">
+                <h1 class="heading">Level</h1>
+                <p>Senior/Junior</p>
+                <h1 class="heading">Years of Experience</h1>
+                <p>2 years</p>
+                <h1><i><img src="{{url_for('static', filename='img/github.png')}}" alt=""></i> Git-Hup Branch:</h1>
+                <p>git-hub link</p>
+            </div>
+            
+
+
+        </section>
+        <section class="timeline_about card">
+            <div class="tabs">
+                <ul>
+                   <li class="timeline">
+                    <i></i>
+                    <span>Timeline</span> 
+                   </li>
+                   <li class="about active">
+                    <span>About</span>
+                   </li>
+
+
+                </ul>
+
+            </div>
+            <div class="contact_info">
+                <h1 class="heading">Contact Information</h1>
+                <ul>
+                    <li class="phone">
+                        <h1 class="label">Phone:</h1>
+                        <span class="info">+234 903 907 4767</span>
+                    </li>
+                    <li class="address">
+                        <h1 class="label">Address:</h1>
+                        <span class="info">address again? But why? Eskeetit</span>
+                    </li>
+                    <li class="email">
+                        <h1 class="label">Email:</h1>  
+                        <span class="info">myemail@whatever.com</span>
+                    </li>
+                    <li class="site">
+                        <h1 class="label">Site/GitHub</h1>
+                        <span class="info">mypersonalgitupProfileLink</span>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="basic_info">
+                <h1 class="heading">Basic Information</h1>
+                <ul>
+                    <li class="birthday">
+                        <h1 class="label">Birthday</h1>
+                        <span class="info">Jan 01, 20000</span>
+                    </li>
+
+                    <li class="sex">
+                        <h1 class="label">Sex</h1>
+                        <span class="info">Male</span>
+                    </li>
+                    <li class="birthday">
+                        <h1 class="label">birthday</h1>
+                        <span class="info">Jan 01, 20000</span>
+                    </li>
+                </ul>
+
+            </div>
+        </section>
+
+    </div>
+
+
+<footer>
+    
+</footer>
+
+</body>
+</html>
