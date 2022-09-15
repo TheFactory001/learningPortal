@@ -11,19 +11,11 @@ function get_sign_up_details(){
         email:email,
         password:password
     }
-    console.log(sign_up_details)
+    send_details('sign_up', sign_up_details)
+   // console.log(sign_up_details)
     //alert(sign_up_details)
-    console.log(sign_up_details['mobile_number'])
-    let str_data= JSON.stringify(sign_up_details)               
-    fetch(`http://127.0.0.1:8000/login`,{
-        method:'POST',
-        credentials:"include",
-        body:str_data,
-        cache:'no-cache',
-        headers: new Headers({
-        'content-type':'application/json'
-    })                                  
-})
+    //console.log(sign_up_details['mobile_number'])
+   
 }
 
 /** 
@@ -53,9 +45,28 @@ form.addEventListener('submit', function(e) {
       email:email,
       password:password
   };
-  console.log(login_details);
+  //console.log(login_details);
+  send_details('login', login_details)
 
 });
+
+function send_details(form_status, user_details){
+    let details = {
+        status:form_status,
+        user_details: user_details
+    }
+    let str_data= JSON.stringify(details)               
+    fetch(`http://127.0.0.1:8000/login`,{
+        method:'POST',
+        credentials:"include",
+        body:str_data,
+        cache:'no-cache',
+        headers: new Headers({
+        'content-type':'application/json'
+    })                                  
+})
+
+}
 
 function password_validation() {
     let password = document.getElementById("Password").value;
