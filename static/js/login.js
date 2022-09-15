@@ -50,6 +50,7 @@ form.addEventListener('submit', function(e) {
 
 });
 
+//includes type of form as status
 function send_details(form_status, user_details){
     let details = {
         status:form_status,

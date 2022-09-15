@@ -12,6 +12,7 @@
 
 body{
     background-color: white;
+    margin: 0;
     /* background-color: azure; */
 }
 
@@ -24,6 +25,7 @@ body{
     width: 100%;
     list-style: none;
     text-decoration: none;
+    
 }
 
 nav {
@@ -66,7 +68,7 @@ nav {
     margin: auto;
     margin-top: 3rem;
     width: 20rem;
-    height: 30rem;
+    min-height: 35rem;
     background-color: #f1f4f7;
     padding:20px 0;
     box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
