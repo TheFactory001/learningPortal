@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request 
 
 app = Flask(__name__)
 
@@ -14,8 +14,13 @@ def about():
 def program():
     return render_template('programs.html')
 
-@app.route("/login")
+@app.route("/login",methods=['GET','POST'])
 def login():
+    if request.method =='POST':
+        login_details= request.get_json()
+        print(login_details)
+
+
     return render_template('login.html')
 
 @app.route("/index")

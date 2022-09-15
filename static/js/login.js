@@ -14,9 +14,16 @@ function get_sign_up_details(){
     console.log(sign_up_details)
     //alert(sign_up_details)
     console.log(sign_up_details['mobile_number'])
-    alert('done')
-
-
+    let str_data= JSON.stringify(sign_up_details)               
+    fetch(`http://127.0.0.1:8000/login`,{
+        method:'POST',
+        credentials:"include",
+        body:str_data,
+        cache:'no-cache',
+        headers: new Headers({
+        'content-type':'application/json'
+    })                                  
+})
 }
 
 /** 
