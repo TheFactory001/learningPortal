@@ -68,62 +68,67 @@ function send_details(form_status, user_details){
 })
 
 }
+let case_valid = document.getElementById("PasswordValidationMessage");
 
 function password_validation() {
     let password = document.getElementById("Password").value;
-    let case_valid = document.getElementById("PasswordValidationMessage");
+    //let case_valid = document.getElementById("PasswordValidationMessage");
+    if (reg_form.style.visibility='visible'){
+        case_valid.style.visibility ="visible";
+        
 
-    lowercase_in_password = false;
-    uppercase_in_password = false;
-    digit_in_password = false;
-    punctuation_in_password = false;
+        lowercase_in_password = false;
+        uppercase_in_password = false;
+        digit_in_password = false;
+        punctuation_in_password = false;
 
-    if (/[a-z]/.test(password)){
-    lowercase_in_password = true;}
+        if (/[a-z]/.test(password)){
+        lowercase_in_password = true;}
 
-    if (/[A-Z]/.test(password)){
-    uppercase_in_password = true;}
-    if (/[0-9]/.test(password))
-    digit_in_password = true;
-    if (/[~!@#$%^&*()_+}{:|?><-=;.,]/.test(password))
-    punctuation_in_password = true;
-   
-  
-
+        if (/[A-Z]/.test(password)){
+        uppercase_in_password = true;}
+        if (/[0-9]/.test(password))
+        digit_in_password = true;
+        if (/[~!@#$%^&*()_+}{:|?><-=;.,]/.test(password))
+        punctuation_in_password = true;
     
-    if (!lowercase_in_password || !uppercase_in_password)
-    {
-        case_valid.style.visibility ="visible";
-        case_valid.style.color ="red";
-        case_valid.innerHTML ="Very weak: Password must contain at least one upper and one lower case";
-    }
-    else if(!digit_in_password)
-    {
-        case_valid.style.visibility ="visible";
-        case_valid.style.color ="darkred";
-        case_valid.innerHTML ="Weak Password: Password must contain digit";
+    
 
-    }
-    else if(!punctuation_in_password)
-    {
-        case_valid.style.visibility ="visible";
-        case_valid.style.color ="darkolivegreen";
-        case_valid.innerHTML ="Average Password: Password must special character";
-    }
-    else if(password.length <8)
-    {
-        case_valid.style.visibility ="visible";
-        case_valid.style.color ="darkolivegreen";
-        case_valid.innerHTML ="Strong Password: Password must be more than 8 characters";
-    }
-    else
-    {
-        case_valid.style.visibility ="visible";
-        case_valid.style.color ="rgb(73, 237, 73)";
-        case_valid.innerHTML ="Secure Password";
-        return true
-    }
-    }
+        
+        if (!lowercase_in_password || !uppercase_in_password)
+        {
+            
+            case_valid.style.color ="red";
+            case_valid.innerHTML ="Very weak: Password must contain at least one upper and one lower case";
+        }
+        else if(!digit_in_password)
+        {
+            
+            case_valid.style.color ="darkred";
+            case_valid.innerHTML ="Weak Password: Password must contain digit";
+
+        }
+        else if(!punctuation_in_password)
+        {
+            
+            case_valid.style.color ="darkolivegreen";
+            case_valid.innerHTML ="Average Password: Password must special character";
+        }
+        else if(password.length <8)
+        {
+            
+            case_valid.style.color ="darkolivegreen";
+            case_valid.innerHTML ="Strong Password: Password must be more than 8 characters";
+        }
+        else
+        {
+            
+            case_valid.style.color ="rgb(73, 237, 73)";
+            case_valid.innerHTML ="Secure Password";
+            return true
+        }
+    }else case_valid.style.visibility ="hidden";
+}
 // function username_input(){
 //     let username_box = document.getElementById("username")
 //     username_box.style.border="green solid 1px";
@@ -179,7 +184,9 @@ var login_form=document.getElementById('LoginForm');
 var reg_form = document.getElementById('RegForm');
 var selector = document.getElementById('Selector');
 function switch_login_form(){
-    
+    reg_form.reset()
+    login_form.reset()
+    case_valid.style.visibility ="hidden";
     // login_form.style.transform = "translateX(100%)"
     // reg_form.style.transform = "translateX(-100%)"
     login_form.style.visibility="visible"
@@ -193,6 +200,8 @@ function switch_login_form(){
 function switch_reg_form(){
     // login_form.style.transform = "translateX(0)"
     // reg_form.style.transform = "translateX(0)"
+    reg_form.reset()
+    login_form.reset()
     login_form.style.visibility="hidden"
     reg_form.style.visibility="visible"
     selector.style.transform ="translateX(2rem)"

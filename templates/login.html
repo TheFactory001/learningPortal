@@ -54,11 +54,14 @@
         <input
           id="Password"
           type="password"
-          oninput="password_validation()"
+          onkeypress="password_validation()"
           required
           placeholder="Password"
         />
-        <label id="PasswordValidationMessage">HELLO</label>
+        <label
+          id="PasswordValidationMessage"
+          style="visibility: hidden"
+        ></label>
         <button class="btn">Sign Up</button>
       </form>
 
