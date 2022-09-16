@@ -17,9 +17,11 @@ def program():
 @app.route("/login",methods=['GET','POST'])
 def login():
     if request.method =='POST':
-        login_details= request.get_json()
-        print(login_details)
-
+        received_details= request.get_json()
+        if received_details['status'] == 'login':
+            pass
+        elif received_details['status']=='signup':
+            pass 
 
     return render_template('login.html')
 
