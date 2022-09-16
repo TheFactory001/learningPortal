@@ -18,10 +18,22 @@ def program():
 def login():
     if request.method =='POST':
         received_details= request.get_json()
+        user_details = received_details['user_details']
+        print(received_details)
         if received_details['status'] == 'login':
-            pass
-        elif received_details['status']=='signup':
-            pass 
+            email = user_details['email']
+            password = user_details['password']
+            #database validation function
+        elif received_details['status']=='sign_up':
+            first_name = user_details['first_name']
+            last_name = user_details['last_name']
+            mobile_number = user_details['mobile_number']
+            email = user_details['email']
+            password = user_details['password']
+            #database validation to prevent duplicates mail
+            #database save function
+
+            
 
     return render_template('login.html')
 

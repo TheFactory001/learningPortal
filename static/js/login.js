@@ -3,10 +3,14 @@ function get_sign_up_details(){
     let mobile_number= document.getElementById("MobileNumber").value;
     let email =document.getElementById('Email').value
     let password = document.getElementById('Password').value
+    let first_name = full_name.split(" ")[0];
+    let last_name =full_name.split(" ")[1];
+
 
 
     let sign_up_details={
-        full_name:full_name,
+        first_name:first_name,
+        last_name:last_name,
         mobile_number:mobile_number,
         email:email,
         password:password
