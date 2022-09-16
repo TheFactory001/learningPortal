@@ -118,7 +118,7 @@ function password_validation() {
         {
             
             case_valid.style.color ="darkolivegreen";
-            case_valid.innerHTML ="Strong Password: Password must be more than 8 characters";
+            case_valid.innerHTML ="Strong Password: Password must be at least 8 characters";
         }
         else
         {

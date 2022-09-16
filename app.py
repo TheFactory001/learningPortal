@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request 
+from flask import Flask, render_template, request, redirect 
 
 app = Flask(__name__)
 
@@ -25,12 +25,22 @@ def login():
 
     return render_template('login.html')
 
+
 @app.route("/index")
 def index():
     return render_template('index.html')
 
-@app.route("/setup")
+@app.route("/setup",methods=['GET','POST'])
 def setUp():
+    if request.method == 'POST': 
+        received_details= request.get_json()
+        profile_photo=received_details['profile_photo']
+        address = received_details['address']
+        country = received_details['country']
+        github_link = received_details['github_link']
+        city = received_details['city']
+        interests =received_details['interests']
+
     return render_template('profile_form.html')
 
 @app.route("/profile")

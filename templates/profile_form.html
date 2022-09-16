@@ -45,7 +45,7 @@
                         <img src="{{url_for('static', filename='img/profileavatar.jpg')}}" id="profileImage" width="150" height="auto" alt="">
                     </div> 
                     <Button onclick="document.getElementById('profilePhoto').click()">Add Profile Photo</Button>               
-                    <form onsubmit="get_profile_details()" action="">
+                    <form onsubmit="get_profile_details()" >
 
                         
                         <input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg" style="visibility: hidden;">
