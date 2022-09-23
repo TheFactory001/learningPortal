@@ -44,16 +44,16 @@
                 <div class="primary">
                     <h1>THE Factory</h1>
                     <span>Primary</span>
-                    <p>The address, yeah long one <br> City and whatever here</p>
+                    <p id="factoryAddress">The address, yeah long one <br> City and whatever here</p>
                 </div>
             </div>
             <div class="skills">
                 <h1 class="heading">Skills</h1>
                 <ul>
-                    <li style="--i:0">Your Skill 1</li>
-                    <li style="--i:1">Your Skill 2</li>
-                    <li style="--i:2">Your Skill 3</li>
-                    <li style="--i:3">Your Skill 4</li>
+                    <li id="skill0" style="--i:0">Your Skill 1</li>
+                    <li id="skill1" style="--i:1">Your Skill 2</li>
+                    <li id="skill2" style="--i:2">Your Skill 3</li>
+                    <li id="skill3" style="--i:3">Your Skill 4</li>
 
                 </ul>
 
@@ -63,21 +63,21 @@
 
         <section class="userDetails card">
             <div class="userName">
-                <h1 class="name">Myname Oryour</h1>
+                <h1 id="fullName" class="name">Myname Oryour</h1>
                 <div class="map">
                     <i class="ri"><img src="{{url_for('static', filename='img/location.png')}}" alt=""></i>
-                    <span>CITY, CT</span>
+                    <span id="city">CITY, CT</span>
                 </div>
-                <p>Professional Title/ Team Title</p>
+                <p id="professionalTitle">Professional Title/ Team Title</p>
             </div>
 
             <div class="rank">
                 <h1 class="heading">Level</h1>
-                <p>Senior/Junior</p>
+                <p id="level">Senior/Junior</p>
                 <h1 class="heading">Years of Experience</h1>
-                <p>2 years</p>
+                <p id="yearsWithFactory">2 years</p>
                 <h1><i><img src="{{url_for('static', filename='img/github.png')}}" alt=""></i> Git-Hup Branch:</h1>
-                <p>git-hub link</p>
+                <p id="githubLink">git-hub link</p>
             </div>
             
 
@@ -103,19 +103,19 @@
                 <ul>
                     <li class="phone">
                         <h1 class="label">Phone:</h1>
-                        <span class="info">+234 903 907 4767</span>
+                        <span id="phoneNumber" class="info">+234 903 907 4767</span>
                     </li>
                     <li class="address">
-                        <h1 class="label">Address:</h1>
-                        <span class="info">address again? But why? Eskeetit</span>
+                        <h1  class="label">Address:</h1>
+                        <span id="contactAddress" class="info">address again? But why? Eskeetit</span>
                     </li>
                     <li class="email">
                         <h1 class="label">Email:</h1>  
-                        <span class="info">myemail@whatever.com</span>
+                        <span id="email" class="info">myemail@whatever.com</span>
                     </li>
                     <li class="site">
                         <h1 class="label">Site/GitHub</h1>
-                        <span class="info">mypersonalgitupProfileLink</span>
+                        <span id="personalSite" class="info">mypersonalgitupProfileLink</span>
                     </li>
 
                 </ul>
@@ -133,7 +133,7 @@
                         <span class="info">Male</span>
                     </li>
                     <li class="birthday">
-                        <h1 class="label">birthday</h1>
+                        <h1 class="label" id="birthday">birthday</h1>
                         <span class="info">Jan 01, 20000</span>
                     </li>
                 </ul>
@@ -142,11 +142,20 @@
         </section>
 
     </div>
+    <button onclick="display_info()">Click Me</button>
+
 
 
 <footer>
     
 </footer>
+<script src="/static/js/profilepage.js"></script>
+<div id="profileData" data-profiledata = '{{profile_data | tojson}}'></div>
+<!-- <script>
+    let profile_data = '{{profile_data | tojson}}';
+    function display2(){
+        alert(profile_data)
 
+</script>    } -->
 </body>
 </html>

@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect 
+from flask import Flask, render_template, request, redirect, jsonify 
 
 app = Flask(__name__)
 
@@ -57,7 +57,20 @@ def setUp():
 
 @app.route("/profile")
 def profile():
-    return render_template('profilepage.html')
+    #get data as dict from database
+    profile_data = {'full_name': 'dan', 'city':'Ibadan'}
+    #jsonify_data = jsonify(profile_data)
+
+    # city =profile_data['city']
+    # email = profile_data['email']
+    # github_link = profile_data['github_link']
+    # name = f"{profile_data['full_name']} {profile_data['full_name']}"
+    # years_with_factory = profile_data['years_with_factory']
+    
+
+
+
+    return render_template('profilepage.html', profile_data = profile_data)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8000', debug=True)
