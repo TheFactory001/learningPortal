@@ -1,13 +1,30 @@
+//blob holder: - A hidden input field for storing the blob value of the uploaded image.
+let blob_holder = document.getElementById('profilePhotoBlob')
 function readURL(input) {
 if (input.files && input.files[0]) {
+    
     var reader = new FileReader();
+    // my_blob = input.files[0]
+    // my_blob instanceof Blob;
+    // console.log(my_blob)
 
     reader.onload = function (e) {
-    $('#profileImage').attr('src', e.target.result).width(150).height(auto);
+        
+        blob_holder.value = reader.result;
+        console.log(reader.result)
+       $('#profileImage').attr('src', e.target.result).width(150).height(auto);
+    
     };
+    
+    
 
     reader.readAsDataURL(input.files[0]);
+    
+    //profile_blob = reader.readAsArrayBuffer(input.files[0])
+    // alert('profile_blob')
+    
 }
+
 }
 
 
@@ -23,7 +40,7 @@ function return_to_text(){
 
 function get_profile_details(e){
     
-    let profile_photo = document.getElementById("profilePhoto").value;
+    let profile_photo = blob_holder.value;
     let address = document.getElementById("address").value;
     let country = document.getElementById("country").value;
     let city =document.getElementById("city").value;
