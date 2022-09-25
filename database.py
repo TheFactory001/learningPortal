@@ -10,7 +10,11 @@ load_dotenv()
 
 host = os.getenv('factorydatabase.cx7bcz8zyphb.ca-central-1.rds.amazonaws.com')
 pass_word = os.getenv('th3f4ctory')
+<<<<<<< Updated upstream
 username = os.getenv('admin')
+=======
+username = os.getenv('user')
+>>>>>>> Stashed changes
 database = os.getenv('project')
 
 db = pymysql.connect(host=host, user=username,
@@ -41,6 +45,12 @@ def getEncodedImage():
     write_file(binaryData, "result/retreivedImage.jpg")
 
 
+<<<<<<< Updated upstream
+=======
+cursor.execute("CREATE TABLE profile (picture BLOB UNIQUE NOT NULL, address VARCHAR(50), city VARCHAR(50), country VARCHAR(50), interests VARCHAR(100), github VARCHAR(50))")
+
+
+>>>>>>> Stashed changes
 def add_person(name, password, email, phonenumber):
     query = "INSERT INTO person (name, password, email, phonenumber) VALUES (%s, %s, %s, %s)"
     values = (name, password, email, phonenumber)
@@ -48,6 +58,11 @@ def add_person(name, password, email, phonenumber):
     db.commit()
 
 
+<<<<<<< Updated upstream
+=======
+#add_person("daniel", "ob123$", "ob@yahoo.com", 2315639874)
+
+>>>>>>> Stashed changes
 def add_profile(picture, address, city, country, interests, github):
     query = "INSERT INTO profile (picture, address, city, country, interests, github) VALUES (%s, %s, %s, %s, %s, %s)"
     values = (picture, address, city, country, interests, github)
@@ -55,6 +70,7 @@ def add_profile(picture, address, city, country, interests, github):
     db.commit()
 
 
+<<<<<<< Updated upstream
 def get_person():
     cursor.execute("SELECT * FROM person")
     result = cursor.fetchall()
@@ -129,6 +145,24 @@ def get_country(country):
 
 def get_address(address):
     query = f"SELECT * FROM profile \"{address}\""
+=======
+#mycursor.execute("SELECT * FROM person")
+
+# for x in mycursor:
+ #   print(x)
+
+
+# def get_person():
+    cursor.execute("SELECT * FROM person")
+    result = cursor.fetchall()
+    # print(result)
+
+
+# get_person()
+
+def get_email(email):
+    query = f"SELECT * FROM person \"{email}\""
+>>>>>>> Stashed changes
     cursor.execute(query)
     result = cursor.fetchall()
     print(result)
