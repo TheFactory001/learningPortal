@@ -1,60 +1,12 @@
 
-.main {
+/* .main {
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-}
+} */
 
-html, body {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 
-/*:::::::::::THE NAVIGATION::::::::::*/
-
-.navDiv {
-    background: #f1f4f7;
-    height: 10%;
-    position: relative;
-    width: 100%;
-    list-style: none;
-    text-decoration: none;
-}
-
-nav {
-    height: 100%;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    height: 100%;
-}
-
-.nav-items-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    list-style: none;
-    text-decoration: none;
-    margin-right: 5%;
-}
-
-.nav-items-container a {
-    font-size: 0.7rem;
-    transition: all 500ms ease;
-    text-decoration: none;
-}
-
-.nav-items-container a:hover {
-    font-size: 1rem;
-    color: black;
-}
 
 .container {
     width: 100%;
@@ -187,45 +139,3 @@ nav {
     font-weight: 900;
 }
 
-.foot {
-    background: #f1f4f7;
-    padding: 1rem 1rem;
-    color: #1659b500;
-    text-decoration: none;
-    height: 8%;
-    position: relative;
-    bottom: 0;
-}
-
-.foot-menu {
-    justify-content: space-between;
-    margin-bottom: 1%;
-}
-
-.foot-items {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.foot-brand {
-    text-align: center;
-}
-
-.social {
-    margin-top: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fas {
-    color: #1c2b33;
-}
-
-.fa-brands {
-    color: #1c2b33;
-}

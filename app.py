@@ -66,11 +66,16 @@ def profile():
     # github_link = profile_data['github_link']
     # name = f"{profile_data['full_name']} {profile_data['full_name']}"
     # years_with_factory = profile_data['years_with_factory']
+
     
 
 
 
     return render_template('profilepage.html', profile_data = profile_data)
+
+@app.route('/test')
+def test():
+    return render_template('test.html')
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='8000', debug=True)
