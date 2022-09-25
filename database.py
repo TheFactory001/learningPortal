@@ -8,14 +8,14 @@ from utilFunctions import *
 
 load_dotenv()
 
-host = os.getenv('factorydatabase.cx7bcz8zyphb.ca-central-1.rds.amazonaws.com')
-pass_word = os.getenv('th3f4ctory')
+host = os.getenv('host')
+pass_word = os.getenv('password')
 <<<<<<< Updated upstream
-username = os.getenv('admin')
+username = os.getenv('username')
 =======
 username = os.getenv('user')
 >>>>>>> Stashed changes
-database = os.getenv('project')
+database = os.getenv('database')
 
 db = pymysql.connect(host=host, user=username,
                      password=pass_word, database=database)
