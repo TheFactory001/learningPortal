@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TheFactory</title>
+
+    {% block stylesheet %} {% endblock stylesheet %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/all.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+  </head>
+  <body>
+    <div class="navDiv">
+      <nav>
+        <div class="nav-container">
+          <h3>TheFactory</h3>
+          <ul class="nav-items-container">
+            <li><a href="{{ url_for('launch') }}">Home</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
+            <li><a href="{{ url_for('program') }}">Programs</a></li>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    {% block body_content %}{% endblock body_content %}
+    <footer class="foot">
+      <div class="foot-menu">
+        <div class="foot-brand">
+          <a href="#" class="text-gray"
+            ><i class="fas fa-contact">Contact Us</i></a
+          >
+        </div>
+        <div class="social">
+          <a href="#"><i class="fas fa-location"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

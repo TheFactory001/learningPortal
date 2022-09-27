@@ -41,7 +41,7 @@ def getEncodedImage():
     write_file(binaryData, "result/retreivedImage.jpg")
 
 #:::::::::::::::::::::::CREATE TABLES:::::::::::::::::::::::::::::::::::::
-#run only the first function if not trying to debug
+#run create_all_tables() only if not trying to debug
 
 def create_user_table():
     cursor.execute(\
@@ -76,17 +76,19 @@ def create_all_tables():
     create_interest_table()
     print('all tables now exist')
 
+#run create_all_tables() here
 
 
 
-def add_user(name, password, email, phonenumber):
+#:::::::::::::::::::::::::::::::::::::::INSERTING INTO TABLE::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+def add_user(first_name,last_name, password, email, phonenumber):
     query = "INSERT INTO person (name, password, email, phonenumber) VALUES (%s, %s, %s, %s)"
-    values = (name, password, email, phonenumber)
+    values = (first_name, last_name, password, email, phonenumber)
     cursor.execute(query, values)
     db.commit()
 
 
-#add_person("daniel", "ob123$", "ob@yahoo.com", 2315639874)
+#add_user("daniel", "ob123$", "ob@yahoo.com", 2315639874)
 
 def add_profile(picture, address, city, country, interests, github):
     query = "INSERT INTO profile (picture, address, city, country, interests, github) VALUES (%s, %s, %s, %s, %s, %s)"
