@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, jsonify 
+from .database import *
 
 app = Flask(__name__)
 
@@ -31,6 +32,7 @@ def login():
             email = user_details['email']
             password = user_details['password']
             #database validation to prevent duplicates mail
+            
             #database save function
 
             
