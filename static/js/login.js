@@ -35,14 +35,14 @@ function get_login_details(e) {
 }
 
 */
-
+/** 
 // Gets a reference to the form element
 var form = document.getElementById('LoginForm');
 
 // Adds a listener for the "submit" event.
 form.addEventListener('submit', function(e) {
 
-  e.preventDefault();
+  //e.preventDefault();
   let email =document.getElementById("loginEmail").value;
   let password =document.getElementById("loginPassword").value;
   let login_details={
@@ -61,17 +61,16 @@ function send_details(form_status, user_details){
         user_details: user_details
     }
     let str_data= JSON.stringify(details)               
-    fetch(`http://127.0.0.1:8000/login`,{
-        method:'POST',
-        credentials:"include",
-        body:str_data,
-        cache:'no-cache',
-        headers: new Headers({
-        'content-type':'application/json'
-    })                                  
-})
+    $.ajax({
+        type: 'POST',
+        url: '/profile',
+        data: JSON.stringify(details),
+        contentType: "application/json"
+    });
+
 
 }
+*/
 let case_valid = document.getElementById("PasswordValidationMessage");
 
 function password_validation() {

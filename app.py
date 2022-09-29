@@ -1,7 +1,15 @@
-from flask import Flask, render_template, request, redirect, jsonify 
-from .database import *
+from flask import Flask, render_template, request, jsonify, redirect, url_for
+from firestoreDB import *
+import os
+from flask_cors import CORS
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = os.path.join(os.getcwd(), 'static')
+app.config['SECRET_KEY'] = '#2703ARAD'
+app.config['CORS_HEADERS'] = 'Content-Type'
+CORS(app)
+
+#print(type(authenticateLogin("johnDoe@doe.com", "123JohnDoe")))
 
 @app.route("/")
 def launch():
@@ -15,34 +23,18 @@ def about():
 def program():
     return render_template('programs.html')
 
-@app.route("/login",methods=['GET','POST'])
+@app.route("/login", methods=['GET','POST'])
 def login():
-    if request.method =='POST':
-        received_details= request.get_json()
-        user_details = received_details['user_details']
-        print(received_details)
-        if received_details['status'] == 'login':
-            email = user_details['email']
-            password = user_details['password']
-            #database validation function
-        elif received_details['status']=='sign_up':
-            first_name = user_details['first_name']
-            last_name = user_details['last_name']
-            mobile_number = user_details['mobile_number']
-            email = user_details['email']
-            password = user_details['password']
-            #database validation to prevent duplicates mail
-            
-            #database save function
-
-            
-
     return render_template('login.html')
 
 
 @app.route("/index")
 def index():
     return render_template('index.html')
+
+@app.route("/dory")
+def tester():
+    return 'Hello Foo!'
 
 @app.route("/setup",methods=['GET','POST'])
 def setUp():
@@ -57,23 +49,25 @@ def setUp():
 
     return render_template('profile_form.html')
 
-@app.route("/profile")
+@app.route("/profile", methods=['GET','POST'])
 def profile():
-    #get data as dict from database
-    profile_data = {'full_name': 'dan', 'city':'Ibadan'}
-    #jsonify_data = jsonify(profile_data)
+    return render_template('profilepage.html')
 
-    # city =profile_data['city']
-    # email = profile_data['email']
-    # github_link = profile_data['github_link']
-    # name = f"{profile_data['full_name']} {profile_data['full_name']}"
-    # years_with_factory = profile_data['years_with_factory']
+@app.route("/authCheck", methods=['GET','POST'])
+def authCheck():
+    if request.method =='POST':
+        email = request.form['email']
+        password = request.form['password']
+        authData =  authenticateLogin(email, password)
+        if type(authData) == dict:
+            return redirect(url_for('profile'))
+    return redirect(url_for('login'))
+       
+# TO DO 
+ # Sign up support from DB
+ # Pass sign in error message to login
+ # Pass info to profile page
 
-    
-
-
-
-    return render_template('profilepage.html', profile_data = profile_data)
 
 @app.route('/test')
 def test():

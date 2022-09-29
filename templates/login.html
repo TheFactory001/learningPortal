@@ -42,7 +42,7 @@
     <button class="btn">Sign Up</button>
   </form>
 
-  <form id="LoginForm" style="visibility: hidden" action="">
+  <form id="LoginForm" style="visibility: hidden" action="/authCheck" method="POST">
     <p>
       Don't have an account?
       <button
@@ -54,11 +54,13 @@
         Sign Up
       </button>
     </p>
-    <input id="loginEmail" type="email" placeholder="Email" />
-    <input id="loginPassword" type="password" placeholder="Password" />
+    <input id="loginEmail" name="email" type="email" placeholder="Email" />
+    <input id="loginPassword" name="password" type="password" placeholder="Password" />
     <button class="btn">Login</button>
   </form>
 </div>
 </div>
+<script type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <script src="/static/js/login.js"></script>
 {% endblock body_content %}
