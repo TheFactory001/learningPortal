@@ -94,3 +94,33 @@ html, body {
     align-items: center;
 }
 
+/*     Viewport less than or equal to 750px    */
+
+@media only screen and (max-width: 750px){
+    .navDiv .nav-container, .nav-items-container{
+       flex-direction: column;
+    }   
+   
+    html, body{
+       grid-template-columns: 100%;
+    }
+   
+    .foot .foot-menu{
+       grid-template-columns: repeat(1,1fr);
+    }
+   }
+   
+   /*  x   Viewport less than or equal to 750px  x  */
+
+
+/*     Viewport less than or equal to 520px    */
+@media only screen and (max-width:520px){
+    html,body{
+        height: 125vh;
+    }
+
+    .foot .foot-menu{
+        padding: 1rem .9rem !important;
+    }
+}
+
