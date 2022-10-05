@@ -1,0 +1,126 @@
+
+*{
+    box-sizing: border-box;
+}
+
+/*:::::::::::THE NAVIGATION::::::::::*/
+
+
+.navDiv {
+    background: #f1f4f7;
+    height: 8%;
+    position: relative;
+    width: 100%;
+    list-style: none;
+    text-decoration: none;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+nav {
+    height: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    height: 100%;
+}
+
+.nav-items-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    list-style: none;
+    text-decoration: none;
+    margin-right: 5%;
+}
+
+.nav-items-container a {
+    font-size: 0.7rem;
+    transition: all 500ms ease;
+    text-decoration: none;
+}
+
+.nav-items-container a:hover {
+    font-size: 1rem;
+    color: black;
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.foot {
+    background: #f1f4f7;
+    padding: 1rem;
+    color: #1659b500;
+    text-decoration: none;
+    height: 10%; 
+    position: relative;
+}
+
+.foot-menu {
+    justify-content: space-between;
+    margin-bottom: 1%;
+}
+
+.foot-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.foot-brand {
+    text-align: center;
+}
+
+.social {
+    margin-top: 1%;
+    margin-left: 40%;
+    margin-right: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*     Viewport less than or equal to 750px    */
+
+@media only screen and (max-width: 750px){
+    .navDiv .nav-container, .nav-items-container{
+       flex-direction: column;
+    }   
+   
+    html, body{
+       grid-template-columns: 100%;
+    }
+   
+    .foot .foot-menu{
+       grid-template-columns: repeat(1,1fr);
+    }
+   }
+   
+   /*  x   Viewport less than or equal to 750px  x  */
+
+
+/*     Viewport less than or equal to 520px    */
+@media only screen and (max-width:520px){
+    html,body{
+        height: 125vh;
+    }
+
+    .foot .foot-menu{
+        padding: 1rem .9rem !important;
+    }
+}
+
