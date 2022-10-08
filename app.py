@@ -49,9 +49,15 @@ def setUp():
 
     return render_template('profile_form.html')
 
-@app.route("/profile", methods=['GET','POST'])
-def profile():
-    return render_template('profilepage.html')
+@app.route('/profile/<id>/<isAuth>', methods=['GET', 'POST'])
+def profile(id, isAuth):
+    if str2bool(isAuth) == True:
+        userData = getUserData(id)
+        return render_template('profilepage.html', userData=userData)
+    return redirect(url_for('login'))
+
+def str2bool(v):
+  return v.lower() in ("yes", "true", "t", "1")
 
 @app.route("/authCheck", methods=['GET','POST'])
 def authCheck():
@@ -60,7 +66,7 @@ def authCheck():
         password = request.form['password']
         authData =  authenticateLogin(email, password)
         if type(authData) == dict:
-            return redirect(url_for('profile'))
+            return redirect(url_for('profile', id=authData['id'], isAuth=True))
     return redirect(url_for('login'))
        
 # TO DO 
