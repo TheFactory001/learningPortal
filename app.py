@@ -68,7 +68,7 @@ def authCheck():
         password = request.form['password']
         authData = authenticateLogin(email, password)
         if type(authData) == dict:
-            return redirect(url_for('profile'))
+            return redirect(url_for('profile', id=authData['id'], isAuth=True))
     return redirect(url_for('login'))
 
 # TO DO
