@@ -3,52 +3,79 @@
     box-sizing: border-box;
 }
 
+
+
 /*:::::::::::THE NAVIGATION::::::::::*/
 
 
-.navDiv {
-    background: #f1f4f7;
-    height: 8%;
-    position: relative;
-    width: 100%;
-    list-style: none;
-    text-decoration: none;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.nav{
+    background: white;
+    padding: 0 2rem;
+    height: 0rem;
+    min-height: 10vh;
+    overflow: hidden;
+    transition: height 1s ease-in-out;
 }
 
-nav {
-    height: 100%;
-}
-
-.nav-container {
+.nav .nav-menu{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-    height: 100%;
 }
 
-.nav-items-container {
+.nav .toggle-collapse{
+    position: absolute;
+    top: 0%;
+    width: 90%;
+    cursor: pointer;
+    display: none;
+}
+
+.nav .toggle-collapse .toggle-icons{
     display: flex;
-    align-items: center;
-    gap: 4rem;
-    list-style: none;
-    text-decoration: none;
-    margin-right: 5%;
+    justify-content: flex-end;
+    padding: 1.7rem 0;
 }
 
-.nav-items-container a {
-    font-size: 0.7rem;
-    transition: all 500ms ease;
-    text-decoration: none;
+.nav .toggle-collapse .toggle-icons i{
+    font-size: 1.4rem;
+
 }
 
-.nav-items-container a:hover {
-    font-size: 1rem;
+.collapse{
+    height: 30rem;
+}
+
+.nav .nav-items{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+}
+
+.nav .nav-items .nav-link{
+    padding: 1.6rem 1rem;
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.nav .nav-items .nav-link:hover{
+    background-color:white;
+}
+
+.nav .nav-items .nav-link:hover a{
+    color:black;
+}
+
+.nav .nav-brand a{
+    text-decoration: none;
+    font-size: 1.6rem;
+    padding: 1rem 0;
+    display: block;
     color: black;
 }
+
+
 
 html, body {
     margin: 0;
@@ -97,9 +124,13 @@ html, body {
 /*     Viewport less than or equal to 750px    */
 
 @media only screen and (max-width: 750px){
-    .navDiv .nav-container, .nav-items-container{
-       flex-direction: column;
-    }   
+    .nav .nav-menu, .nav .nav-link{
+        flex-direction: column;
+    }
+
+    .nav .toggle-collapse{
+        display: initial;
+    }
    
     html, body{
        grid-template-columns: 100%;
@@ -122,5 +153,10 @@ html, body {
     .foot .foot-menu{
         padding: 1rem .9rem !important;
     }
+
+    nav.toggle-collapse{
+        width: 80% !important;
+    }
+
 }
 
