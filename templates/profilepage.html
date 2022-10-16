@@ -61,13 +61,11 @@
     <div class="rank">
       <h1 class="heading">Level</h1>
       <p id="level">Senior/Junior</p>
-      <h1 class="heading">Years of Experience</h1>
-      <p id="yearsWithFactory">2 years</p>
       <h1>
         <i
           ><img src="{{url_for('static', filename='img/github.png')}}" alt=""
         /></i>
-        Git-Hup Branch:
+        Git-Hub:
       </h1>
       <p id="githubLink">git-hub link</p>
     </div>
@@ -101,32 +99,15 @@
           <h1 class="label">Email:</h1>
           <span id="email" class="info">myemail@whatever.com</span>
         </li>
-        <li class="site">
-          <h1 class="label">Site/GitHub</h1>
-          <span id="personalSite" class="info">mypersonalgitupProfileLink</span>
-        </li>
-      </ul>
-    </div>
-    <div class="basic_info">
-      <h1 class="heading">Basic Information</h1>
-      <ul>
-        <li class="birthday">
-          <h1 class="label">Birthday</h1>
-          <span class="info">Jan 01, 20000</span>
-        </li>
-
-        <li class="sex">
-          <h1 class="label">Sex</h1>
-          <span class="info">Male</span>
-        </li>
-        <li class="birthday">
-          <h1 class="label" id="birthday">birthday</h1>
-          <span class="info">Jan 01, 20000</span>
-        </li>
       </ul>
     </div>
   </section>
 </div>
-
+<script type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+</script>
+<script type="text/javascript" charset="utf-8">
+    let userData = '{{userData|tojson}}';
+</script>
 <script src="/static/js/profilepage.js"></script>
 {% endblock body_content %}
