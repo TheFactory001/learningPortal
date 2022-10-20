@@ -55,10 +55,22 @@ def setUp():
 
     return render_template('profile_form.html')
 
+<<<<<<< HEAD
 
 @app.route("/profile", methods=['GET', 'POST'])
 def profile():
     return render_template('profilepage.html')
+=======
+@app.route('/profile/<id>/<isAuth>', methods=['GET', 'POST'])
+def profile(id, isAuth):
+    if str2bool(isAuth) == True:
+        userData = getUserData(id)
+        return render_template('profilepage.html', userData=userData)
+    return redirect(url_for('login'))
+
+def str2bool(v):
+  return v.lower() in ("yes", "true", "t", "1")
+>>>>>>> db8401780323f16e4b19087acff61f8b0c495882
 
 
 @app.route("/authCheck", methods=['GET', 'POST'])
