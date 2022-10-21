@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
-#from firestoreDB import *
+from firestoreDB import *
 import os
 from flask_cors import CORS
 
@@ -55,12 +55,6 @@ def setUp():
 
     return render_template('profile_form.html')
 
-<<<<<<< HEAD
-
-@app.route("/profile", methods=['GET', 'POST'])
-def profile():
-    return render_template('profilepage.html')
-=======
 @app.route('/profile/<id>/<isAuth>', methods=['GET', 'POST'])
 def profile(id, isAuth):
     if str2bool(isAuth) == True:
@@ -70,7 +64,6 @@ def profile(id, isAuth):
 
 def str2bool(v):
   return v.lower() in ("yes", "true", "t", "1")
->>>>>>> db8401780323f16e4b19087acff61f8b0c495882
 
 
 @app.route("/authCheck", methods=['GET', 'POST'])

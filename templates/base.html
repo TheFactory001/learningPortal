@@ -28,8 +28,14 @@
           </div>
         </div>
         <div>
-          <ul class="nav-items">
-            <li class="nav-link">
+          <!-- <ul class="nav-items">  -->
+            <ul class="nav-items">
+              <li class="nav-link"><a href="{{ url_for('launch') }}">Home</a></li>
+              <li class="nav-link"><a href="{{ url_for('about') }}">About</a></li>
+              <li class="nav-link"><a href="{{ url_for('program') }}">Programs</a></li>
+              <li class="nav-link"><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+            <!-- <li class="nav-link">
               <a href="#">Home</a>
             </li>
             <li class="nav-link">
@@ -41,7 +47,7 @@
             <li class="nav-link">
               <a href="#">Login</a>
             </li>
-          </ul>
+          </ul> -->
         </div>
       </div>
     </nav>
