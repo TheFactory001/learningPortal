@@ -2,7 +2,7 @@ from heapq import merge
 import firebase_admin
 from firebase_admin import credentials, firestore 
 
-cred = credentials.Certificate("./thefactory-firebase-adminsdk-xxfjn-4a315edc65.json")
+cred = credentials.Certificate("./thefactory-firebase-adminsdk-xxfjn-4f1eb8f607.json")
 firebase_admin.initialize_app(cred)
 
 
