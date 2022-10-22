@@ -38,6 +38,15 @@ function return_to_text(){
 }
 
 
+let level = document.getElementById('level');
+function change_to_mail(){
+    level.type ="email"
+}
+function return_to_text(){
+    level.type = "text"
+}
+
+
 function get_profile_details(e){
     
     let profile_photo = blob_holder.value;
