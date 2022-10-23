@@ -22,9 +22,15 @@
         <div class="nav-brand">
           <a href="#" class="text-gray">TheFactory</a>
         </div>
-        <div class="toggle-collapse">
-          <div class="toggle-icons">
+        <div class="dropdown">
+          <div class="dropbtn" onclick="myFunction()">
             <i class="fas fa-bars"></i>
+          </div>
+          <div class="dropdown-content" id="myDropdown">
+            <a href="{{ url_for('launch') }}">Home</a>
+            <a href="{{ url_for('about') }}">About</a>
+            <a href="{{ url_for('program') }}">Programs</a>
+            <a href="{{ url_for('login') }}">login</a>
           </div>
         </div>
         <div>

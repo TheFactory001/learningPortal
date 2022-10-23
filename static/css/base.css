@@ -3,6 +3,10 @@
     box-sizing: border-box;
 }
 
+a{
+    text-decoration: none;
+    color: black;  
+}
 
 
 /*:::::::::::THE NAVIGATION::::::::::*/
@@ -24,28 +28,55 @@
     justify-content: space-between;
 }
 
-.nav .toggle-collapse{
-    position: absolute;
-    top: 0%;
-    width: 90%;
-    cursor: pointer;
+.dropdown {
+    overflow: hidden;
+    margin-right: 5%;
     display: none;
-}
+  }
 
-.nav .toggle-collapse .toggle-icons{
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.7rem 0;
-}
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: gray;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+  }
 
-.nav .toggle-collapse .toggle-icons i{
-    font-size: 1.4rem;
+  .navbar a:hover,
+  .dropdown:hover .dropbtn,
+  .dropbtn:focus {
+    background-color: black;
+  }
 
-}
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 
-.collapse{
-    height: 30rem;
-}
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+
+  .dropdown-content a:hover {
+    background-color: rgb(221, 221, 221);
+  }
+
+  .show {
+    display: block;
+  }
 
 .nav .nav-items{
     list-style-type: none;
@@ -124,12 +155,12 @@ html, body {
 /*     Viewport less than or equal to 750px    */
 
 @media only screen and (max-width: 750px){
-    .nav .nav-menu, .nav .nav-link{
+    .nav .nav-menu, .nav .nav-items{
         flex-direction: column;
     }
 
-    .nav .toggle-collapse{
-        display: initial;
+    .dropdown{
+        display: block;
     }
    
     html, body{
