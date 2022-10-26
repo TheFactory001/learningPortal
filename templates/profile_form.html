@@ -35,7 +35,7 @@
       <button onclick="document.getElementById('profilePhoto').click()">
         Add Profile Photo
       </button>
-      <form onsubmit="get_profile_details()">
+      <form action="/setupForm" method="POST">
         <input
           id="profilePhoto"
           type="file"
@@ -50,29 +50,48 @@
                             <div class="photo-input"><input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg"></div>
                         </div> -->
 
+        <div class="form-item" style="visibility: hidden">
+          <label for="email">Email</label>
+          <input id="email" name ="email" type="text" value= '{{email}}' required />
+        </div>
+
         <div class="form-item">
           <label for="address">Address</label>
-          <input id="address" type="text" required />
+          <input id="address" name ="address" type="text" required />
         </div>
 
         <div class="form-item">
           <label for="city">City</label>
-          <input id="city" type="text" required />
+          <input id="city" name="city" type="text" required />
         </div>
 
         <!-- <div class="form-item">
                             <label for="address2">Address Line2</label>
                             <input id="address2" type="text">
                         </div> -->
-
         <div class="form-item">
-          <label for="country">Country</label>
-          <input id="country" type="text" required />
+          <label for="level">Level</label>
+          <input
+            name="level"
+            id="level"
+            type="text"
+            list="levelTopics"
+            onclick="change_to_mail()"
+            onblur="return_to_text()"
+            multiple
+          />
+          <datalist id="levelTopics">
+            <option value="Basic">Basic</option>
+            <option value="Familiar">Familiar</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="L4">L4</option>
+          </datalist>
         </div>
 
         <div class="form-item">
           <label for="interest">Interest 1</label>
           <input
+            name="interest1"
             id="interest"
             type="text"
             list="topics"
@@ -81,6 +100,7 @@
             multiple
           />
           <datalist id="topics">
+            <option value="Basics">Basics</option>
             <option value="Cyber Security">Cyber Security</option>
             <option value="Artificial Intelligence">
               Artificial Intelligence
@@ -93,6 +113,7 @@
           <label for="interest">Interest 2</label>
           <input
             id="interest"
+            name="interest2"
             type="text"
             list="topics"
             onclick="change_to_mail()"
@@ -100,6 +121,7 @@
             multiple
           />
           <datalist id="topics">
+            <option value="Basics">Basics</option>
             <option value="Cyber Security">Cyber Security</option>
             <option value="Artificial Intelligence">
               Artificial Intelligence
@@ -110,7 +132,7 @@
         </div>
         <div class="form-item">
           <label for="githubLink">GitHub Profile Link</label>
-          <input id="githubLink" type="text" required />
+          <input id="githubLink" name="github" type="text" />
         </div>
 
         <button type="submit" class="btn">Submit</button>

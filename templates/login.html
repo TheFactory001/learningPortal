@@ -14,7 +14,7 @@
     <hr id="Selector" />
   </div>
 
-  <form id="RegForm" onsubmit="get_sign_up_details()" action="">
+  <form id="RegForm" action="/signUp" method="POST">
     <p>
       Alread have an account?
       <button
@@ -26,14 +26,15 @@
         Login
       </button>
     </p>
-    <input type="text" required id="FullName" placeholder="Full Name" />
+    <input type="text" name="name" required id="FullName" placeholder="Full Name" />
 
-    <input type="text" id="MobileNumber" required placeholder="Mobile Number" />
-    <input type="email" id="Email" required placeholder="Email" />
+    <input type="text" name="number" id="MobileNumber" required placeholder="Mobile Number" />
+    <input type="email" name="email" id="Email" required placeholder="Email" />
 
     <input
       id="Password"
       type="password"
+      name="password"
       oninput="password_validation()"
       required
       placeholder="Password"
