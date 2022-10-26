@@ -38,3 +38,5 @@ def getUserData(email):
     except Exception as e :
         print("Error getting info", e)
         return "Error getting info, enter valid email"
+def save_user():
+    pass
