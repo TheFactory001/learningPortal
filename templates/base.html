@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <!-- <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>TheFactory</title>
 
     {% block stylesheet %} {% endblock stylesheet %}
@@ -18,37 +18,25 @@
   </head>
   <body>
     <nav class="nav">
-      <div class="nav-menu flex row">
+      <div class="nav-menu">
         <div class="nav-brand">
           <a href="#" class="text-gray">TheFactory</a>
         </div>
-        <div class="toggle-collapse">
+       <!-- <div class="toggle-collapse">
           <div class="toggle-icons">
             <i class="fas fa-bars"></i>
-          </div>
-        </div>
-        <div>
-          <!-- <ul class="nav-items">  -->
-            <ul class="nav-items">
+
+          </div> -->
+     
+            <ul class="nav-items" id="menu">
               <li class="nav-link"><a href="{{ url_for('launch') }}">Home</a></li>
               <li class="nav-link"><a href="{{ url_for('about') }}">About</a></li>
               <li class="nav-link"><a href="{{ url_for('program') }}">Programs</a></li>
               <li class="nav-link"><a href="{{ url_for('login') }}">Login</a></li>
             </ul>
-            <!-- <li class="nav-link">
-              <a href="#">Home</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">About</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Programs</a>
-            </li>
-            <li class="nav-link">
-              <a href="#">Login</a>
-            </li>
-          </ul> -->
-        </div>
+            <button id="closeMenuBtn"><i><img src="{{url_for('static',filename= 'img/close1.png')}}" height="35px" alt="close menu items button" ></i></button>
+            <button id="openMenuBtn"><i class="fas fa-bars" ></i></button>
+    
       </div>
     </nav>
     {% block body_content %}{% endblock body_content %}

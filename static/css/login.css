@@ -97,6 +97,24 @@ body{
     margin: 1rem 0;
     border: 2px solid rgb(176, 166, 166) ;
 }
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 22px;
+    right: 10px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .fa-eye-slash{
+    visibility: hidden;
+
+  }
+   
+.account-form i{
+    display: inline-block;
+
+}
 #Password{
     margin-top: 1rem;
     margin-bottom: 0;
