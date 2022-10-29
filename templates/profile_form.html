@@ -32,24 +32,11 @@
           alt=""
         />
       </div>
-      <button onclick="document.getElementById('profilePhoto').click()">
-        Add Profile Photo
-      </button>
+      <form method=post action="/uploadPhoto/{{email}}" enctype=multipart/form-data>
+        <input type=file name=file onchange="readURL(this)">
+        <input type=submit value= Save >
+      </form>
       <form action="/setupForm" method="POST">
-        <input
-          id="profilePhoto"
-          type="file"
-          onchange="readURL(this)"
-          accept="jpg png jpeg"
-          style="visibility: hidden"
-        />
-        <!--profilePhotoBlob: - A hidden input field for storing the blob value of the uploaded image.-->
-        <input id="profilePhotoBlob" type="text" style="visibility: hidden" />
-        <!-- <div class="form-item">
-                            <label for="">Add Photograph</label>
-                            <div class="photo-input"><input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg"></div>
-                        </div> -->
-
         <div class="form-item" style="visibility: hidden">
           <label for="email">Email</label>
           <input id="email" name ="email" type="text" value= '{{email}}' required />
@@ -142,5 +129,13 @@
     <!-- </div> -->
   </div>
 </div>
+<script type="text/javascript" charset="utf-8">
+  let userData = '{{data|tojson}}';
+  var data = JSON.parse(userData);
+  if (data['imageUri']) {
+    let image = document.getElementById("profileImage");
+    image.src = data['imageUri'];
+  }
+</script>
 <script src="/static/js/profile_form.js"></script>
 {% endblock body_content %}
