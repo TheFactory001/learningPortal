@@ -1,8 +1,8 @@
-*{
+/* *{
     list-style: none;
     text-decoration: none;
     box-sizing: border-box;
-}
+} */
 
 
 .container{
@@ -12,75 +12,37 @@
 
 body{
     background-color: white;
+    margin: 0;
     /* background-color: azure; */
 }
 
 
-/* ::::::::::::::::::::::::nav-bar:::::::::::::::::::::::::::::: */
-.navDiv {
-    background: #f1f4f7;
-    height: 20%;
-    position: relative;
-    width: 100%;
-    list-style: none;
-    text-decoration: none;
-}
 
-nav {
-    height: 100%;
-}
-
-.nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    height: 100%;
-}
-
-.nav-items-container {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    list-style: none;
-    text-decoration: none;
-    margin-right: 5%;
-}
-
-.nav-items-container a {
-    font-size: 0.7rem;
-    transition: all 500ms ease;
-    text-decoration: none;
-}
-
-.nav-items-container a:hover {
-    font-size: 1rem;
-    color: black;
-}
 
 /* :::::::::::::::::::::::::::FORM:::::::::::::::::::::::::::::::::::: */
 
-.form-container{
-    padding: 0;
-    margin: 0;
+.account-form{
+    box-sizing: border-box;
     margin: auto;
-    margin-top: 3rem;
     width: 20rem;
-    height: 30rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    height: 35rem;
     background-color: #f1f4f7;
     padding:20px 0;
-    box-shadow: 0 0 20px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
 }
 
 .form-header{
     cursor: pointer;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
 .form-header h2{
     display: inline-block;
     margin-left: 3rem;
     
 }
+
 #Selector{
     border: none;
     background: slategray;
@@ -104,6 +66,7 @@ nav {
     text-align: left;
 }
 .account-form form{
+    box-sizing: border-box;
     max-width: 20rem;
     padding: 0 1.5rem;
     position: absolute;
@@ -123,15 +86,34 @@ nav {
 }
 
 .account-form input{
+    box-sizing: border-box;
     font-family: sans-serif;
     font-weight: 300;
     font-size: 0.8rem;
-    line-height: 2rem;
+    line-height: 1.5rem;
     border-radius: 0.5rem;
     width: 100%;
     padding:0 1rem;
     margin: 1rem 0;
     border: 2px solid rgb(176, 166, 166) ;
+}
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 22px;
+    right: 10px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .fa-eye-slash{
+    visibility: hidden;
+
+  }
+   
+.account-form i{
+    display: inline-block;
+
 }
 #Password{
     margin-top: 1rem;
@@ -145,6 +127,7 @@ nav {
 }
 
 .account-form .btn{
+    box-sizing: border-box;
     width: 100%;
     line-height: 2rem;
     border-radius: 1rem;
