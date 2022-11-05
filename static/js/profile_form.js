@@ -1,32 +1,42 @@
 //blob holder: - A hidden input field for storing the blob value of the uploaded image.
-let blob_holder = document.getElementById('profilePhotoBlob')
 function readURL(input) {
-if (input.files && input.files[0]) {
-    
-    var reader = new FileReader();
-    // my_blob = input.files[0]
-    // my_blob instanceof Blob;
-    // console.log(my_blob)
-
-    reader.onload = function (e) {
+    if (input.files && input.files[0]) {
         
-        blob_holder.value = reader.result;
-        console.log(reader.result)
-       $('#profileImage').attr('src', e.target.result).width(150).height(auto);
-    
-    };
-    
-    
+        var reader = new FileReader();
+        //reader.onload = function (e) {
+            //do stuff here to give the blob some data...
+            //blob_holder.value = reader.result;
+            //$.ajax({
+            //    type: 'POST',
+            //    url: '/uploadPhoto',
+            //    data: { data: JSON.stringify(info) },
+            //    dataType: 'json',
+            //});
 
-    reader.readAsDataURL(input.files[0]);
+            //fetch("/uploadPhoto",{
+           //     method:'POST',
+           //     credentials:"include",
+            //    body: my_dat,
+            //    cache:'no-cache',
+            //    headers: new Headers({
+            //    'content-type':'application/json'
+            //})})   
+            //$('#profileImage').attr('src', e.target.result).width(150).height(auto);
     
-    //profile_blob = reader.readAsArrayBuffer(input.files[0])
-    // alert('profile_blob')
-    
+        //};
+        
+        var objectURL = URL.createObjectURL(input.files[0]);
+        document.getElementById("profileImage") = objectURL;
+        //profile_blob = reader.readAsArrayBuffer(input.files[0])
+        // alert('profile_blob')
+        
+    }
+
 }
 
+function blobToFile(theBlob, fileName){       
+    return new File([theBlob], fileName, { lastModified: new Date().getTime(), type: theBlob.type })
 }
-
 
 //multiple selection
 let interest= document.getElementById('interest');

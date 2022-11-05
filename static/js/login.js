@@ -192,8 +192,8 @@ function switch_login_form() {
     login_form.style.visibility = "visible"
     reg_form.style.visibility = "hidden"
     selector.style.transform = "translateX(11rem)"
-    see_icon.style.visibility = 'hidden';
-    unsee_icon.style.visibility = 'hidden';
+    see_icon_reg.style.visibility = 'hidden';
+    unsee_icon_reg.style.visibility = 'hidden';
 
 
     // form_title.innerHTML="Login Form"

@@ -1,6 +1,6 @@
 from heapq import merge
 import firebase_admin
-from firebase_admin import credentials, firestore 
+from firebase_admin import credentials, firestore, storage
 
 cred = credentials.Certificate("./thefactory-firebase-adminsdk-xxfjn-4f1eb8f607.json")
 firebase_admin.initialize_app(cred)
@@ -33,9 +33,7 @@ def getUserData(email):
     try :
         print(email)
         doc_ref = db.collection(u'userData').document(email)
-        print(doc_ref)
         data = doc_ref.get().to_dict()
-        print(data)
         return data
     except Exception as e :
         print("Error getting info", e)
@@ -51,7 +49,6 @@ def signUpUser(data):
         print("Error getting info", e)
 
 def userProfileData(data):
-    print(data)
     try :
         docId = data['email']
         data.pop("email")
@@ -79,3 +76,17 @@ def obfusMail(email):
     for letter in email:
         obfus += str(ord(letter) - 96)
     return obfus
+
+def uploadPhoto(filename, imageBlob, id):
+    bucket = storage.bucket("thefactory.appspot.com")
+    blob = bucket.blob(filename)
+    blob.upload_from_filename(filename)
+
+    # Opt : if you want to make public access from the URL
+    blob.make_public()
+    try :
+        db.collection(u'userData').document(id).set({'imageUri': blob.public_url}, merge=True)
+    except Exception as e :
+        print("Error getting info", e)
+
+    # print("your file url", blob.public_url)

@@ -97,8 +97,9 @@ html, body {
     padding: 1rem;
     color: #1659b500;
     text-decoration: none;
-    height: 10%; 
+    height: 5rem; 
     position: relative;
+    width: 100%;
 }
 
 .foot-menu {
@@ -135,7 +136,7 @@ html, body {
     color: #1c2b33;
 }
 
-.stream {
+/* .stream {
     text-align: center;
     margin-left: 20%;
     margin-right: auto;
@@ -174,7 +175,7 @@ html, body {
     font-size: 0.9rem;
     top: auto;
     bottom: auto;
-}
+} */
 
 
 @media only screen and (max-width: 750px){

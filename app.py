@@ -1,7 +1,10 @@
 import email
 from flask import Flask, render_template, request, jsonify, redirect, url_for
+from werkzeug.utils import secure_filename
 from firestoreDB import *
+from utilFunctions import *
 import os
+import json
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -44,13 +47,13 @@ def tester():
 
 @app.route("/setup/<email>",methods=['GET','POST'])
 def setUp(email):
-    return render_template('profile_form.html',  email=email)
+    userData = getUserData(email)
+    return render_template('profile_form.html', data=userData, email=email)
 
 @app.route("/setupForm",methods=['GET','POST'])
 def setForm():
     if request.method == 'POST': 
         received_details= request.form
-
         id = received_details['email']
         address = received_details['address']
         github_link = received_details['github']
@@ -125,9 +128,31 @@ def signUp():
  # Pass sign in error message to login
 
 
-@app.route('/test')
-def test():
-    return render_template('test.html')
+@app.route('/uploadPhoto/<id>', methods=['GET','POST'])
+def test(id):
+    print("Hello")
+    if request.method =='POST':
+         # check if the post request has the file part
+        if 'file' not in request.files:
+            print('No file part')
+            return redirect(url_for('setUp', email=id))
+        image_file  = request.files['file']
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if image_file .filename == '':
+            print('No selected file')
+
+        if image_file:
+            filename = secure_filename(image_file.filename)
+            image_file.save(os.path.join(
+                app.config['UPLOAD_FOLDER'], filename))
+            pic = os.path.join('static', filename)
+            n_pic = pic.replace(os.sep, '/')
+            empPicture = convertToBinaryData(n_pic)
+            uploadPhoto(pic, empPicture, id)
+            os.remove(pic)
+
+    return redirect(url_for('setUp', email=id))
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port='8000', debug=True)

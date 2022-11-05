@@ -21,5 +21,9 @@ $(document).ready(function () {
     interestA.innerHTML = data['interest1'];
     let interestB = document.getElementById("interest1");
     interestB.innerHTML = data['interest2'];
-    //display_info(data)
+
+    if(data['imageUri']){
+        let image = document.getElementById("profileImage");
+        image.src = data['imageUri'];
+    }
 })
