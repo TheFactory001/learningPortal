@@ -48,9 +48,9 @@
     --xs-fs:1rem;
 
 }
-.container, html{
-    font-size: 10px;
-  }
+/* .container, html{
+    font-size: 10px; 
+  }*/
 /* body{
     display: flex;
     justify-content: center ;
@@ -86,6 +86,26 @@
     padding: 1rem;
     box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 25px rgba(0, 0, 0,0.08);
     grid-gap: 1rem;
+}
+@media only screen and (max-width: 750px){
+    .container{
+        top: 2.3rem;
+        width: 90%;
+        /* height: 93vh; */
+        margin: 0% auto;
+        display: grid;
+        /* grid-template-columns: 4fr; */
+        /* grid-template-areas: "header header"
+        "userProfile userDetails"
+        "work_skills timeline_about"
+        "work_skills timeline_about"; */
+        background: var(--glass-bg);
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 25px rgba(0, 0, 0,0.08);
+        grid-gap: 1rem;
+    }
+
+
 }
 /*::::::::::::::::::Container Card Grid-Area Start::::::::::::::::::::::*/
 header

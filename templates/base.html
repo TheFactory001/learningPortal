@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
     <title>TheFactory</title>
 
     {% block stylesheet %} {% endblock stylesheet %}
@@ -14,19 +17,28 @@
     />
   </head>
   <body>
-    <div class="navDiv">
-      <nav>
-        <div class="nav-container">
-          <h3>TheFactory</h3>
-          <ul class="nav-items-container">
-            <li><a href="{{ url_for('launch') }}">Home</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-            <li><a href="{{ url_for('program') }}">Programs</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-          </ul>
+    <nav class="nav">
+      <div class="nav-menu">
+        <div class="nav-brand">
+          <a href="#" class="text-gray">TheFactory</a>
         </div>
-      </nav>
-    </div>
+       <!-- <div class="toggle-collapse">
+          <div class="toggle-icons">
+            <i class="fas fa-bars"></i>
+
+          </div> -->
+     
+            <ul class="nav-items" id="menu">
+              <li class="nav-link"><a href="{{ url_for('launch') }}">Home</a></li>
+              <li class="nav-link"><a href="{{ url_for('about') }}">About</a></li>
+              <li class="nav-link"><a href="{{ url_for('program') }}">Programs</a></li>
+              <li class="nav-link"><a href="{{ url_for('login') }}">Login</a></li>
+            </ul>
+            <button id="closeMenuBtn"><i><img src="{{url_for('static',filename= 'img/close1.png')}}" height="35px" alt="close menu items button" ></i></button>
+            <button id="openMenuBtn"><i class="fas fa-bars" ></i></button>
+    
+      </div>
+    </nav>
     {% block body_content %}{% endblock body_content %}
     <footer class="foot">
       <div class="foot-menu">
@@ -46,5 +58,11 @@
         </div>
       </div>
     </footer>
+
+    <!--------jquery library file-->
+    <script src="/static/js/jquery3.6.1.min.js"></script>
+
+    <!-----Base script---->
+    <script src="/static/js/base.js"></script>
   </body>
 </html>

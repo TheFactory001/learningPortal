@@ -89,4 +89,4 @@ def uploadPhoto(filename, imageBlob, id):
     except Exception as e :
         print("Error getting info", e)
 
-    print("your file url", blob.public_url)
+    # print("your file url", blob.public_url)

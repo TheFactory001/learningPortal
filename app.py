@@ -15,23 +15,31 @@ CORS(app)
 
 #print(type(authenticateLogin("johnDoe@doe.com", "123JohnDoe")))
 
+
 @app.route("/")
 def launch():
     return render_template('launch.html')
+
 
 @app.route("/about")
 def about():
     return render_template('aboutUs.html')
 
+
 @app.route("/programs")
 def program():
     return render_template('programs.html')
 
+<<<<<<< HEAD
 @app.route("/questions")
 def questions():
     return render_template('questions.html')
 
 @app.route("/login", methods=['GET','POST'])
+=======
+
+@app.route("/login", methods=['GET', 'POST'])
+>>>>>>> origin/flask-impl-dan
 def login():
     return render_template('login.html')
 
@@ -39,6 +47,7 @@ def login():
 @app.route("/index")
 def index():
     return render_template('launch.html')
+
 
 @app.route("/dory")
 def tester():
@@ -57,6 +66,7 @@ def setForm():
         address = received_details['address']
         github_link = received_details['github']
         city = received_details['city']
+        # interests = received_details['interests']
         level = received_details['level']
         interest1 = received_details['interest1']
         interest2 = received_details['interest2']
@@ -86,12 +96,13 @@ def profile(id, isAuth):
 def str2bool(v):
   return v.lower() in ("yes", "true", "t", "1")
 
-@app.route("/authCheck", methods=['GET','POST'])
+
+@app.route("/authCheck", methods=['GET', 'POST'])
 def authCheck():
-    if request.method =='POST':
+    if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-        authData =  authenticateLogin(email, password)
+        authData = authenticateLogin(email, password)
         if type(authData) == dict:
             return redirect(url_for('profile', id=authData['id'], isAuth=True))
     return redirect(url_for('login'))
@@ -151,5 +162,5 @@ def test(id):
 
     return redirect(url_for('setUp', email=id))
 
-#if __name__ == '__main__':
- #   app.run(host='0.0.0.0', port='8000', debug=True)
+if __name__ == '__main__':
+   app.run(host='0.0.0.0', port='8000', debug=True)

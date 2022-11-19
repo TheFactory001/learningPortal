@@ -27,7 +27,7 @@ body{
     width: 20rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
-    height: 30rem;
+    height: 35rem;
     background-color: #f1f4f7;
     padding:20px 0;
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
@@ -96,6 +96,24 @@ body{
     padding:0 1rem;
     margin: 1rem 0;
     border: 2px solid rgb(176, 166, 166) ;
+}
+.field-icon {
+    float: right;
+    margin-left: -25px;
+    margin-top: 22px;
+    right: 10px;
+    position: relative;
+    z-index: 2;
+    cursor: pointer;
+  }
+  .fa-eye-slash{
+    visibility: hidden;
+
+  }
+   
+.account-form i{
+    display: inline-block;
+
 }
 #Password{
     margin-top: 1rem;
