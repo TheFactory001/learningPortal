@@ -27,6 +27,10 @@ def about():
 def program():
     return render_template('programs.html')
 
+@app.route("/questions")
+def questions():
+    return render_template('questions.html')
+
 @app.route("/login", methods=['GET','POST'])
 def login():
     return render_template('login.html')
