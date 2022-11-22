@@ -30,16 +30,11 @@ def about():
 def program():
     return render_template('programs.html')
 
-<<<<<<< HEAD
 @app.route("/questions")
 def questions():
     return render_template('questions.html')
 
 @app.route("/login", methods=['GET','POST'])
-=======
-
-@app.route("/login", methods=['GET', 'POST'])
->>>>>>> origin/flask-impl-dan
 def login():
     return render_template('login.html')
 
@@ -90,7 +85,7 @@ def setForm():
 def profile(id, isAuth):
     if str2bool(isAuth) == True:
         userData = getUserData(id)
-        return render_template('profilepage.html', userData=userData)
+        return render_template('profilepage.html', userData=userData, email=id)
     return redirect(url_for('login'))
 
 def str2bool(v):
@@ -138,7 +133,6 @@ def signUp():
 
 @app.route('/uploadPhoto/<id>', methods=['GET','POST'])
 def test(id):
-    print("Hello")
     if request.method =='POST':
          # check if the post request has the file part
         if 'file' not in request.files:
@@ -157,10 +151,38 @@ def test(id):
             pic = os.path.join('static', filename)
             n_pic = pic.replace(os.sep, '/')
             empPicture = convertToBinaryData(n_pic)
-            uploadPhoto(pic, empPicture, id)
+            uploadPhoto(pic, "imageUri", id)
             os.remove(pic)
 
     return redirect(url_for('setUp', email=id))
+
+@app.route('/uploadFile/<id>', methods=['GET','POST'])
+def test2(id):
+    if request.method =='POST':
+         # check if the post request has the file part
+        userData = getUserData(id)
+        if 'file' not in request.files:
+            print('No file part')
+            return redirect(url_for('setUp', email=id))
+        image_file  = request.files['file']
+        # If the user does not select a file, the browser submits an
+        # empty file without a filename.
+        if image_file .filename == '':
+            print('No selected file')
+
+        if image_file:
+            filename = secure_filename(image_file.filename)
+            image_file.save(os.path.join(
+                app.config['UPLOAD_FOLDER'], filename))
+            pic = os.path.join('static', filename)
+            n_pic = pic.replace(os.sep, '/')
+            #empPicture = convertToBinaryData(n_pic)
+            uploadPhoto(pic, "asssessment", id)
+            os.remove(pic)
+            
+            return render_template('profilepage.html', userData=userData, email=id)
+
+    return render_template('profilepage.html', userData=userData, email=id)
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port='8000', debug=True)

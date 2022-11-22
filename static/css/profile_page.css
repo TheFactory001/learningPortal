@@ -381,8 +381,22 @@ header
     background: var(--bg5-colour);
 
 }
+
+.contact_info {
+    display: none;
+}
+
+.assess {
+    display: none;
+}
+
+#submitAssessment {
+    align-items: center;
+    text-align: center;
+}
+
 .timeline_about .contact_info .heading,
-.timeline_about .basic_info .heading
+.timeline_about .assessment .heading
 {
     font-size: var(--xs-fs);
     color: var(--f4-colour);
@@ -391,24 +405,24 @@ header
 }
 
 .timeline_about .contact_info ul, 
-.timeline_about .basic_info ul{
+.timeline_about .assessment ul{
     margin-bottom: 1.5rem;
 }
 .timeline_about .contact_info ul li,
-.timeline_about .basic_info ul li{
+.timeline_about .assessment ul li{
     display: flex;
     margin: 0.5rem 0;
 
 }
 .timeline_about .contact_info ul li h1,
-.timeline_about .basic_info ul li h1
+.timeline_about .assessment ul li h1
 {   
      font-weight: 500;
     font-size: var(--m-fs);
     min-width: 12rem;
 }
 .timeline_about .contact_info ul li span,
-.timeline_about .basic_info ul li span{
+.timeline_about .assessment ul li span{
     font-size: var(--m-fs);
 
 

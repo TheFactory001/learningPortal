@@ -57,18 +57,19 @@
       </h1>
       <p id="githubLink">git-hub link</p>
     </div>
+    <button class="contact" onclick=showContact()>See Contact Information.</button>
+    <button class="assess" onclick=showAssess()>Submit an Assessment.</button>
   </section>
   <section class="timeline_about card">
-    <div class="tabs">
-      <ul>
-        <li class="timeline">
-          <i></i>
-          <span>Timeline</span>
-        </li>
-        <li class="about active">
-          <span>About</span>
-        </li>
-      </ul>
+    <div class="assessment">
+      <h1 class="heading">Assessment</h1>
+      <div id="submitAssessment">
+        <h3>Submit an assessment.</h3>
+        <form method=post action="/uploadFile/{{email}}" enctype=multipart/form-data>
+          <input type=file name=file id="inputFiles"><br><br>
+          <input type=submit value=Upload >
+        </form>
+      </div>
     </div>
     <div class="contact_info">
       <h1 class="heading">Contact Information</h1>

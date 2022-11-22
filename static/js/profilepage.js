@@ -26,4 +26,60 @@ $(document).ready(function () {
         let image = document.getElementById("profileImage");
         image.src = data['imageUri'];
     }
+
+
 })
+
+function showContact() {
+    var contact = document.getElementsByClassName("contact_info");
+    var assessment = document.getElementsByClassName("assessment");
+    var contactButton = document.getElementsByClassName("contact");
+    var assessButton = document.getElementsByClassName("assess");
+    //assessment.style.display = "none"
+    //contact.style.display = "block"
+    for(var i = 0; i < assessment.length; i++){
+        //contact[i].style.visibility = "hidden";
+        assessment[i].style.display = "none"; 
+    }
+
+    for(var i = 0; i < contact.length; i++){
+        //contact[i].style.visibility = "hidden";
+        contact[i].style.display = "block";
+    }
+
+    for(var i = 0; i < contactButton.length; i++){
+        contactButton[i].style.display = "none";
+    }
+
+    for(var i = 0; i < assessButton.length; i++){
+        assessButton[i].style.display = "block";
+    }
+  }
+
+  function showAssess() {
+    var contact = document.getElementsByClassName("contact_info");
+    var assessment = document.getElementsByClassName("assessment");
+    var contactButton = document.getElementsByClassName("contact");
+    var assessButton = document.getElementsByClassName("assess");
+    //assessment.style.display = "none"
+    //contact.style.display = "block"
+    for(var i = 0; i < assessment.length; i++){
+        //contact[i].style.visibility = "hidden";
+        assessment[i].style.display = "block"; 
+    }
+
+    for(var i = 0; i < contact.length; i++){
+        //contact[i].style.visibility = "hidden";
+        contact[i].style.display = "none";
+    }
+
+    for(var i = 0; i < contactButton.length; i++){
+        contactButton[i].style.display = "block";
+    }
+
+    for(var i = 0; i < assessButton.length; i++){
+        assessButton[i].style.display = "none";
+    }
+
+
+  }

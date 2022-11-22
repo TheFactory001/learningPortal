@@ -13,9 +13,8 @@
       href="{{ url_for('static', filename='css/base.css') }}"
     />
     <style>
-        
         #question {
-            margin-left: 2%;
+            margin-left: 5%;
             margin-top: 2%;
             width: 70%;
             background: #f1f4f7;
@@ -58,6 +57,48 @@
             margin-left: auto;
             margin-top: auto;
             width: 70%;
+        }
+
+        .navDiv {
+            background: #f1f4f7;
+            height: 10%;
+            position: relative;
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        nav {
+            height: 100%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100%;
+        }
+
+        .nav-items-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            list-style: none;
+            text-decoration: none;
+            margin-right: 5%;
+        }
+
+        .nav-items-container a {
+            font-size: 0.9rem;
+            transition: all 500ms ease;
+            text-decoration: none;
+        }
+
+        .nav-items-container a:hover {
+            font-size: 1rem;
+            color: black;
         }
 
     </style>
@@ -156,6 +197,16 @@
           </p>
         </div>
         <div id="qualitativeHolder"></div>
+        <div>
+          <h4>How to submit assessment</h4>
+          <ul>
+            <li> Write your workings on paper with your name and email address/phone number and scan your answers.</li>
+            <li> Click the "Login to Submit" icon on the top right of the page.</li>
+            <li> Sign in or Sign up for a new account and fill out required information </li>
+            <li> On the profile page, click icon "Upload assessment" icon and choose the PDF file you scanned.</li>
+          </ul>
+          <p>You will hear from us in 3 - 5 days from the date of submission.</p>
+        </div>
     </div>
     <script type="text/javascript"
         src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
