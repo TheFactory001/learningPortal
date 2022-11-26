@@ -122,7 +122,7 @@ html, body {
     top: auto;
     bottom: auto;
 }
-@media only screen and (max-width: 750px ) {
+@media only screen and (max-device-width: 750px ) {
     .streams{
         display: flex;
         text-align: center;

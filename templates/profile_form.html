@@ -1,83 +1,20 @@
-{% extends 'base.html' %} {% block stylesheet %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='css/profile_form.css') }}"
-/>
-<link
-  class="jsbin"
-  href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css"
-  rel="stylesheet"
-  type="text/css"
-/>
-<script
-  class="jsbin"
-  src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
-></script>
-<script
-  class="jsbin"
-  src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
-></script>
-{% endblock stylesheet %} {% block body_content %}
-
-<div class="bg">
-  <div class="container body-details">
-    <!-- <div class="centered"> -->
-    <div class="form-container">
-      <div class="display_image">
-        <img
-          src="{{url_for('static', filename='img/profileavatar.jpg')}}"
-          id="profileImage"
-          width="150"
-          height="auto"
-          alt=""
-        />
-      </div>
-      <form method=post action="/uploadPhoto/{{email}}" enctype=multipart/form-data>
-        <input type=file name=file onchange="readURL(this)">
-        <input type=submit value= Save >
-      </form>
-      <form action="/setupForm" method="POST">
-        <div class="form-item" style="visibility: hidden">
-          <label for="email">Email</label>
-          <input id="email" name ="email" type="text" value= '{{email}}' required />
-        </div>
-
-        <div class="form-item">
-          <label for="address">Address</label>
-          <input id="address" name ="address" type="text" required />
-        </div>
-
-        <div class="form-item">
-          <label for="city">City</label>
-          <input id="city" name="city" type="text" required />
-        </div>
-
-        <!-- <div class="form-item">
-                            <label for="address2">Address Line2</label>
-                            <input id="address2" type="text">
-                        </div> -->
-        <div class="form-item">
-          <label for="level">Level</label>
-          <input
-            name="level"
-            id="level"
-            type="text"
-            list="levelTopics"
-            onclick="change_to_mail()"
-            onblur="return_to_text()"
-            multiple
-          />
-          <datalist id="levelTopics">
-            <option value="Basic">Basic</option>
-            <option value="Familiar">Familiar</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="L4">L4</option>
-          </datalist>
-        </div>
-
-        <div class="form-item">
-          <label for="interest">Interest 1</label>
-          <input
+{% extends 'base2.html' %} 
+{% block stylesheet_content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/profile_form2.css')}}">
+{% endblock stylesheet_content %}
+ {% block body_content %}
+ <div class="container">
+    <div class="form_container">
+         <img src="{{url_for('static', filename='img/profileavatar.jpg')}}" alt="">
+        <form action="">
+            <div class="image_picker">
+                <input id='imageInput' type="file">
+                <button id="saveImageBtn">Save</button>
+            </div>
+            <div class="text_input"><label for="">Address</label><input type="text" class="text_input"></div>
+            <div class="text_input"><label for="">City</label><input type="text" class="text_input"></div>
+            <div class="text_input"><label for="">Level</label><input type="text" class="text_input"></div>
+            <input
             name="interest1"
             id="interest"
             type="text"
@@ -95,9 +32,7 @@
             <option value="Embedded System">Embedded System</option>
             <option value="Data Science">Data Science</option>
           </datalist>
-        </div>
-        <div class="form-item">
-          <label for="interest">Interest 2</label>
+
           <input
             id="interest"
             name="interest2"
@@ -116,26 +51,15 @@
             <option value="Embedded System">Embedded System</option>
             <option value="Data Science">Data Science</option>
           </datalist>
-        </div>
-        <div class="form-item">
-          <label for="githubLink">GitHub Link</label>
-          <input id="githubLink" name="github" type="text" />
-        </div>
 
-        <button type="submit" class="btn">Submit</button>
-      </form>
+            <div class="text_input"><label for="">Interest1</label><input type="text" class="text_input"></div>
+            <div class="text_input"><label for="">Interest2</label><input type="text" class="text_input"></div>
+            <div class="text_input"><label for="">Github Link</label><input type="text" class="text_input"></div>
+            <Button id="submitFormBtn">SUBMIT</Button>
+        </form>
+        
+
     </div>
-
-    <!-- </div> -->
-  </div>
-</div>
-<script type="text/javascript" charset="utf-8">
-  let userData = '{{data|tojson}}';
-  var data = JSON.parse(userData);
-  if (data['imageUri']) {
-    let image = document.getElementById("profileImage");
-    image.src = data['imageUri'];
-  }
-</script>
-<script src="/static/js/profile_form.js"></script>
-{% endblock body_content %}
+ </div>
+ {% endblock body_content %} 
+{%block script_content %}{% endblock script_content %}

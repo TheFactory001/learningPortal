@@ -1,8 +1,8 @@
 function get_sign_up_details() {
-    let full_name = document.getElementById("FullName").value;
-    let mobile_number = document.getElementById("MobileNumber").value;
-    let email = document.getElementById('Email').value
-    let password = document.getElementById('Password').value
+    let full_name = document.getElementById("fullName").value;
+    let mobile_number = document.getElementById("mobileNumber").value;
+    let email = document.getElementById('email').value
+    let password = document.getElementById('passwordReg').value
     let first_name = full_name.split(" ")[0];
     let last_name = full_name.split(" ")[1];
 
@@ -22,59 +22,11 @@ function get_sign_up_details() {
 
 }
 
-/** 
-function get_login_details(e) {
-    e.preventDefault();
-    let email =document.getElementById("loginEmail").value;
-    let password =document.getElementById("loginPassword").value;
-    let login_details={
-        email:email,
-        password:password
-    };
-    console.log(login_details);
-}
 
-*/
-/** 
-// Gets a reference to the form element
-var form = document.getElementById('LoginForm');
-
-// Adds a listener for the "submit" event.
-form.addEventListener('submit', function(e) {
-
-  //e.preventDefault();
-  let email =document.getElementById("loginEmail").value;
-  let password =document.getElementById("loginPassword").value;
-  let login_details={
-      email:email,
-      password:password
-  };
-  //console.log(login_details);
-  send_details('login', login_details)
-
-});
-
-//includes type of form as status
-function send_details(form_status, user_details){
-    let details = {
-        status:form_status,
-        user_details: user_details
-    }
-    let str_data= JSON.stringify(details)               
-    $.ajax({
-        type: 'POST',
-        url: '/profile',
-        data: JSON.stringify(details),
-        contentType: "application/json"
-    });
-
-
-}
-*/
 let case_valid = document.getElementById("PasswordValidationMessage");
 
 function password_validation() {
-    let password = document.getElementById("Password").value;
+    let password = document.getElementById("passwordReg").value;
     //let case_valid = document.getElementById("PasswordValidationMessage");
     if (reg_form.style.visibility = 'visible') {
         case_valid.style.visibility = "visible";
@@ -146,7 +98,7 @@ function email_validator() {
     else { document.getElementById("email").style.border = "red solid 3px" }
 }
 function mobile_number_validator() {
-    let number_box = document.getElementById("mobile_number")
+    let number_box = document.getElementById("mobileNumber")
     let mobile_number = number_box.value.split(" ").join("")
     console.log(mobile_number)
 }
@@ -180,55 +132,52 @@ function is_valid() {
     // }
 }
 
-var login_form = document.getElementById('LoginForm');
-var reg_form = document.getElementById('RegForm');
-var selector = document.getElementById('Selector');
+var login_form = document.getElementById('loginForm');
+var reg_form = document.getElementById('regForm');
+let sign_up_switch = document.getElementById('signUpSwitch');
+let login_switch = document.getElementById('loginSwitch');
+// var selector = document.getElementById('Selector');
+// sign_up_switch.addEventListener('click', ()=>{
+//     alert('hey')
+// })
 function switch_login_form() {
-    reg_form.reset()
-    login_form.reset()
-    case_valid.style.visibility = "hidden";
-    // login_form.style.transform = "translateX(100%)"
-    // reg_form.style.transform = "translateX(-100%)"
-    login_form.style.visibility = "visible"
-    reg_form.style.visibility = "hidden"
-    selector.style.transform = "translateX(11rem)"
-    see_icon_reg.style.visibility = 'hidden';
-    unsee_icon_reg.style.visibility = 'hidden';
-
-
-    // form_title.innerHTML="Login Form"
-
+    login_switch.style.borderBottom='3px solid black';
+    sign_up_switch.style.borderBottom='none';
+    reg_form.style.display ='none';
+    login_form.style.display='initial';
+    
+    
 }
 function switch_reg_form() {
-    // login_form.style.transform = "translateX(0)"
-    // reg_form.style.transform = "translateX(0)"
-    reg_form.reset()
-    login_form.reset()
-    login_form.style.visibility = "hidden";
-    reg_form.style.visibility = "visible";
-    selector.style.transform = "translateX(2rem)"
-    see_icon.style.visibility = 'visible';
-
-    // form_title.innerHTML="Registration Form"
+    login_switch.style.borderBottom='none';
+    sign_up_switch.style.borderBottom='3px solid black';
+    login_form.style.display ='none';
+    reg_form.style.display='initial';
 }
 
 var see_icon_reg = document.getElementById('seeIconReg');
 var unsee_icon_reg = document.getElementById('unseeIconReg');
+var see_icon_login = document.getElementById('seeIconLogin');
+var unsee_icon_login = document.getElementById('unseeIconLogin');
+let password_login = document.getElementById('passwordLogin');
+let password_reg = document.getElementById('passwordReg');
 
-//show - hide password
+
 let passwordReg = document.getElementById('Password');
 function show_password() {
-    
-    passwordReg.type = 'text';
-    see_icon_reg.style.visibility = 'hidden';
+    password_reg.type = 'text';
+    password_login.type='text';
+    see_icon_reg.style.visibility='hidden';
+    see_icon_login.style.visibility='hidden';
+    unsee_icon_login.style.visibility = 'visible';
     unsee_icon_reg.style.visibility = 'visible';
-    
-
 }
 
 function hide_password() {
-    passwordReg.type = 'password';
-    see_icon_reg.style.visibility = 'visible';
+    password_reg.type = 'password';
+    password_login.type='password';
+    see_icon_reg.style.visibility='visible';
+    see_icon_login.style.visibility='visible';
+    unsee_icon_login.style.visibility = 'hidden';
     unsee_icon_reg.style.visibility = 'hidden';
-
 }

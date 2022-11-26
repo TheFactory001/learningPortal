@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html,body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+nav{
+    background: #F5F5F5;
+    height: 60px;
+}
+
+.logo{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 20px;
+}
+.nav_container{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+.nav_items{
+    list-style: none;
+    position: fixed;
+    top: 60px;
+    right:0;
+    z-index: 2;
+    display: none;
+}
+#menuClose{
+    display: none;
+}
+.nav_item{ 
+    width: 140px;
+    height:40px;
+    border-bottom:2px solid #F5F5F5;
+    border-left:2px solid #F5F5F5;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    color: black;
+}
+.nav_item a:visited{
+    color: black;
+}
+.nav_item:hover{
+    background: #F5F5F5;
+}
+.container{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+footer{
+    width: 100%;
+    bottom: 0;
+    background: #F5F5F5;
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+footer .footer_header{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 18px;
+}
+.contact_icons{
+    display: flex;
+    gap: 10px;
+}
+
+/*media queries*/
+@media only screen and (min-width:720px){
+    /* .nav_container{
+        width: 80%;
+    } */
+
+    #menuDisplay, #menuClose{
+        display: none !important;
+    }
+    .nav_items{
+        display: flex !important;
+        position: inherit;
+        gap: 10px;
+        height: 100%;
+       
+    }
+    .nav_item{
+        background: none;
+        border: none;
+        width: auto;
+        min-width: 70px;
+        padding: 2px;
+        text-align: center;
+        height: 100%;
+        justify-content: center;
+       
+    }
+
+    .nav_item:hover{
+        background: #fff ;
+    }
+}

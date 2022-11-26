@@ -1,0 +1,114 @@
+{% extends 'base.html' %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/login.css') }}"
+/>
+{% endblock stylesheet %} {% block body_content %}
+<div class="form-container">
+  <div class="account-form">
+    <div class="form-header">
+      <h2 onclick="switch_reg_form()">Sign Up</h2>
+      <h2 onclick="switch_login_form()">Login</h2>
+      <hr id="Selector" />
+    </div>
+
+    <form id="RegForm" action="/signUp" method="POST">
+      <p>
+        Alread have an account?
+        <button
+          class="switch_btn"
+          id="LoginSwitch"
+          type="button"
+          onclick="switch_login_form()"
+        >
+          Login
+        </button>
+      </p>
+      <input
+        type="text"
+        name="name"
+        required
+        id="FullName"
+        placeholder="Full Name"
+      />
+
+      <input
+        type="text"
+        name="number"
+        id="MobileNumber"
+        required
+        placeholder="Mobile Number"
+      />
+      <input
+        type="email"
+        name="email"
+        id="Email"
+        required
+        placeholder="Email"
+        oninput="email_validator()"
+      />
+
+      <input
+        id="Password"
+        type="password"
+        name="password"
+        oninput="password_validation()"
+        required
+        placeholder="Password"
+      />
+      <i
+        class="fa-solid fa-eye field-icon"
+        id="seeIconReg"
+        onclick="show_password()"
+      ></i>
+      <i
+        class="fa-solid fa-eye-slash field-icon"
+        id="unseeIconReg"
+        onclick="hide_password()"
+      ></i>
+      <label id="PasswordValidationMessage" style="visibility: hidden"></label>
+      <button class="btn">Sign Up</button>
+    </form>
+
+    <form
+      id="LoginForm"
+      style="visibility: hidden"
+      action="/authCheck"
+      method="POST"
+    >
+      <p>
+        Don't have an account?
+        <button
+          class="switch_btn"
+          id="SignUpSwitch"
+          type="button"
+          onclick="switch_reg_form()"
+        >
+          Sign Up
+        </button>
+      </p>
+
+      <input id="loginEmail" name="email" type="email" placeholder="Email" />
+
+      <input
+        id="loginPassword"
+        name="password"
+        type="password"
+        placeholder="Password"
+      />
+      <i
+        class="fa-solid fa-eye field-icon"
+        id="showPassword"
+        onclick="show_password"
+      ></i>
+      <i class="fa-solid fa-eye-slash field-icon" onclick="hide_password"></i>
+      <button class="btn">Login</button>
+    </form>
+  </div>
+</div>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+></script>
+<script src="/static/js/login.js"></script>
+{% endblock body_content %}

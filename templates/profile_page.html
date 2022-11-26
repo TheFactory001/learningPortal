@@ -1,0 +1,68 @@
+{% extends 'base2.html' %}
+
+{% block stylesheet_content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/profile_page2.css')}}">
+{% endblock stylesheet_content %}
+{% block body_content %}
+<div class="container">
+    <div class="profile_container">
+        <img src="{{url_for('static', filename='img/profileavatar.jpg')}}" id="profileImage" alt="">
+        <div class="profile_box user_profile">
+            <h4 id="fullName">Daniel Adedokun</h4>
+            <p><iconify-icon icon="ph:map-pin"></iconify-icon><span id="city">City</span></p>
+            <p id="professionalTitle">Professional Title</p>
+            <div class="rank">
+                <p>
+                    
+                    <label class="heading">Level:</label>
+                    <span id="level">Senior/Junior</span>
+                </p>
+                <p>
+                    <label class="heading"><iconify-icon icon="jam:github"></iconify-icon>Git-Hub:</label>
+                    <span id="githubLink">git-hub link</span>
+                </p>
+                
+            </div>
+        </div>
+        <div class="profile_box interests">
+                <h3>INTERESTS</h3>
+                <ul>
+                    <li class="interest" id="interest1">Interest1</li>
+                    <li class="interest" id="interest2">Interest2</li>
+                </ul>
+        </div>
+        <div class="profile_box timeline__about">
+            <h4>
+                <span class="timeline span__all">Timeline</span>
+                <span class="about span__all"> <span>About</span> </span>
+            </h4>
+            <div class="about_details">
+                <h6>Contact Information</h6>
+                <p>
+                    <label for="">Phone:</label>
+                    <span id="phoneNumber">+2349767</span>
+                </p>
+                <p>
+                    <label for="" id="contactAddress" >Email:</label>
+                    <span id="email">derlos@gmail.com</span>
+                </p>
+                <p>
+                    <label for="">Git-Hub Username:</label>
+                    <span id="githubUsername">Derr</span>
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endblock body_content %}
+{% block script_content %}
+    <script
+    type="text/javascript"
+    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+    ></script>
+    <script type="text/javascript" charset="utf-8">
+        let userData = "{{userData|tojson}}";
+    </script>
+    <script src="/static/js/profile_page.js"></script>
+{% endblock script_content %}

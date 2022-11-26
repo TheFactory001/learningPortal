@@ -74,44 +74,21 @@
 .container{
     top: 2.3rem;
     width: 90%;
-    /* height: 93vh; */
     margin: 0% auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    grid-template-areas: "header header"
-    "userProfile userDetails"
+    grid-template-areas:"userProfile userDetails"
     "work_skills timeline_about"
     "work_skills timeline_about";
+    
     background: var(--glass-bg);
     padding: 1rem;
     box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 25px rgba(0, 0, 0,0.08);
     grid-gap: 1rem;
 }
-@media only screen and (max-width: 750px){
-    .container{
-        top: 2.3rem;
-        width: 90%;
-        /* height: 93vh; */
-        margin: 0% auto;
-        display: grid;
-        /* grid-template-columns: 4fr; */
-        /* grid-template-areas: "header header"
-        "userProfile userDetails"
-        "work_skills timeline_about"
-        "work_skills timeline_about"; */
-        background: var(--glass-bg);
-        padding: 1rem;
-        box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 25px rgba(0, 0, 0,0.08);
-        grid-gap: 1rem;
-    }
 
-
-}
 /*::::::::::::::::::Container Card Grid-Area Start::::::::::::::::::::::*/
-header
-{
-    grid-area: header;
-}
+
 
 .userProfile
 {
@@ -131,6 +108,8 @@ header
 }
 
 
+
+
 /*:::::::::::::::::::::::CONTAINER CARDS::::::::::::::::::*/
 .container .card
 {
@@ -140,15 +119,16 @@ header
     box-shadow: 0 0 25px rgba(0,0,0,0.05);
     padding:1.5rem;
 }
+
 /*:::::::::::::::::::::Container Header/Navbar CSS::::::::::::::::::::::::::*/
 
 
-.container header{
+/* .container header{
     padding: 0 2.5rem;
 
-} 
+}  */
 /*::::::::::::::::::::Container Header::::::::::::::::::::::*/
-.container header figure  img{
+/* .container header figure  img{
     height: 3.5rem;
     width: 3.5rem;
 }
@@ -157,7 +137,7 @@ header
     font-size: var(--xl-fs);
     font-weight: 700;
     margin-left: 0.5ren;
-}
+} */
 
 
 /*::::::::::::::::::::::USER MAIN Profile::::::::::::::::::::*/
@@ -182,6 +162,7 @@ header
 /*:::::::::::::::::::Work & Skills Css:::::::::::::::::*/
 .container .work_skills{
     padding: 1.5rem;
+    width: 90%;
 
 }
 
@@ -268,6 +249,7 @@ header
 
 /*::::::::::::::::::::User Details::::::::::::::::*/
 .userDetails{
+    width: 90%;
     position: relative;
     padding: 1.5rem 2.5rem;
 }
@@ -337,6 +319,7 @@ header
 
 /*::::::::::Timeline & About:::::::::::*/
 .timeline_about {
+    width: 90%;
     padding: 2.5rem;
 }
 
@@ -398,12 +381,13 @@ header
 .timeline_about .basic_info ul li{
     display: flex;
     margin: 0.5rem 0;
+    
 
 }
 .timeline_about .contact_info ul li h1,
 .timeline_about .basic_info ul li h1
 {   
-     font-weight: 500;
+    font-weight: 500;
     font-size: var(--m-fs);
     min-width: 12rem;
 }
@@ -420,4 +404,46 @@ header
     color: var(--f5-colour);
 }
 
+/* small screen*/
+@media only screen and (max-device-width: 750px){
+    .container{
+        top: 2.3rem;
+        width: 90%;
+        margin: 0% auto;
+        display: inline-grid;
+        grid-template-columns: auto;
+        grid-template-areas: "one"
+        "two"
+        "three"
+        "four";
+        background: var(--glass-bg);
+        padding: 1rem;
+        box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 25px rgba(0, 0, 0,0.08);
+        grid-gap: 1rem;
+    }
+    .userProfile
+{
+    grid-area: one;
+       
+}
+.work_skills
+{
+    grid-area: three;
 
+}
+.userDetails{
+    grid-area: two;
+}
+.timeline_about{
+    grid-area: four;
+}
+.timeline_about .contact_info ul li,
+.timeline_about .basic_info ul li{
+    display: inline-block;
+    margin: 0.5rem 0;
+    
+
+}
+
+
+}

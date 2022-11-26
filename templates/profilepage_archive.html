@@ -9,7 +9,6 @@
 <span class="main_bg"></span>
 
 <div class="container">
-  <header class="header"></header>
   <section class="userProfile card">
     <div class="profile">
       <figure>
@@ -43,7 +42,7 @@
         /></i>
         <span id="city">CITY, CT</span>
       </div>
-      <p id="professionalTitle">Professional Title/ Team Title</p>
+      <p id="professionalTitle">Professional Title</p>
     </div>
 
     <div class="rank">
@@ -91,11 +90,12 @@
     </div>
   </section>
 </div>
-<script type="text/javascript"
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
-</script>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+></script>
 <script type="text/javascript" charset="utf-8">
-    let userData = '{{userData|tojson}}';
+  let userData = "{{userData|tojson}}";
 </script>
 <script src="/static/js/profilepage.js"></script>
 {% endblock body_content %}

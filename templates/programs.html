@@ -1,61 +1,70 @@
-{% extends 'base.html' %}
-{% block stylesheet %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/programs.css') }}" />
-{% endblock stylesheet %}
-{% block body_content %}
-
-
-    <div class="container">
-      <p class="intro"> 
-        We all have to start from somewhere. The current program is designed to serve as an introduction to problem-solving in programming
-        at its simplest. With these basics, we can advance to more specific fields and streams.  
-      </p>
-      <div class="about">
-        <div class="topics">
-          <div class="topic">
-              <h3 id="headers">Primary Stream</h3>
+{% extends 'base2.html' %} {% block stylesheet_content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/program2.css')}}"
+/>
+{% endblock stylesheet_content %} {% block body_content %}
+<div class="container">
+  <p class="intro">
+    We all have to start from somewhere. The current program is designed to
+    serve as an introduction to problem-solving in programming at its simplest.
+    With these basics, we can advance to more specific fields and streams.
+  </p>
+  <section>
+    <h3>PRIMARY STREAM</h3>
+    <div class="path">
+      <div class="stream">
+        <div class="circle">
+          <span class="path_text">Basic Mathematics</span>
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="circle">
+          <span class="path_text"
+            >Introduction <br />
+            to programming</span
+          >
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="circle">
+          <span class="path_text">Mathematical Functions</span>
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="side_stream">
+            <div class="desktop_stream">
+                    <div class="circle">
+                        <span class="path_text">Relational DataBases</span>
+                    </div>
+                    <div class="down_arrow">&#8595;</div>
+                    <div class="circle"><span class="path_text">Specialization</span></div>
+                    <div class="down_arrow">&#8595;</div>
+                    <div class="circle"><span class="path_text">Project</span></div>
+                    <div class="down_arrow">&#8595;</div>
+                    <div class="circle"><span class="path_text">Deployment</span></div>
+            </div>
+          <div class="circle desktop_hide">
+            <span class="path_text ">Relational DataBases</span>
+          </div>
+          <div class="left_arrow">&#8594;</div>
+          <div class="circle">
+            <span class="path_text">Projects</span>
           </div>
         </div>
-      </div>
-      <div class="streams">
-        <div class="stream">
-          <p class="streamText circle">Basic Mathematics</p>
-          <p class="side_arrow mobile_hide">&#8594;</p>
-          <p class="down_arrow desktop_hide">&#8595;</p>
-          <p class="streamText circle">Introduction to Programming</p>
-          <p class="side_arrow mobile_hide">&#8594;</p>
-          <p class="down_arrow desktop_hide">&#8595;</p>
-          <p class="streamText circle">Mathematical functions</p>
-          <p class="side_arrow mobile_hide">&#8594;</p>
-          <p class="down_arrow desktop_hide">&#8595;</p>
-          
-          
-          
-          <div class="pathDrop">
-            <p class="streamText circle mobile_hide">Relational databases</p>
-            
-            <div class="mobile_path desktop_hide">
-              <p class="streamText circle">Relational databases</p>
-              <p class="side_arrow ">&#8594;</p>
-              <p class="streamText circle mobile_circle ">Project</p>
-            </div>
-            <p class="down_arrow">&#8595;</p>
-            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
-            <p class="streamText circle">Specialization</p>
-            <p class="down_arrow ">&#8595;</p>
-            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
-            <p class="streamText circle">Project</p>
-            <p class="down_arrow ">&#8595;</p>
-            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
-            <p class="streamText circle">Deployment</p>
-          </div>
-            <p class="side_arrow mobile_hide">&#8594;</p>
-            <p class="streamText circle mobile_hide">Project</p>
+        <div class="desktop_hide">
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Specialization</span></div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Project</span></div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Deployment</span></div>
 
-          
-        </div>  
-      </div>
+        </div>
+        
     </div>
-    
-    {% endblock body_content %}
-</html>
+    </div>
+  </section>
+</div>
+{% endblock body_content %} {% block script_content %}{% endblock script_content
+%}

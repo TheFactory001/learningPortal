@@ -6,14 +6,13 @@
 
 
 
-/*:::::::::::THE NAVIGATION::::::::::*/
+/* :::::::::::THE NAVIGATION:::::::::: */
 
 
 .nav{
     background: #f1f4f7;;
-    padding: 0 2rem;
     transition: height 1s ease-in-out;
-    min-height: 4rem;
+    min-height: 5rem;
     width: 100%;
     align-items: center;
 }
@@ -36,28 +35,7 @@ nav button{
     display: none;
 }
 
-/* .nav .toggle-collapse{
-    position: absolute;
-    top: 0%;
-    width: 90%;
-    cursor: pointer;
-    display: none;
-}
 
-.nav .toggle-collapse .toggle-icons{
-    display: flex;
-    justify-content: flex-end;
-    padding: 1.7rem 0;
-}
-
-.nav .toggle-collapse .toggle-icons i{
-    font-size: 1.4rem;
-
-} */
-/* 
-.collapse{
-    height: 30rem;
-} */
 
 .nav .nav-items{
     list-style-type: none;
@@ -136,64 +114,10 @@ html, body {
     color: #1c2b33;
 }
 
-/* .stream {
-    text-align: center;
-    margin-left: 20%;
-    margin-right: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: #f1f4f7;
-    display: flex;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    margin-top: 0.2%;
-}
-
-.pathDrop {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-}
-
-.streamText {
-    overflow-wrap: break-word;
-    padding: auto;
-    text-align: center;
-    font-family: sans-serif;
-    font-weight: 300;
-    font-size: 0.9rem;
-    top: auto;
-    bottom: auto;
-} */
 
 
-@media only screen and (max-width: 750px){
-    /* .nav .nav-menu, .nav .nav-link{
-        flex-direction: column;
-    }
-
-    .nav .toggle-collapse{
-        display: initial;
-    }
-    */
-    /* html, body{
-       grid-template-columns: 100%;
-    }
-   
-    .foot .foot-menu{
-       grid-template-columns: repeat(1,1fr);
-    } */
+@media only screen and (max-device-width: 750px){
+  
     nav button{
         display: inline-block;
         background: transparent;
@@ -242,7 +166,7 @@ html, body {
         margin-right: 30%;
    }
    
-   /*  x   Viewport less than or equal to 750px  x  */
+
 
 }
 /*     Viewport less than or equal to 520px  - small phone  */

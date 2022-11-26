@@ -40,7 +40,27 @@ def login():
 def index():
     return render_template('launch.html')
 
+@app.route("/trial")
+def trial():
+    return render_template('index2.html')
+@app.route("/about2")
+def about2():
+    return render_template('about2.html')
 
+@app.route('/programs2')
+def programs2():
+    return render_template('programs2.html')
+
+@app.route('/login2')
+def login2():
+    return render_template('login2.html')
+
+@app.route('/form')
+def form():
+    return render_template('profile_form2.html')
+@app.route('/profile2')
+def profile2():
+    return render_template('profile_page2.html')
 @app.route("/dory")
 def tester():
     return 'Hello Foo!'
@@ -82,7 +102,7 @@ def setForm():
 def profile(id, isAuth):
     if str2bool(isAuth) == True:
         userData = getUserData(id)
-        return render_template('profilepage.html', userData=userData)
+        return render_template('profile_page.html', userData=userData)
     return redirect(url_for('login'))
 
 def str2bool(v):

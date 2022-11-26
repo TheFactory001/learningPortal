@@ -1,7 +1,8 @@
 
 $(document).ready(function () {
+    
     var data = JSON.parse(userData);
-    //console.log(data)
+    console.log(data)
     let name = document.getElementById('fullName');
     name.innerHTML = data['name'];
     let address = document.getElementById('contactAddress');
@@ -17,9 +18,9 @@ $(document).ready(function () {
     let city = document.getElementById("city");
     city.innerHTML = data['city'];
     //interest0
-    let interestA = document.getElementById("interest0");
+    let interestA = document.getElementById("interest1");
     interestA.innerHTML = data['interest1'];
-    let interestB = document.getElementById("interest1");
+    let interestB = document.getElementById("interest2");
     interestB.innerHTML = data['interest2'];
 
     if(data['imageUri']){
