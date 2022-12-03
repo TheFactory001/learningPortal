@@ -1,20 +1,31 @@
-{% extends 'base2.html' %} 
- {% block stylesheet_content %}
- <link rel="stylesheet" href="{{url_for('static', filename = 'css/index2.css')}}">
-  {% endblock stylesheet_content %}
- {% block body_content %} 
- <div class="container">
-    <h1>TheFactory</h1>
-    <h4>Think. Build. Execute</h4>
-    <div class="city_img"><img src="{{url_for('static', filename='img/ibadan.jpg')}}" alt="image of ibadan city"></div>
-    <p>A vibrant city with the potential of becoming the new hub of innovation.
-        We are committed to providing an environment where learning and practical implementation of Mathematics, 
-        Computer Science, Physics, and Finance can thrive. 
-        We will start small but our mission is to be pacesetters who build scalable and innovative solutions.</p>
-    <p>We seek to provide an educational environment where individuals will great ideas and visions can thrive.
-        We will build new scalable services and improve existing ones, providing the right resources to individuals
-        and make an optimal use of the wealth of knowlegde that the state has.</p>
-        
- </div>
- {% endblock body_content %}
- {% block script_content %} {% endblock script_content %}
+{% extends 'base2.html' %} {% block stylesheet_content %}
+<link
+  rel="stylesheet"
+  href="{{url_for('static', filename = 'css/index2.css')}}"
+/>
+{% endblock stylesheet_content %} {% block body_content %}
+<div class="container">
+  <h1>TheFactory</h1>
+  <h4>Think. Build. Simplify</h4>
+  <div class="city_img">
+    <img
+      src="{{url_for('static', filename='img/ibadan.jpg')}}"
+      alt="image of ibadan city"
+    />
+  </div>
+  <p>
+    A vibrant city with the potential of becoming the new hub of innovation. We
+    are committed to providing an environment where learning and practical
+    implementation of Mathematics, Computer Science, Physics, and Finance can
+    thrive. We will start small but our mission is to be pacesetters who build
+    scalable and innovative solutions.
+  </p>
+  <p>
+    We seek to provide an educational environment where individuals will great
+    ideas and visions can thrive. We will build new scalable services and
+    improve existing ones, providing the right resources to individuals and make
+    an optimal use of the wealth of knowlegde that the state has.
+  </p>
+</div>
+{% endblock body_content %} {% block script_content %} {% endblock
+script_content %}

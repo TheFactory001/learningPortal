@@ -118,8 +118,8 @@
 }
 .about_details label{
     display: inline-block;
-    width: 55px;
-    text-align: right;
+    width: 60px;
+    text-align: left;
     margin-right: 5px;
 }
 .about_details span{
@@ -139,8 +139,11 @@
         grid-template-columns: 1fr 2fr;
         grid-template-areas:
         "img user_profile"
-        "interests timeline__about"
         "interests timeline__about";
+        /* "interests timeline__about"; */
+        /* "img interests"
+        "user_profile timeline__about"
+        "user_profile timeline__about"; */
         
         background: linear-gradient(to right bottom,rgba(255,255,255,0.5), rgba(255,255,255,0.3)
         );
@@ -171,8 +174,17 @@
         margin: auto;
     }
     .profile_box{
+        width: auto;
         margin: 0;
         height: 200px;
         /* padding:1.5rem; */
+    }
+    .about_details{
+        display: flex;
+        flex-direction: column;
+    }
+    .about_details label{
+        width: 120px;
+        text-align: left;
     }
 }
