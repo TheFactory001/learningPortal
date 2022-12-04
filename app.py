@@ -105,7 +105,7 @@ def setForm():
 def profile(id, isAuth):
     if str2bool(isAuth) == True:
         userData = getUserData(id)
-        return render_template('profile_page.html', userData=userData, email=id)
+        return render_template('profilepage.html', userData=userData, email=id)
     return redirect(url_for('login'))
 
 def str2bool(v):
