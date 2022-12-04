@@ -102,7 +102,7 @@
     display: inline-block;
     padding: 0 5px;
 }
-.about::before{
+/* .about::before{
     content: '';
     position: absolute;
     height: 3px;
@@ -110,6 +110,10 @@
     width: 60px;
     margin-top: 17px;
     border-radius: 1.5px;
+} */
+#aboutBtn{
+    color: #6495ED ;
+    font-size: 18px;
 }
 .about_details p{
     margin-bottom: 5px;
@@ -129,6 +133,9 @@
 }
 .about_details h6{
     font-size: 14px;
+}
+.timeline__about .timeline{
+    display: none;
 }
 @media only screen and (min-width:720px){
     .profile_container {

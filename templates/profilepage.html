@@ -40,17 +40,29 @@
     </div>
     <div class="profile_box timeline__about">
       <h4>
-        <span class="timeline span__all" onclick="alertuser()">Timeline</span>
-        <span class="about span__all"> <span>About</span> </span>
+        <span class="span__all" id="timelineBtn" onclick="showAssessment()"
+          >Timeline</span
+        >
+        <span class="span__all" id="aboutBtn" onclick="showContact()">
+          <span>About</span>
+        </span>
       </h4>
-      <div class="about_details">
+      <div class="timeline" id='timeline'>
+        <h3>Submit an assessment.</h3>
+        <form method=post action="/uploadFile/{{email}}" enctype=multipart/form-data>
+          <input type=file name=file id="inputFiles"><br><br>
+          <input type=submit value=Upload >
+        </form>
+      </div>
+
+      <div class="about_details" id='contactInfo'>
         <h6>Contact Information</h6>
         <p>
           <label for="">Phone:</label>
           <span id="phoneNumber">+2349039074767</span>
         </p>
         <p>
-          <label for="" >Address:</label>
+          <label for="">Address:</label>
           <span id="contactAddress">derrysantaclos@gmail.com</span>
         </p>
         <p>
@@ -65,18 +77,15 @@
     </div>
   </div>
 </div>
-{% endblock body_content %}
-{%block script_content%}
+{% endblock body_content %} {%block script_content%}
 <script
   type="text/javascript"
   src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
 ></script>
 <script type="text/javascript" charset="utf-8">
-    let userData = '{{userData|tojson}}';
-    // function alertuser() {
-      console.log(userData);
-   
+  let userData = '{{userData|tojson}}';
+  // function alertuser() {
+  console.log(userData);
 </script>
 <script src="/static/js/profile_page.js"></script>
 {%endblock script_content%}
-
