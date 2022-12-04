@@ -1,0 +1,140 @@
+
+/* .main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+} */
+
+
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.resources {
+    background-color: white;
+    width: 30%;
+}
+
+
+
+#headers {
+    cursor: pointer;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2%;
+    width: 70%;
+    text-align: center;
+    background: #f1f4f7;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px;
+}
+
+#resourceTopic {
+    margin-left: 10%;
+}
+
+#resourceContent {
+    margin-left: 12%;
+}
+
+.about h3:hover {
+    cursor: pointer;
+}
+
+.about {
+    background-color: white;
+    width: 95%;
+}
+
+.intro {
+    margin-left: auto;
+    overflow-wrap: break-word;
+    margin-right: auto;
+    width: 50%;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.topic {
+    width: 100%;
+    margin-left: 1%;
+    border-color: burlywood;
+}
+
+.defs {
+    margin-left: auto;
+    overflow-wrap: break-word;
+    margin-right: auto;
+    width: 70%;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 0.9rem;
+    
+}
+
+.defs p { 
+    padding: 15;
+}
+
+.topics {
+    margin-left: 5;
+    margin-right: 10;   
+}
+
+.bg {
+    /* The image used */
+    background-image: url("back1.jpg");
+  
+    /* Full height */
+    height: 100%; 
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+.backImg {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50;
+    overflow: hidden;
+}
+
+/* Centered text */
+.centered {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+  }
+
+.welcome {
+    margin-left: 30%;
+    margin-right: auto;
+    color: white;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.mainText {
+    color: white;
+    margin-left: 17%;
+    margin-right: auto;
+    font-weight: 900;
+}
+

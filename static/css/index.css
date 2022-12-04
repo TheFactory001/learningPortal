@@ -1,63 +1,45 @@
 
-html, body {
-    margin: 0;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.container{
+    text-align: center;
+    margin: auto;
 }
 
-.pageContent {
+h1{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+h4{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.city_img{
+    margin-bottom: 10px;
+}
+.city_img img{
     width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-
-
-.welcome {
+    height: 20vh;
+    object-fit: center;
     text-align: center;
 }
-
-.mainText {
-    text-align: center;
-    font-family: 'Amplitude';
-    font-weight: 300;
-    font-size: 1.0rem;
+.container p{
+    width: 90%;
+    font-size: 15px;
+    margin: auto;
+    margin-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
 }
-
-.imgDiv {
-    text-align: center;
-    align-items: center;
-    margin-top: 2%;
-    margin-bottom: 2%;
-}
-
-.imgDiv img {
-    text-align: center;
-    object-fit: cover;
-    width: 95%;
-    height: 300;
-}
-
-.introText {
-    width: 50%;
-    margin-left: auto;
-    margin-right: auto;
-    font-family: sans-serif;
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-
-.box {
-    overflow-wrap: break-word;
-    text-align: center;
-    width: 100%;
-}
-
-.container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 2%;
+@media only screen and (min-width:720px){
+    
+    .city_img img{
+        text-align: center;
+        object-fit: cover;
+        /* width: 95%; */
+        height: 300px;
+    }
+    .container p{
+        width: 50%;
+    }
 }

@@ -1,7 +1,7 @@
-{% extends 'base2.html' %} {% block stylesheet_content %}
+{% extends 'base.html' %} {% block stylesheet_content %}
 <link
   rel="stylesheet"
-  href="{{url_for('static', filename = 'css/index2.css')}}"
+  href="{{url_for('static', filename = 'css/index.css')}}"
 />
 {% endblock stylesheet_content %} {% block body_content %}
 <div class="container">
@@ -27,5 +27,4 @@
     an optimal use of the wealth of knowlegde that the state has.
   </p>
 </div>
-{% endblock body_content %} {% block script_content %} {% endblock
-script_content %}
+{% endblock body_content %}
