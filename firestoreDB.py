@@ -77,7 +77,7 @@ def obfusMail(email):
         obfus += str(ord(letter) - 96)
     return obfus
 
-def uploadPhoto(filename, imageBlob, id):
+def uploadPhoto(filename, key, id):
     bucket = storage.bucket("thefactory.appspot.com")
     blob = bucket.blob(filename)
     blob.upload_from_filename(filename)
@@ -85,7 +85,7 @@ def uploadPhoto(filename, imageBlob, id):
     # Opt : if you want to make public access from the URL
     blob.make_public()
     try :
-        db.collection(u'userData').document(id).set({'imageUri': blob.public_url}, merge=True)
+        db.collection(u'userData').document(id).set({key: blob.public_url}, merge=True)
     except Exception as e :
         print("Error getting info", e)
 
