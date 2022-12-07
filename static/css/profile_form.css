@@ -49,7 +49,8 @@
     width: 250px;
     height: 40px;
     border-radius: 20px;
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
+    color: #5f5d5d;
     border: 2px solid rgb(176, 166, 166) ;
     font-size: 16px;
     background: #708090;

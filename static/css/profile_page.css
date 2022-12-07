@@ -36,7 +36,7 @@
 }
 .user_profile{
     height: 150px;
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
     text-align: left;
     padding: 15px;
 }
@@ -65,7 +65,7 @@
     margin-right: 10px;
 }
 .interests{
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
     text-align: left;
     padding: 15px;
 }
@@ -83,8 +83,8 @@
     border-radius: 1.5px;
 }
 .timeline__about{
-    padding: 15px;
-    font-family: 'IM Fell English SC', serif;
+    padding: 20px;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
     text-align: left;
 }
 .timeline__about h4{
@@ -128,7 +128,7 @@
     margin-right: 5px;
 }
 .about_details span{
-    font-family: 'IM Fell English', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
     font-size: 14px;
 }
 .about_details h6{

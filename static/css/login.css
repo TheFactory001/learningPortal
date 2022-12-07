@@ -22,7 +22,8 @@
 }
 header h2{
     font-size: 18px;
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
+    color: #5f5d5d;
     display: inline-block;
     padding: 10px;
 }
