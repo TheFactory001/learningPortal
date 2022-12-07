@@ -1,113 +1,91 @@
-{% extends 'base.html' %} {% block stylesheet %}
-<title>Factory|User Profile</title>
+{% extends 'base.html' %} {% block stylesheet_content %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/profile_page.css') }}"
+  href="{{url_for('static', filename='css/profile_page.css')}}"
 />
-{% endblock stylesheet %} {% block body_content %}
-
-<span class="main_bg"></span>
-
+{% endblock stylesheet_content %} {% block body_content %}
 <div class="container">
-  <header class="header"></header>
-  <section class="userProfile card">
-    <div class="profile">
-      <figure>
-        <img
-          src="{{url_for('static', filename='img/profileavatar.jpg')}}"
-          alt="profile picture"
-        />
-      </figure>
-    </div>
-  </section>
-
-  <!--:::::::::::::: Work & Skills Section ::::::::::::::::-->
-  <section class="work_skills card">
-    <!--::::::::::::::::::Work::::::::::::::::::-->
-    <div class="work">
-      <h1 class="heading">work</h1>
-      <div class="primary">
-        <h1>THE Factory</h1>
-        <span>Primary</span>
-        <p id="factoryAddress">
-          The address, yeah long one <br />
-          City and whatever here
+  <div class="profile_container">
+    <img
+      src="{{url_for('static', filename='img/profileavatar.jpg')}}"
+      id="profileImage"
+      alt=""
+    />
+    <div class="profile_box user_profile">
+      <h4 id="fullName">Daniel Adedokun</h4>
+      <p>
+        <iconify-icon icon="ph:map-pin"></iconify-icon
+        ><span id="city">City</span>
+      </p>
+      <p id="professionalTitle">Professional Title</p>
+      <div class="rank">
+        <p>
+          <label class="heading">Level:</label>
+          <span id="level">Senior/Junior</span>
+        </p>
+        <p>
+          <label class="heading"
+            ><iconify-icon icon="jam:github"></iconify-icon>Git-Hub:</label
+          >
+          <span id="githubLink">git-hub link</span>
         </p>
       </div>
     </div>
-    <div class="skills">
-      <h1 class="heading">Skills</h1>
+    <div class="profile_box interests">
+      <h3>INTERESTS</h3>
       <ul>
-        <li id="skill0" style="--i: 0">Your Skill 1</li>
-        <li id="skill1" style="--i: 1">Your Skill 2</li>
-        <li id="skill2" style="--i: 2">Your Skill 3</li>
-        <li id="skill3" style="--i: 3">Your Skill 4</li>
+        <li class="interest" id="interest1">Interest1</li>
+        <li class="interest" id="interest2">Interest2</li>
       </ul>
     </div>
-  </section>
-
-  <section class="userDetails card">
-    <div class="userName">
-      <h1 id="fullName" class="name">Myname Oryour</h1>
-      <div class="map">
-        <i class="ri"
-          ><img src="{{url_for('static', filename='img/location.png')}}" alt=""
-        /></i>
-        <span id="city">CITY, CT</span>
-      </div>
-      <p id="professionalTitle">Professional Title/ Team Title</p>
-    </div>
-
-    <div class="rank">
-      <h1 class="heading">Level</h1>
-      <p id="level">Senior/Junior</p>
-      <h1>
-        <i
-          ><img src="{{url_for('static', filename='img/github.png')}}" alt=""
-        /></i>
-        Git-Hub:
-      </h1>
-      <p id="githubLink">git-hub link</p>
-    </div>
-  </section>
-  <section class="timeline_about card">
-    <div class="tabs">
-      <ul>
-        <li class="timeline">
-          <i></i>
-          <span>Timeline</span>
-        </li>
-        <li class="about active">
+    <div class="profile_box timeline__about">
+      <h4>
+        <span class="span__all" id="timelineBtn" onclick="showAssessment()"
+          >Timeline</span
+        >
+        <span class="span__all" id="aboutBtn" onclick="showContact()">
           <span>About</span>
-        </li>
-      </ul>
+        </span>
+      </h4>
+      <div class="timeline" id='timeline'>
+        <h3>Submit an assessment.</h3>
+        <form method=post action="/uploadFile/{{email}}" enctype=multipart/form-data>
+          <input type=file name=file id="inputFiles"><br><br>
+          <input type=submit value=Upload >
+        </form>
+      </div>
+
+      <div class="about_details" id='contactInfo'>
+        <h6>Contact Information</h6>
+        <p>
+          <label for="">Phone:</label>
+          <span id="phoneNumber">+2349039074767</span>
+        </p>
+        <p>
+          <label for="">Address:</label>
+          <span id="contactAddress">derrysantaclos@gmail.com</span>
+        </p>
+        <p>
+          <label for="" id="contactAddress">Email:</label>
+          <span id="email">derrysantaclos@gmail.com</span>
+        </p>
+        <p>
+          <label for="">Git-Hub Username:</label>
+          <span id="githubUsername">DerrySantaclos</span>
+        </p>
+      </div>
     </div>
-    <div class="contact_info">
-      <h1 class="heading">Contact Information</h1>
-      <ul>
-        <li class="phone">
-          <h1 class="label">Phone:</h1>
-          <span id="phoneNumber" class="info">+234 903 907 4767</span>
-        </li>
-        <li class="address">
-          <h1 class="label">Address:</h1>
-          <span id="contactAddress" class="info"
-            >address again? But why? Eskeetit</span
-          >
-        </li>
-        <li class="email">
-          <h1 class="label">Email:</h1>
-          <span id="email" class="info">myemail@whatever.com</span>
-        </li>
-      </ul>
-    </div>
-  </section>
+  </div>
 </div>
-<script type="text/javascript"
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
-</script>
+{% endblock body_content %} {%block script_content%}
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+></script>
 <script type="text/javascript" charset="utf-8">
-    let userData = '{{userData|tojson}}';
+  let userData = '{{userData|tojson}}';
+  // function alertuser() {
+  console.log(userData);
 </script>
-<script src="/static/js/profilepage.js"></script>
-{% endblock body_content %}
+<script src="/static/js/profile_page.js"></script>
+{%endblock script_content%}

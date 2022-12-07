@@ -1,132 +1,93 @@
-/* *{
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-} */
-
-
 .container{
-    width: 85%;
-    margin: auto;
-}
-
-body{
-    background-color: white;
-    margin: 0;
-    /* background-color: azure; */
-}
-
-
-
-
-/* :::::::::::::::::::::::::::FORM:::::::::::::::::::::::::::::::::::: */
-
-.account-form{
-    box-sizing: border-box;
-    margin: auto;
-    width: 20rem;
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    height: 30rem;
-    background-color: #f1f4f7;
-    padding:20px 0;
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
-}
-
-.form-header{
-    cursor: pointer;
-    margin-bottom: 2rem;
-}
-.form-header h2{
-    display: inline-block;
-    margin-left: 3rem;
-    
-}
-
-#Selector{
-    border: none;
-    background: slategray;
-    height: 3px;
-    width: 7rem;
-    margin-top: 0.5rem;
-    transform: translateX(2rem);
-    padding: 0;
-    margin: 0;
-}
-/* .item{
     display: flex;
-    align-items: center;
-    margin: auto;
-    margin-bottom: 1rem;
-    text-align: center;
     justify-content: center;
-} */
-.item h3{
-    width: 5rem;
+    align-items: center;
+}
+.form_container{
+    margin: 10px 0;
+    height: 550px;
+    width: 300px;
+    background: #d9d9d9;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.2);
+
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; */
+}
+.form_container header{
+    margin:40px 10px ;
+    display: flex;
+    justify-content: space-around;
+}
+header h2{
+    font-size: 18px;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
+    color: #5f5d5d;
+    display: inline-block;
+    padding: 10px;
+}
+header h2:hover{
+    cursor: pointer;
+}
+header #signUpSwitch{
+    border-bottom: 3px solid black;
+}
+
+.form_container form p{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
     text-align: left;
-}
-.account-form form{
-    box-sizing: border-box;
-    max-width: 20rem;
-    padding: 0 1.5rem;
-    position: absolute;
-}
-.switch_btn{
-    border: none;
-    background: none;
-    color: rgb(6, 123, 123);
-    display: inline;
-    margin: 0;
-    display: inline;
-    outline: none;
-    width: auto;
-    padding: 2px;
-    text-align: left;
-    text-decoration: underline;
-}
-
-.account-form input{
-    box-sizing: border-box;
-    font-family: sans-serif;
-    font-weight: 300;
-    font-size: 0.8rem;
-    line-height: 1.5rem;
-    border-radius: 0.5rem;
-    width: 100%;
-    padding:0 1rem;
-    margin: 1rem 0;
-    border: 2px solid rgb(176, 166, 166) ;
-}
-#Password{
-    margin-top: 1rem;
-    margin-bottom: 0;
-}
-
-.account-form label{
-    margin-top: 0;
-    margin-bottom: 1rem;
-    visibility: hidden;
-}
-
-.account-form .btn{
-    box-sizing: border-box;
-    width: 100%;
-    line-height: 2rem;
-    border-radius: 1rem;
-    outline: none;
-    cursor: pointer;  
-    border: 2px solid rgb(176, 166, 166) ;  
-    transition: ease 200ms;
-    background-color: slategray;
-    margin: 1rem 0;
-}
-
-.account-form .btn:hover{
-   background-color: #6495ED;
-   color: whitesmoke;
-}
-
-
-/* form{
     
+}
+.form_container form p:not(.excess){
+    margin-bottom: 40px;
+    margin-left: 15px;
+}
+.form_container form p span{
+    color: #6495ED;
+}
+.form_container form input{
+    height: 30px;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid rgb(176, 166, 166) ;
+    padding: 5px 20px;
+}
+.form_container form input:not(.last_input){
+    margin-bottom: 30px;
+}
+form iconify-icon{
+    position: absolute;
+    margin-left: -25px;
+    margin-top: 6px;
+}
+form iconify-icon:hover{
+    cursor: pointer;
+}
+.excess{
+    margin-top: 5px;
+    margin-left: 30px;
+}
+
+.form_container form button{
+    width: 250px;
+    height: 40px;
+    border-radius: 20px;
+    font-family: 'IM Fell English SC', serif;
+    border: 2px solid rgb(176, 166, 166) ;
+    font-size: 16px;
+    background: #708090;
+    margin-top: 40px;
+}
+.form_container form button:hover{
+    cursor: pointer;
+    background: #6495ED;
+    color: wheat;
+}
+#loginForm{
+    display: none;
+}
+/* #signUpForm{
+    display: none;
 } */

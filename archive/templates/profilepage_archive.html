@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% block stylesheet %}
+<title>Factory|User Profile</title>
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/profile_page.css') }}"
+/>
+{% endblock stylesheet %} {% block body_content %}
+
+<span class="main_bg"></span>
+
+<div class="container">
+  <section class="userProfile card">
+    <div class="profile">
+      <figure>
+        <img
+          id="profileImage"
+          src="{{url_for('static', filename='img/profileavatar.jpg')}}"
+          alt="profile picture"
+        />
+      </figure>
+    </div>
+  </section>
+
+  <!--:::::::::::::: Work & Skills Section ::::::::::::::::-->
+  <section class="work_skills card">
+    <!--::::::::::::::::::Work::::::::::::::::::-->
+    <div class="skills">
+      <h1 class="heading">Interests</h1>
+      <ul>
+        <li id="interest0" style="--i: 0">Your Skill 1</li>
+        <li id="interest1" style="--i: 1">Your Skill 2</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="userDetails card">
+    <div class="userName">
+      <h1 id="fullName" class="name">Myname Oryour</h1>
+      <div class="map">
+        <i class="ri"
+          ><img src="{{url_for('static', filename='img/location.png')}}" alt=""
+        /></i>
+        <span id="city">CITY, CT</span>
+      </div>
+      <p id="professionalTitle">Professional Title</p>
+    </div>
+
+    <div class="rank">
+      <h1 class="heading">Level</h1>
+      <p id="level">Senior/Junior</p>
+      <h1>
+        <i
+          ><img src="{{url_for('static', filename='img/github.png')}}" alt=""
+        /></i>
+        Git-Hub:
+      </h1>
+      <p id="githubLink">git-hub link</p>
+    </div>
+    <button class="contact" onclick=showContact()>See Contact Information.</button>
+    <button class="assess" onclick=showAssess()>Submit an Assessment.</button>
+  </section>
+  <section class="timeline_about card">
+    <div class="assessment">
+      <h1 class="heading">Assessment</h1>
+      <div id="submitAssessment">
+        <h3>Submit an assessment.</h3>
+        <form method=post action="/uploadFile/{{email}}" enctype=multipart/form-data>
+          <input type=file name=file id="inputFiles"><br><br>
+          <input type=submit value=Upload >
+        </form>
+      </div>
+    </div>
+    <div class="contact_info">
+      <h1 class="heading">Contact Information</h1>
+      <ul>
+        <li class="phone">
+          <h1 class="label">Phone:</h1>
+          <span id="phoneNumber" class="info">+234 903 907 4767</span>
+        </li>
+        <li class="address">
+          <h1 class="label">Address:</h1>
+          <span id="contactAddress" class="info"
+            >address again? But why? Eskeetit</span
+          >
+        </li>
+        <li class="email">
+          <h1 class="label">Email:</h1>
+          <span id="email" class="info">myemail@whatever.com</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</div>
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+></script>
+<script type="text/javascript" charset="utf-8">
+  let userData = "{{userData|tojson}}";
+</script>
+<script src="/static/js/profilepage.js"></script>
+{% endblock body_content %}

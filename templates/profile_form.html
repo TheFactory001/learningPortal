@@ -1,7 +1,7 @@
-{% extends 'base.html' %} {% block stylesheet %}
+{% extends 'base.html' %} {% block stylesheet_content %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/profile_form.css') }}"
+  href="{{url_for('static', filename='css/profile_form.css')}}"
 />
 <link
   class="jsbin"
@@ -17,108 +17,71 @@
   class="jsbin"
   src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"
 ></script>
-{% endblock stylesheet %} {% block body_content %}
-
-<div class="bg">
-  <div class="container body-details">
-    <!-- <div class="centered"> -->
-    <div class="form-container">
-      <div class="display_image">
-        <img
-          src="{{url_for('static', filename='img/profileavatar.jpg')}}"
-          id="profileImage"
-          width="150"
-          height="auto"
-          alt=""
-        />
+{% endblock stylesheet_content %} {% block body_content %}
+<div class="container">
+  <div class="form_container">
+    <img src="{{url_for('static', filename='img/profileavatar.jpg')}}" alt="" />
+    <form action="">
+      <div class="image_picker">
+        <input id="imageInput" type="file" />
+        <button id="saveImageBtn">Save</button>
       </div>
-      <button onclick="document.getElementById('profilePhoto').click()">
-        Add Profile Photo
-      </button>
-      <form onsubmit="get_profile_details()">
-        <input
-          id="profilePhoto"
-          type="file"
-          onchange="readURL(this)"
-          accept="jpg png jpeg"
-          style="visibility: hidden"
-        />
-        <!--profilePhotoBlob: - A hidden input field for storing the blob value of the uploaded image.-->
-        <input id="profilePhotoBlob" type="text" style="visibility: hidden" />
-        <!-- <div class="form-item">
-                            <label for="">Add Photograph</label>
-                            <div class="photo-input"><input id="profilePhoto" type="file" onchange="readURL(this)" accept="jpg png jpeg"></div>
-                        </div> -->
+      <div class="text_input">
+        <label for="">Address</label><input type="text" class="text_input" />
+      </div>
+      <div class="text_input">
+        <label for="">City</label><input type="text" class="text_input" />
+      </div>
+      <div class="text_input">
+        <label for="">Level</label><input type="text" class="text_input" />
+      </div>
+      <input
+        name="interest1"
+        id="interest"
+        type="text"
+        list="topics"
+        onclick="change_to_mail()"
+        onblur="return_to_text()"
+        multiple
+      />
+      <datalist id="topics">
+        <option value="Basics">Basics</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Artificial Intelligence">Artificial Intelligence</option>
+        <option value="Embedded System">Embedded System</option>
+        <option value="Data Science">Data Science</option>
+      </datalist>
 
-        <div class="form-item">
-          <label for="address">Address</label>
-          <input id="address" type="text" required />
-        </div>
+      <input
+        id="interest"
+        name="interest2"
+        type="text"
+        list="topics"
+        onclick="change_to_mail()"
+        onblur="return_to_text()"
+        multiple
+      />
+      <datalist id="topics">
+        <option value="Basics">Basics</option>
+        <option value="Cyber Security">Cyber Security</option>
+        <option value="Artificial Intelligence">Artificial Intelligence</option>
+        <option value="Embedded System">Embedded System</option>
+        <option value="Data Science">Data Science</option>
+      </datalist>
 
-        <div class="form-item">
-          <label for="city">City</label>
-          <input id="city" type="text" required />
-        </div>
-
-        <!-- <div class="form-item">
-                            <label for="address2">Address Line2</label>
-                            <input id="address2" type="text">
-                        </div> -->
-
-        <div class="form-item">
-          <label for="country">Country</label>
-          <input id="country" type="text" required />
-        </div>
-
-        <div class="form-item">
-          <label for="interest">Interest 1</label>
-          <input
-            id="interest"
-            type="text"
-            list="topics"
-            onclick="change_to_mail()"
-            onblur="return_to_text()"
-            multiple
-          />
-          <datalist id="topics">
-            <option value="Cyber Security">Cyber Security</option>
-            <option value="Artificial Intelligence">
-              Artificial Intelligence
-            </option>
-            <option value="Embedded System">Embedded System</option>
-            <option value="Data Science">Data Science</option>
-          </datalist>
-        </div>
-        <div class="form-item">
-          <label for="interest">Interest 2</label>
-          <input
-            id="interest"
-            type="text"
-            list="topics"
-            onclick="change_to_mail()"
-            onblur="return_to_text()"
-            multiple
-          />
-          <datalist id="topics">
-            <option value="Cyber Security">Cyber Security</option>
-            <option value="Artificial Intelligence">
-              Artificial Intelligence
-            </option>
-            <option value="Embedded System">Embedded System</option>
-            <option value="Data Science">Data Science</option>
-          </datalist>
-        </div>
-        <div class="form-item">
-          <label for="githubLink">GitHub Profile Link</label>
-          <input id="githubLink" type="text" required />
-        </div>
-
-        <button type="submit" class="btn">Submit</button>
-      </form>
-    </div>
-
-    <!-- </div> -->
+      <div class="text_input">
+        <label for="">Interest1</label><input type="text" class="text_input" />
+      </div>
+      <div class="text_input">
+        <label for="">Interest2</label><input type="text" class="text_input" />
+      </div>
+      <div class="text_input">
+        <label for="">Github Link</label
+        ><input type="text" class="text_input" />
+      </div>
+      <button id="submitFormBtn">SUBMIT</button>
+    </form>
   </div>
 </div>
-<script src="/static/js/profile_form.js"></script>
-{% endblock body_content %}
+{% endblock body_content %} {%block script_content %}{% endblock script_content
+%}

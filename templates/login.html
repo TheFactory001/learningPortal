@@ -1,66 +1,75 @@
-{% extends 'base.html' %} {% block stylesheet %}
+{% extends 'base.html' %} {% block stylesheet_content %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/login.css') }}"
+  href="{{url_for('static', filename='css/login.css')}}"
 />
-{% endblock stylesheet %} {% block body_content %}
-<div class="form-container">
-
-
-<div class="account-form">
-  <div class="form-header">
-    <h2 onclick="switch_reg_form()">Sign Up</h2>
-    <h2 onclick="switch_login_form()">Login</h2>
-    <hr id="Selector" />
+{% endblock stylesheet_content %} {% block body_content %}
+<div class="container">
+  <div class="form_container">
+    <header>
+      <h2 id="signUpSwitch" onclick="switch_reg_form()">
+        <span>Sign Up</span>
+      </h2>
+      <h2 id="loginSwitch" onclick="switch_login_form()"><span>Login</span></h2>
+    </header>
+    <form id="regForm" action="/signUp" method="POST">
+      <p>Already have an account? <span>Login here.</span></p>
+      <div class="inputs">
+        <input type="text" placeholder="Full Name" />
+        <input type="text" name="mobile number" placeholder="Mobile Number" />
+        <input type="email" id="email2" name="email" placeholder="Email" />
+        <input
+          class="last_input password"
+          type="password"
+          id="passwordReg"
+          oninput="password_validation()"
+          placeholder="Password"
+        />
+        <iconify-icon
+          icon="ic:baseline-remove-red-eye"
+          id="seeIconReg"
+          onclick="show_password()"
+        ></iconify-icon>
+        <iconify-icon
+          icon="mdi:eye-off"
+          style="visibility: hidden"
+          id="unseeIconReg"
+          onclick="hide_password()"
+        ></iconify-icon>
+        <p class="excess"><span id="PasswordValidationMessage"></span></p>
+      </div>
+      <button>Sign Up</button>
+    </form>
+    <form id="loginForm" action="/authCheck" method="POST">
+      <p>Don't have an account? <span>SignUp here</span></p>
+      <input class="first_input" type="email" name="email" placeholder="email" id='email' />
+      <input
+        class="last_input"
+        type="password"
+        id="passwordLogin"
+        placeholder="Password"
+        name="password"
+      />
+      <iconify-icon
+        icon="ic:baseline-remove-red-eye"
+        id="seeIconLogin"
+        onclick="show_password()"
+      ></iconify-icon>
+      <iconify-icon
+        icon="mdi:eye-off"
+        style="visibility: hidden"
+        id="unseeIconLogin"
+        onclick="hide_password()"
+      ></iconify-icon>
+      <p class="excess"><span>Forgot Password?</span></p>
+      <button>Log in</button>
+    </form>
   </div>
-
-  <form id="RegForm" onsubmit="get_sign_up_details()" action="">
-    <p>
-      Alread have an account?
-      <button
-        class="switch_btn"
-        id="LoginSwitch"
-        type="button"
-        onclick="switch_login_form()"
-      >
-        Login
-      </button>
-    </p>
-    <input type="text" required id="FullName" placeholder="Full Name" />
-
-    <input type="text" id="MobileNumber" required placeholder="Mobile Number" />
-    <input type="email" id="Email" required placeholder="Email" />
-
-    <input
-      id="Password"
-      type="password"
-      oninput="password_validation()"
-      required
-      placeholder="Password"
-    />
-    <label id="PasswordValidationMessage" style="visibility: hidden"></label>
-    <button class="btn">Sign Up</button>
-  </form>
-
-  <form id="LoginForm" style="visibility: hidden" action="/authCheck" method="POST">
-    <p>
-      Don't have an account?
-      <button
-        class="switch_btn"
-        id="SignUpSwitch"
-        type="button"
-        onclick="switch_reg_form()"
-      >
-        Sign Up
-      </button>
-    </p>
-    <input id="loginEmail" name="email" type="email" placeholder="Email" />
-    <input id="loginPassword" name="password" type="password" placeholder="Password" />
-    <button class="btn">Login</button>
-  </form>
 </div>
-</div>
-<script type="text/javascript"
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+{% endblock body_content %} {% block script_content %}
+<script
+  type="text/javascript"
+  src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+></script>
 <script src="/static/js/login.js"></script>
-{% endblock body_content %}
+{% endblock script_content %}

@@ -41,7 +41,7 @@ def getEncodedImage():
     write_file(binaryData, "result/retreivedImage.jpg")
 
 #:::::::::::::::::::::::CREATE TABLES:::::::::::::::::::::::::::::::::::::
-#run create_all_tables() only if not trying to debug
+#run create_all_tables() only, if not trying to debug
 
 def create_user_table():
     cursor.execute(\

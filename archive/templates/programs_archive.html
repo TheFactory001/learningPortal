@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block stylesheet %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/programs.css') }}" />
+{% endblock stylesheet %}
+{% block body_content %}
+
+
+    <div class="container">
+      <p class="intro"> 
+        We all have to start from somewhere. The current program is designed to serve as an introduction to problem-solving in programming
+        at its simplest. With these basics, we can advance to more specific fields and streams.  
+      </p>
+      <div class="about">
+        <div class="topics">
+          <div class="topic">
+              <h3 id="headers">Primary Stream</h3>
+          </div>
+        </div>
+      </div>
+      <div class="streams">
+        <div class="stream">
+          <p class="streamText circle">Basic Mathematics</p>
+          <p class="side_arrow mobile_hide">&#8594;</p>
+          <p class="down_arrow desktop_hide">&#8595;</p>
+          <p class="streamText circle">Introduction to Programming</p>
+          <p class="side_arrow mobile_hide">&#8594;</p>
+          <p class="down_arrow desktop_hide">&#8595;</p>
+          <p class="streamText circle">Mathematical functions</p>
+          <p class="side_arrow mobile_hide">&#8594;</p>
+          <p class="down_arrow desktop_hide">&#8595;</p>
+          
+          
+          
+          <div class="pathDrop">
+            <p class="streamText circle mobile_hide">Relational databases</p>
+            
+            <div class="mobile_path desktop_hide">
+              <p class="streamText circle">Relational databases</p>
+              <p class="side_arrow ">&#8594;</p>
+              <p class="streamText circle mobile_circle ">Project</p>
+            </div>
+            <p class="down_arrow">&#8595;</p>
+            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
+            <p class="streamText circle">Specialization</p>
+            <p class="down_arrow ">&#8595;</p>
+            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
+            <p class="streamText circle">Project</p>
+            <p class="down_arrow ">&#8595;</p>
+            <!-- <p class="side_arrow desktop_hide">&#8594;</p> -->
+            <p class="streamText circle">Deployment</p>
+          </div>
+            <p class="side_arrow mobile_hide">&#8594;</p>
+            <p class="streamText circle mobile_hide">Project</p>
+
+          
+        </div>  
+      </div>
+    </div>
+    
+    {% endblock body_content %}
+</html>

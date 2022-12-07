@@ -1,44 +1,72 @@
-{% extends 'base.html' %}
-{% block stylesheet %}
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/programs.css') }}" />
-{% endblock stylesheet %}
-{% block body_content %}
-
-
-    <div class="container">
-      <p class="intro"> 
-        We all have to start from somewhere. The current program is designed to serve as an introduction to problem-solving in programming
-        at its simplest. With these basics, we can advance to more specific fields and streams.  
-      </p>
-      <div class="about">
-        <div class="topics">
-          <div class="topic">
-              <h3 id="headers">Primary Stream</h3>
+{% extends 'base.html' %} {% block stylesheet_content %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/program.css')}}"
+/>
+{% endblock stylesheet_content %} {% block body_content %}
+<div class="container">
+  <p class="intro">
+    We all have to start from somewhere. The current program is designed to
+    serve as an introduction to problem-solving in programming at its simplest.
+    With these basics, we can advance to more specific fields and streams.
+  </p>
+  <section>
+    <h3>PRIMARY STREAM</h3>
+    <div class="path">
+      <div class="stream">
+        <div class="circle">
+          <span class="path_text">Basic Mathematics</span>
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="circle">
+          <span class="path_text"
+            >Introduction <br />
+            to programming</span
+          >
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="circle">
+          <span class="path_text">Mathematical Functions</span>
+        </div>
+        <div class="down_arrow desktop_hide">&#8595;</div>
+        <div class="left_arrow mobile_hide">&#8594;</div>
+        <div class="side_stream">
+          <div class="desktop_stream">
+            <div class="circle">
+              <span class="path_text">Relational DataBases</span>
+            </div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle">
+              <span class="path_text">Specialization</span>
+            </div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Project</span></div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Deployment</span></div>
+          </div>
+          <div class="circle desktop_hide">
+            <span class="path_text">Relational DataBases</span>
+          </div>
+          <div class="left_arrow">&#8594;</div>
+          <div class="circle">
+            <span class="path_text">Projects</span>
           </div>
         </div>
-      </div>
-      <div class="streams">
-        <div class="stream">
-          <div class="circle"><p class="streamText">Basic Mathematics</p></div>
-          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
-          <div class="circle"><p class="streamText">Introduction to Programming</p></div>
-          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
-          <div class="circle"><p class="streamText">Mathematical functions</p></div>
-          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
-          <div class="pathDrop">
-            <div class="circle"><p class="streamText">Relational databases</p></div>
-            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
-            <div class="circle"><p class="streamText">Specialization</p></div>
-            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
-            <div class="circle"><p class="streamText">Project</p></div>
-            <p style="font-size: 30px; margin-top: .2%; margin-bottom: .2%; text-align: center; width: 100%;">&#8595;</p>
-            <div class="circle"><p class="streamText">Deployment</p></div>
+        <div class="desktop_hide">
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle">
+            <span class="path_text">Specialization</span>
           </div>
-          <p style="font-size: 30px; margin-left: .4%; margin-right: .4%;">&#8594;</p>
-          <div class="circle"><p class="streamText">Project</p></div>
-        </div>  
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle"><span class="path_text">Project</span></div>
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle"><span class="path_text">Deployment</span></div>
+        </div>
       </div>
     </div>
-    
-    {% endblock body_content %}
-</html>
+  </section>
+</div>
+{% endblock body_content %} {% block script_content %}{% endblock script_content
+%}
