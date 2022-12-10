@@ -5,12 +5,14 @@
 }
 
 h1{
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
+    color: #5f5d5d;
     font-size: 20px;
     margin-bottom: 15px;
 }
 h4{
-    font-family: 'IM Fell English SC', serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
+    color: #5f5d5d;
     font-size: 16px;
     margin-bottom: 10px;
 }
@@ -29,7 +31,7 @@ h4{
     font-size: 15px;
     margin: auto;
     margin-bottom: 5px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Amplitude','Arial Narrow',sans-serif;
 }
 @media only screen and (min-width:720px){
     
