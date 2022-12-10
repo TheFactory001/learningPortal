@@ -1,7 +1,7 @@
-{% extends 'base2.html' %} {% block stylesheet_content %}
+{% extends 'base.html' %} {% block stylesheet_content %}
 <link
   rel="stylesheet"
-  href="{{ url_for('static', filename='css/program2.css')}}"
+  href="{{ url_for('static', filename='css/program.css')}}"
 />
 {% endblock stylesheet_content %} {% block body_content %}
 <div class="container">
@@ -33,19 +33,21 @@
         <div class="down_arrow desktop_hide">&#8595;</div>
         <div class="left_arrow mobile_hide">&#8594;</div>
         <div class="side_stream">
-            <div class="desktop_stream">
-                    <div class="circle">
-                        <span class="path_text">Relational DataBases</span>
-                    </div>
-                    <div class="down_arrow">&#8595;</div>
-                    <div class="circle"><span class="path_text">Specialization</span></div>
-                    <div class="down_arrow">&#8595;</div>
-                    <div class="circle"><span class="path_text">Project</span></div>
-                    <div class="down_arrow">&#8595;</div>
-                    <div class="circle"><span class="path_text">Deployment</span></div>
+          <div class="desktop_stream">
+            <div class="circle">
+              <span class="path_text">Relational DataBases</span>
             </div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle">
+              <span class="path_text">Specialization</span>
+            </div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Project</span></div>
+            <div class="down_arrow">&#8595;</div>
+            <div class="circle"><span class="path_text">Deployment</span></div>
+          </div>
           <div class="circle desktop_hide">
-            <span class="path_text ">Relational DataBases</span>
+            <span class="path_text">Relational DataBases</span>
           </div>
           <div class="left_arrow">&#8594;</div>
           <div class="circle">
@@ -53,16 +55,16 @@
           </div>
         </div>
         <div class="desktop_hide">
-            <div class="down_arrow">&#8595;</div>
-            <div class="circle"><span class="path_text">Specialization</span></div>
-            <div class="down_arrow">&#8595;</div>
-            <div class="circle"><span class="path_text">Project</span></div>
-            <div class="down_arrow">&#8595;</div>
-            <div class="circle"><span class="path_text">Deployment</span></div>
-
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle">
+            <span class="path_text">Specialization</span>
+          </div>
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle"><span class="path_text">Project</span></div>
+          <div class="down_arrow">&#8595;</div>
+          <div class="circle"><span class="path_text">Deployment</span></div>
         </div>
-        
-    </div>
+      </div>
     </div>
   </section>
 </div>

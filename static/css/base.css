@@ -1,222 +1,122 @@
-
 *{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
     text-decoration: none;
 }
-
-
-
-/* :::::::::::THE NAVIGATION:::::::::: */
-
-
-.nav{
-    background: #f1f4f7;;
-    transition: height 1s ease-in-out;
-    min-height: 5rem;
-    width: 100%;
-    align-items: center;
-}
-
-.nav .nav-menu{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-.nav .nav-brand a{
-    text-decoration: none;
-    font-size: 1.6rem;
-    padding: 1rem 0;
-    display: block;
-    color: black;
-}
-
-nav button{
-    display: none;
-}
-
-
-
-.nav .nav-items{
-    list-style-type: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.nav .nav-items .li{
-    font-size: 1.1rem;
-    position: relative;
-}
-
-.nav .nav-items .li:hover{
-    background-color:white;
-}
-
-.nav .nav-items .nav-link a{
-    color:black;
-}
-
-
-
-
-
-html, body {
-    margin: 0;
-    height: 100%;
+html,body{
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+}
+nav{
+    background: #F5F5F5;
+    height: 60px;
 }
 
-
-
-.foot {
-    background: #f1f4f7;
-    padding: 1rem;
-    color: #1659b500;
-    text-decoration: none;
-    height: 5rem; 
-    position: relative;
-    width: 100%;
+.logo{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 20px;
 }
-
-.foot-menu {
-    justify-content: space-between;
-    margin-bottom: 1%;
-}
-
-.foot-items {
+.nav_container{
+    width: 90%;
+    height: 100%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.foot-brand {
-    text-align: center;
-}
-
-.social {
-    margin-top: 1%;
-    margin-left: 40%;
-    margin-right: 40%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-   
+    justify-content: space-between;
+    margin: auto;
+}
+.nav_items{
+    list-style: none;
+    position: fixed;
+    top: 60px;
+    right:0;
+    z-index: 2;
+    display: none;
+}
+#menuClose{
+    display: none;
+}
+.nav_item{ 
+    width: 140px;
+    height:40px;
+    border-bottom:2px solid #F5F5F5;
+    border-left:2px solid #F5F5F5;
+    background: #fff;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    color: black;
+}
+.nav_item a:visited{
+    color: black;
+}
+.nav_item:hover{
+    background: #F5F5F5;
+}
+.container{
+    width: 90%;
+    text-align: center;
+    margin: auto;
+}
+footer{
+    width: 100%;
+    bottom: 0;
+    background: #F5F5F5;
+    height: 60px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.fas {
-    color: #1c2b33;
+.footer_container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+footer .footer_header{
+    font-family: 'IM Fell English SC', serif;
+    font-size: 18px;
+}
+.contact_icons{
+    display: flex;
+    gap: 10px;
 }
 
-.fa-brands {
-    color: #1c2b33;
-}
-
-
-
-@media only screen and (max-device-width: 750px){
-  
-    nav button{
-        display: inline-block;
-        background: transparent;
-        cursor: pointer;
+/*media queries*/
+@media only screen and (min-width:720px){
+    /* .nav_container{
+        width: 80%;
+    } */
+    .container, .nav_container{
+        width: 95%;
+    }
+    #menuDisplay, #menuClose{
+        display: none !important;
+    }
+    .nav_items{
+        display: flex !important;
+        position: inherit;
+        gap: 10px;
+        height: 100%;
+       
+    }
+    .nav_item{
+        background: none;
         border: none;
-        font-size: 2rem;
-    }
-    nav button#closeMenuBtn{
-        display: none;
-    }
-    .nav .nav-items {
-        position: fixed;
-        top: 4rem;
-        right:0;
-        height: fit-content;
-        width: 8rem;
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-        border: none;
-        display: none;
-        
-    }
-    .nav-items li{
-       width: 100%;
-       height: 3rem;
-       padding: 1rem 1rem;
-       border: 1px solid #f1f4f7;
-       background: white;
-       border-collapse: collapse;
+        width: auto;
+        min-width: 70px;
+        padding: 2px;
+        text-align: center;
+        height: 100%;
+        justify-content: center;
        
     }
 
-    .nav .nav-items li{
-        cursor: pointer;
+    .nav_item:hover{
+        background: #fff ;
     }
-   
-    .nav .nav-items li:hover{
-        background-color: #f1f4f7;
-        color: white;
-    }
-    .social {
-        margin-top: 1%;
-        margin-left: 30%;
-        margin-right: 30%;
-   }
-   
-
-
-}
-/*     Viewport less than or equal to 520px  - small phone  */
-@media only screen and (max-width:520px){
-    nav button{
-        display: inline-block;
-        background: transparent;
-        cursor: pointer;
-        border: none;
-        font-size: 2rem;
-    }
-    nav button#closeMenuBtn{
-        display: none;
-    }
-    .nav .nav-items {
-        position: fixed;
-        top: 4rem;
-        right:0;
-        height: fit-content;
-        width: 8rem;
-        flex-direction: column;
-        gap: 0;
-        margin: 0;
-        padding: 0;
-        border: none;
-        display: none;
-        
-    }
-    .nav-items li{
-       width: 100%;
-       height: 3rem;
-       padding: 1rem 1rem;
-       border: 1px solid #f1f4f7;
-       background: white;
-       border-collapse: collapse;
-       
-    }
-
-    .nav .nav-items li{
-        cursor: pointer;
-    }
-   
-    .nav .nav-items li:hover{
-        background-color: #f1f4f7;
-        color: white;
-    }
-    .social {
-        margin-top: 1%;
-        margin-left: 30%;
-        margin-right: 30%;
-   }
-   
 }

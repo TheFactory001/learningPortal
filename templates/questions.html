@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TheFactory</title>
+
+    {% block stylesheet %} {% endblock stylesheet %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/all.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <style>
+        #question {
+            margin-left: 5%;
+            margin-top: 2%;
+            width: 70%;
+            background: #f1f4f7;
+            font-family: sans-serif;
+            font-weight: 200;
+            font-size: 0.9rem;
+            padding: 15px;
+        }
+
+        #attempt {
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            width: 80%;
+            font-family: sans-serif;
+            font-weight: 400;
+            font-size: 1.4rem;
+            padding: 15px;
+        }
+
+        #section {
+          font-family: sans-serif;
+          font-weight: 500;
+          font-size: 1.5rem;
+          margin-left: 2%;
+        }
+
+        #intro {
+          margin-left: 2%;
+          margin-top: 2%;
+          width: 80%;
+          background: #f1f4f7;
+          font-family: sans-serif;
+          font-weight: 200;
+          font-size: 0.9rem;
+          padding: 15px;
+        }
+
+        #objectives {
+            margin-left: auto;
+            margin-top: auto;
+            width: 70%;
+        }
+
+        .navDiv {
+            background: #f1f4f7;
+            height: 10%;
+            position: relative;
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        nav {
+            height: 100%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100%;
+        }
+
+        .nav-items-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            list-style: none;
+            text-decoration: none;
+            margin-right: 5%;
+        }
+
+        .nav-items-container a {
+            font-size: 0.9rem;
+            transition: all 500ms ease;
+            text-decoration: none;
+        }
+
+        .nav-items-container a:hover {
+            font-size: 1rem;
+            color: black;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="navDiv">
+      <nav>
+        <div class="nav-container">
+          <h3>TheFactory</h3>
+          <ul class="nav-items-container">
+            <li><a href="{{ url_for('launch') }}">Home</a></li>
+            <li><a href="{{ url_for('login') }}">Login to Submit</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    {% block body_content %}
+    <div id="questions">
+        <h3 id="attempt">Attempt the following. It is important to show your workings (*comments are accepted.)</h3>
+        <h3 id="section">Section 1</h3>
+        <div id="questionHolder"></div>
+        <h3 id="section">Section 2</h3>
+        <h4 id="attempt">In this section you will work on a simple syntax. Follow the examples and attempt the following questions</h4>
+        <div id="intro">
+          <div id="objectives">
+            <ul >
+              <li>We will examined two variable types Integer (number) and String (word)</li>
+              <li>Strings are specified by adding quotes (" ")</li>
+              <li>We can only add variables of the same type.</li>
+            </ui>
+          </div>
+          <p>
+            If a variable x = 5, then x is an Integer <br><br>
+            If a variable y = "John", then y is a String <br>
+          </p>
+          <hr>
+          <p>
+            Example 1. We define two variables x and y.<br><br>
+            x = 5 <br><br> 
+            y = 6 <br><br>
+            print( x + y ) = 11 <br><br>
+            Result of print ( x + y ) is 11 <br><br>
+            Simple right? Let's attempt more examples.
+          </p>
+          <hr>
+          <p>
+            Example 2. Let's define two variables a and b. <br><br>
+            a = 15<br><br> 
+            b = 34<br><br>
+            print( a + b ) = 49 <br><br>
+            Let's do one more... <br><br>
+            <hr>
+            Example 3. <br><br>
+            x = 3, y = 6 <br><br>
+            print( x * y ) = 18 <br><br>
+            Simple math.
+          </p>
+          <hr>
+          <p>
+            Let's try something different. Remember variable type String mentioned above <br><br>
+            Example 4. Let's define two String variables x and y. <br><br>
+            x = "Hello " <br><br> 
+            y = "my name is Joe" <br><br>
+            print( x + y ) = ? <br><br>
+            Let's add the two variables x and y. We'd get: <br><br>
+            print( x + y ) = "Hello my name is Joe" <br><br>
+          </p>
+          <hr>
+          <p>
+            Another example. <br><br>
+            x = "The capital of Oyo State is ", y = "Ibadan" <br><br>
+            print( x + y ) = ? <br><br>
+            Let's add the two variables x and y. We'd get: <br><br>
+            print( x + y ) = The capital of Oyo State is Ibadan <br><br>
+          </p>
+          <hr>
+          <p>
+            Something of note. Take a look at this example. We have two variables of different types. <br><br>
+            x = "How old is Tony?", y = 4 <br><br>
+            print( x + y ) = ? <br><br>
+            Let's add the two variables x and y. <br><br>
+            Result: This is not allowed. We cannot add two different variable types. <br><br>
+            Why? We can only add variables of the same type. <br><br>
+          </p>
+          <hr>
+          <p>
+            So, in this case. We can covert y into a String type by simple putting quotes around it ("4") <br><br>
+            x = "How old is Tony?", y = "4"
+            print( x + y ) = ?
+            Let's add the two variables x and y.
+            Result: "How old is Tony? 4"
+          </p>
+          <hr>
+          <p>
+            Nothing too difficult right? Now, it's your turn to attempt some questions.
+          </p>
+        </div>
+        <div id="qualitativeHolder"></div>
+        <div>
+          <h4>How to submit assessment</h4>
+          <ul>
+            <li> Write your workings on paper with your name and email address/phone number and scan your answers.</li>
+            <li> Click the "Login to Submit" icon on the top right of the page.</li>
+            <li> Sign in or Sign up for a new account and fill out required information </li>
+            <li> On the profile page, click icon "Upload assessment" icon and choose the PDF file you scanned.</li>
+          </ul>
+          <p>You will hear from us in 3 - 5 days from the date of submission.</p>
+        </div>
+    </div>
+    <script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js">
+    </script>
+    <script src="/static/js/questions.js"></script>
+    {% endblock body_content %}
+    <footer class="foot">
+      <div class="foot-menu">
+        <div class="foot-brand">
+          <a href="#" class="text-gray"
+            ><i class="fas fa-contact">Contact Us</i></a
+          >
+        </div>
+        <div class="social">
+          <a href="#"><i class="fas fa-location"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

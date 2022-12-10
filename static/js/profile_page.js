@@ -27,4 +27,80 @@ $(document).ready(function () {
         let image = document.getElementById("profileImage");
         image.src = data['imageUri'];
     }
+
+
 })
+let timeline =document.getElementById('timeline')
+let contact_info = document.getElementById('contactInfo')
+let timeline_btn = document.getElementById('timelineBtn')
+let about_btn = document.getElementById('aboutBtn')
+
+function showContact() {
+    timeline.style.display='none';
+    contact_info.style.display='flex';
+    about_btn.style.color='#6495ED'
+    about_btn.style.fontSize='18px'
+    timeline_btn.style.color='black'
+    timeline_btn.style.fontSize='15px'
+    
+    // var contact = document.getElementsByClassName("contact_info");
+    // var assessment = document.getElementsByClassName("assessment");
+    // var contactButton = document.getElementsByClassName("contact");
+    // var assessButton = document.getElementsByClassName("assess");
+    // //assessment.style.display = "none"
+    // //contact.style.display = "block"
+    // for(var i = 0; i < assessment.length; i++){
+    //     //contact[i].style.visibility = "hidden";
+    //     assessment[i].style.display = "none"; 
+    // }
+
+    // for(var i = 0; i < contact.length; i++){
+    //     //contact[i].style.visibility = "hidden";
+    //     contact[i].style.display = "block";
+    // }
+
+    // for(var i = 0; i < contactButton.length; i++){
+    //     contactButton[i].style.display = "none";
+    // }
+
+    // for(var i = 0; i < assessButton.length; i++){
+    //     assessButton[i].style.display = "block";
+    // }
+  }
+
+  function showAssessment() {
+   
+    // var contact = document.getElementsByClassName("contact_info");
+    // var assessment = document.getElementsByClassName("assessment");
+    // var contactButton = document.getElementsByClassName("contact");
+    // var assessButton = document.getElementsByClassName("assess");
+        timeline.style.display='block'
+        contact_info.style.display='none'
+        about_btn.style.color='black'
+        about_btn.style.fontSize='15px'
+        timeline_btn.style.color='#6495ED'
+        timeline_btn.style.fontSize='18px'
+
+
+    // //assessment.style.display = "none"
+    // //contact.style.display = "block"
+    // for(var i = 0; i < assessment.length; i++){
+    //     //contact[i].style.visibility = "hidden";
+    //     assessment[i].style.display = "block"; 
+    // }
+
+    // for(var i = 0; i < contact.length; i++){
+    //     //contact[i].style.visibility = "hidden";
+    //     contact[i].style.display = "none";
+    // }
+
+    // for(var i = 0; i < contactButton.length; i++){
+    //     contactButton[i].style.display = "block";
+    // }
+
+    // for(var i = 0; i < assessButton.length; i++){
+    //     assessButton[i].style.display = "none";
+    // }
+
+
+  }
