@@ -18,7 +18,8 @@
             margin-top: 2%;
             width: 70%;
             background: #f1f4f7;
-            font-family: sans-serif;
+            font-family: 'Amplitude','Arial Narrow',sans-serif;
+            color:#5f5d5d;
             font-weight: 200;
             font-size: 0.9rem;
             padding: 15px;
@@ -29,17 +30,24 @@
             margin-right: auto;
             margin-top: 2%;
             width: 80%;
-            font-family: sans-serif;
+            font-family: 'Amplitude','Arial Narrow',sans-serif;
+            color: #5f5d5d;
             font-weight: 400;
             font-size: 1.4rem;
             padding: 15px;
         }
 
         #section {
-          font-family: sans-serif;
+          font-family: 'Amplitude','Arial Narrow',sans-serif;
+          color: #5f5d5d;
           font-weight: 500;
           font-size: 1.5rem;
           margin-left: 2%;
+        }
+
+        hr {
+          margin-top: 2px;
+          margin-bottom: 5px;
         }
 
         #intro {
@@ -47,7 +55,7 @@
           margin-top: 2%;
           width: 80%;
           background: #f1f4f7;
-          font-family: sans-serif;
+          font-family: 'Amplitude','Arial Narrow',sans-serif;
           font-weight: 200;
           font-size: 0.9rem;
           padding: 15px;
@@ -61,7 +69,7 @@
 
         .navDiv {
             background: #f1f4f7;
-            height: 10%;
+            height: 50px;
             position: relative;
             width: 100%;
             list-style: none;
@@ -70,6 +78,7 @@
 
         nav {
             height: 100%;
+            color: #5f5d5d;
         }
 
         .nav-container {
@@ -79,6 +88,7 @@
             padding-left: 15px;
             padding-right: 15px;
             height: 100%;
+            color: #5f5d5d;
         }
 
         .nav-items-container {
@@ -88,6 +98,7 @@
             list-style: none;
             text-decoration: none;
             margin-right: 5%;
+            color: #5f5d5d;
         }
 
         .nav-items-container a {
@@ -101,6 +112,14 @@
             color: black;
         }
 
+        .howToSubmit {
+          bottom: 10%;
+          margin-right: auto;
+          margin-left: 5%;
+          width: 100%;
+          font-family: 'Amplitude','Arial Narrow',sans-serif;
+          color: #5f5d5d;
+        }
     </style>
   </head>
   <body>
@@ -110,6 +129,7 @@
           <h3>TheFactory</h3>
           <ul class="nav-items-container">
             <li><a href="{{ url_for('launch') }}">Home</a></li>
+            <li><a href="{{ url_for('positions') }}">Available Positions</a></li>
             <li><a href="{{ url_for('login') }}">Login to Submit</a></li>
           </ul>
         </div>
@@ -197,7 +217,8 @@
           </p>
         </div>
         <div id="qualitativeHolder"></div>
-        <div>
+        <hr>
+        <div class="howToSubmit">
           <h4>How to submit assessment</h4>
           <ul>
             <li> Write your workings on paper with your name and email address/phone number and scan your answers.</li>

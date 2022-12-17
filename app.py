@@ -1,4 +1,5 @@
 import email
+from datetime import datetime
 from flask import Flask, render_template, request, jsonify, redirect, url_for, session, flash
 from werkzeug.utils import secure_filename
 from firestoreDB import *
@@ -34,6 +35,10 @@ def program():
 @app.route("/questions")
 def questions():
     return render_template('questions.html')
+
+@app.route("/positions")
+def positions():
+    return render_template('positions.html')
 
 @app.route("/login", methods=['GET','POST'])
 def login():
@@ -90,8 +95,11 @@ def setForm():
 @app.route('/profile', methods=['GET', 'POST'])
 @app.route('/profile/<id>/<isAuth>', methods=['GET', 'POST'])
 def profile(id, isAuth):
-    if str2bool(isAuth) == True:
-        session['logged_in'] = True
+    userData = getUserData(id)
+    current_dateTime = datetime.now()
+    timeStamp = current_dateTime.timestamp()
+    print((timeStamp -  userData['timeStamp'])/60.0 < 30.0)
+    if isAuth == userData['sessionToken'] and (timeStamp -  userData['timeStamp'])/60.0 < 30.0:
         userData = getUserData(id)
         return render_template('profilepage.html', userData=userData, email=id)
     return redirect(url_for('login'))
@@ -108,8 +116,8 @@ def authCheck():
         password = request.form['password']
         authData = authenticateLogin(email, password)
         if type(authData) == dict:
-            is_logged_in=True
-            return redirect(url_for('profile', id=authData['id'], isAuth=True))
+            session['logged_in']=True
+            return redirect(url_for('profile', id=authData['id'], isAuth=authData['sessionToken']))
     return redirect(url_for('login'))
 
 

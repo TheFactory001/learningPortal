@@ -134,7 +134,10 @@
 .about_details h6{
     font-size: 14px;
 }
-.timeline__about #contactInfo{
+.timeline__about .timeline{
+    text-align: center;
+}
+.timeline__about .about_details{
     display: none;
 }
 .timeline{
