@@ -41,7 +41,7 @@
     <div class="profile_box timeline__about">
       <h4>
         <span class="span__all" id="timelineBtn" onclick="showAssessment()"
-          >Timeline</span
+          >Assessment</span
         >
         <span class="span__all" id="aboutBtn" onclick="showContact()">
           <span>About</span>
@@ -58,7 +58,7 @@
       <div class="about_details" id='contactInfo'>
         <h6>Contact Information</h6>
         <p>
-          <label for="">Phone:</label>
+          <label for="" onclick="alertuser()">Phone:</label>
           <span id="phoneNumber">+2349039074767</span>
         </p>
         <p>
@@ -84,8 +84,6 @@
 ></script>
 <script type="text/javascript" charset="utf-8">
   let userData = '{{userData|tojson}}';
-  // function alertuser() {
-  console.log(userData);
 </script>
 <script src="/static/js/profile_page.js"></script>
 {%endblock script_content%}

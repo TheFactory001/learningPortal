@@ -30,7 +30,7 @@ header h2{
 header h2:hover{
     cursor: pointer;
 }
-header #signUpSwitch{
+header #loginSwitch{
     border-bottom: 3px solid black;
 }
 
@@ -85,9 +85,9 @@ form iconify-icon:hover{
     background: #6495ED;
     color: wheat;
 }
-#loginForm{
-    display: none;
-}
-/* #signUpForm{
+/* #loginForm{
     display: none;
 } */
+#regForm{
+    display: none;
+}

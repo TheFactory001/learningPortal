@@ -111,7 +111,7 @@
     margin-top: 17px;
     border-radius: 1.5px;
 } */
-#aboutBtn{
+#timelineBtn{
     color: #6495ED ;
     font-size: 18px;
 }
@@ -134,8 +134,15 @@
 .about_details h6{
     font-size: 14px;
 }
-.timeline__about .timeline{
+.timeline__about #contactInfo{
     display: none;
+}
+.timeline{
+    text-align: center;
+}
+.timeline h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 @media only screen and (min-width:720px){
     .profile_container {

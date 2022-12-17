@@ -27,6 +27,7 @@ $(document).ready(function () {
         let image = document.getElementById("profileImage");
         image.src = data['imageUri'];
     }
+   
 
 
 })

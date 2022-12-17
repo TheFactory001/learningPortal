@@ -1,5 +1,5 @@
 import email
-from flask import Flask, render_template, request, jsonify, redirect, url_for
+from flask import Flask, render_template, request, jsonify, redirect, url_for, session, flash
 from werkzeug.utils import secure_filename
 from firestoreDB import *
 from utilFunctions import *
@@ -15,13 +15,14 @@ CORS(app)
 
 #print(type(authenticateLogin("johnDoe@doe.com", "123JohnDoe")))
 
-
+is_logged_in = False
 @app.route("/")
 def launch():
-    return render_template('launch.html')
+    return render_template('launch.html',is_logged_in=is_logged_in)
 
 
 @app.route("/about")
+
 def about():
     return render_template('aboutUs.html')
 
@@ -39,31 +40,17 @@ def login():
     return render_template('login.html')
 
 
-@app.route("/index")
+@app.route("/index/<is_logged>")
 def index():
     return render_template('launch.html')
 
-@app.route("/trial")
-def trial():
-    return render_template('index2.html')
-@app.route("/about2")
-def about2():
-    return render_template('about2.html')
 
-@app.route('/programs2')
-def programs2():
-    return render_template('programs2.html')
 
-@app.route('/login2')
-def login2():
-    return render_template('login2.html')
 
 @app.route('/form')
 def form():
-    return render_template('profile_form2.html')
-@app.route('/profile2')
-def profile2():
-    return render_template('profile_page2.html')
+    return render_template('profile_form.html')
+
 @app.route("/dory")
 def tester():
     return 'Hello Foo!'
@@ -90,7 +77,7 @@ def setForm():
             'email': id,
             'address': address,
             'github' : github_link,
-            'city' : city,
+            'city' : city, 
             'level' : level,
             'interest1' : interest1,
             'interest2' : interest2
@@ -104,12 +91,14 @@ def setForm():
 @app.route('/profile/<id>/<isAuth>', methods=['GET', 'POST'])
 def profile(id, isAuth):
     if str2bool(isAuth) == True:
+        session['logged_in'] = True
         userData = getUserData(id)
         return render_template('profilepage.html', userData=userData, email=id)
     return redirect(url_for('login'))
 
 def str2bool(v):
   return v.lower() in ("yes", "true", "t", "1")
+
 
 
 @app.route("/authCheck", methods=['GET', 'POST'])
@@ -119,6 +108,7 @@ def authCheck():
         password = request.form['password']
         authData = authenticateLogin(email, password)
         if type(authData) == dict:
+            is_logged_in=True
             return redirect(url_for('profile', id=authData['id'], isAuth=True))
     return redirect(url_for('login'))
 
@@ -203,6 +193,13 @@ def test2(id):
             return render_template('profilepage.html', userData=userData, email=id)
 
     return render_template('profilepage.html', userData=userData, email=id)
+
+#log out
+@app.route('/logout')
+def logout():
+    session.pop('logged_in', None)
+    flash('You logged out.')
+    return redirect(url_for('login'))
 
 if __name__ == '__main__':
    app.run(host='0.0.0.0', port='8000', debug=True)
