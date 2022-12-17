@@ -39,6 +39,7 @@ let about_btn = document.getElementById('aboutBtn')
 function showContact() {
     timeline.style.display='none';
     contact_info.style.display='flex';
+    contact_info.style.flexDirection='column';
     about_btn.style.color='#6495ED'
     about_btn.style.fontSize='18px'
     timeline_btn.style.color='black'
