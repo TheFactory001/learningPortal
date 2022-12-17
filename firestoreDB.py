@@ -1,4 +1,6 @@
 from heapq import merge
+import random, string
+from datetime import datetime
 import firebase_admin
 from firebase_admin import credentials, firestore, storage
 
@@ -18,9 +20,14 @@ def getAllData():
 
 def authenticateLogin(email, password):
     try :
+        token = ''.join(random.choices(string.ascii_letters + string.digits, k=16))
+        current_dateTime = datetime.now()
+        timeStamp = current_dateTime.timestamp()
         doc_ref = db.collection(u'userData').document(u'{}'.format(obfusMail(email)))
         data = doc_ref.get().to_dict()
         if data['password'] == password:
+            db.collection(u'userData').document(u'{}'.format(obfusMail(email))).set({"sessionToken": token.lower(), "timeStamp" : timeStamp}, merge=True)
+            data = doc_ref.get().to_dict()
             return data
         else :
             return "Incorrect password"

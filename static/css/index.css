@@ -1,5 +1,6 @@
 
 .container{
+    flex: 1;
     text-align: center;
     margin: auto;
 }
@@ -9,12 +10,14 @@ h1{
     color: #5f5d5d;
     font-size: 20px;
     margin-bottom: 15px;
+    margin-top: 5%;
 }
 h4{
     font-family: 'Amplitude','Arial Narrow',sans-serif;
     color: #5f5d5d;
     font-size: 16px;
     margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 .city_img{
@@ -33,6 +36,14 @@ h4{
     margin-bottom: 5px;
     font-family: 'Amplitude','Arial Narrow',sans-serif;
 }
+
+.joinUs {
+    position: relative;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+}
+
 @media only screen and (min-width:720px){
     
     .city_img img{
@@ -41,7 +52,21 @@ h4{
         /* width: 95%; */
         height: 300px;
     }
+
+    .container{
+        flex: 1;
+        text-align: center;
+        margin: auto;
+    }
+
     .container p{
         width: 50%;
+    }
+
+    .joinUs {
+        position: fixed;
+        bottom: 10%;
+        left: 0;
+        right: 0;
     }
 }

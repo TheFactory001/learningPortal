@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TheFactory</title>
+
+    {% block stylesheet %} {% endblock stylesheet %}
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/all.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base.css') }}"
+    />
+    <style>
+      body {
+        flex: 1;
+      }
+
+      #questions {
+        flex: 1;
+      }
+
+        #question {
+            margin-left: 5%;
+            margin-top: 2%;
+            width: 70%;
+            background: #f1f4f7;
+            font-family: sans-serif;
+            font-weight: 200;
+            font-size: 0.9rem;
+            padding: 15px;
+        }
+
+        #attempt {
+          text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 2%;
+            width: 100%;
+            font-family: sans-serif;
+            font-weight: 400;
+            font-size: 1.4rem;
+            padding: 15px;
+        }
+
+        #section {
+          font-family: sans-serif;
+          font-weight: 500;
+          font-size: 1.5rem;
+          margin-left: 2%;
+        }
+
+        hr {
+          margin-top: 7px;
+          margin-bottom: 5px;
+        }
+
+        #intro {
+          margin-left: 2%;
+          margin-top: 2%;
+          width: 80%;
+          background: #f1f4f7;
+          font-family: sans-serif;
+          font-weight: 200;
+          font-size: 0.9rem;
+          padding: 15px;
+        }
+
+        #objectives {
+            margin-left: auto;
+            margin-top: auto;
+            width: 70%;
+        }
+
+        .navDiv {
+            background: #f1f4f7;
+            height: 50px;
+            position: relative;
+            width: 100%;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        .positionDiv {
+          width: 100%;
+        }
+
+        .position {
+          margin-left: auto;
+          margin-right: auto;
+          padding: 2%;
+          border-radius: 50;
+          width: 95%;
+          background-color: #f1f4f7;
+        }
+
+        .position ul {
+          margin-left: 5%;
+        }
+
+        .position h4 {
+          margin-top: 2%;
+        }
+
+        nav {
+            height: 100%;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100%;
+        }
+
+        .nav-items-container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            list-style: none;
+            text-decoration: none;
+            margin-right: 5%;
+        }
+
+        .nav-items-container a {
+            font-size: 0.9rem;
+            transition: all 500ms ease;
+            text-decoration: none;
+        }
+
+        .nav-items-container a:hover {
+            font-size: 1rem;
+            color: black;
+        }
+
+        .howToSubmit {
+          position: fixed;
+          bottom: 10%;
+          margin-right: auto;
+          margin-left: 5%;
+          width: 100%;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="navDiv">
+      <nav>
+        <div class="nav-container">
+          <h3>TheFactory</h3>
+          <ul class="nav-items-container">
+            <li><a href="{{ url_for('launch') }}">Home</a></li>
+            <li><a href="{{ url_for('questions') }}">Assessment</a></li>
+            <li><a href="{{ url_for('login') }}">Login to Submit</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    {% block body_content %}
+    <div id="questions">
+      <h3 id="attempt">Join us.</h3>
+      <hr>
+      <div class="positionDiv">
+        <div class="position">
+          <h3> Part-time Logistics Assistant </h3>
+          <p>
+            This is a part-time role that could become full-time position. You will be responsible for collecting, organizing, and analyzing data.
+            You will be required to work for 10 hours a week and no prior work experience is needed for this role.
+          </p>
+          <h4> Requirements: </h4>
+          <ul>
+            <li>
+              Attempt Section 1 on the Assessment page.
+            </li>
+            <li>
+              You have completed secondary school education.
+            </li>
+            <li>
+              You are willing to learn new things.
+            </li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+      <div class="howToSubmit">
+        <h4>How to submit application</h4>
+        <ul>
+          <li> Attempt Section 1 on the Assessment page</li>
+          <li> Write your workings on paper with your name and email address/phone number and scan your answers.</li>
+          <li> Click the "Login to Submit" icon on the top right of the page.</li>
+          <li> Sign in or Sign up for a new account and fill out required information </li>
+          <li> On the profile page, click icon "Upload assessment" icon and choose the PDF file you scanned.</li>
+        </ul>
+        <p>You will hear from us in 3 - 5 days from the date of submission.</p>
+      </div>
+      
+    </div>
+    {% endblock body_content %}
+    <footer class="foot">
+      <div class="foot-menu">
+        <div class="foot-brand">
+          <a href="#" class="text-gray"
+            ><i class="fas fa-contact">Contact Us</i></a
+          >
+        </div>
+        <div class="social">
+          <a href="#"><i class="fas fa-location"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
