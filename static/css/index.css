@@ -64,7 +64,8 @@ h4{
     }
 
     .joinUs {
-        position: fixed;
+        position: relative;
+        padding-top: 2%;
         bottom: 10%;
         left: 0;
         right: 0;
