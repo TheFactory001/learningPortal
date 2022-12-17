@@ -111,7 +111,7 @@
     margin-top: 17px;
     border-radius: 1.5px;
 } */
-#aboutBtn{
+#timelineBtn{
     color: #6495ED ;
     font-size: 18px;
 }
@@ -135,6 +135,9 @@
     font-size: 14px;
 }
 .timeline__about .timeline{
+    text-align: center;
+}
+.timeline__about .about_details{
     display: none;
 }
 @media only screen and (min-width:720px){

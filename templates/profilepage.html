@@ -41,7 +41,7 @@
     <div class="profile_box timeline__about">
       <h4>
         <span class="span__all" id="timelineBtn" onclick="showAssessment()"
-          >Timeline</span
+          >Assessment</span
         >
         <span class="span__all" id="aboutBtn" onclick="showContact()">
           <span>About</span>
@@ -51,7 +51,7 @@
         <h3>Submit an assessment.</h3>
         <form method=post action="/uploadFile/{{email}}" enctype=multipart/form-data>
           <input type=file name=file id="inputFiles"><br><br>
-          <input type=submit value=Upload >
+          <input type=submit value=Upload onclick="alertSubmit()" >
         </form>
       </div>
 

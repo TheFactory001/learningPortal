@@ -104,3 +104,6 @@ function showContact() {
 
 
   }
+  function alertSubmit(){
+    alert("You have successfully submitted your assessment")
+  }
