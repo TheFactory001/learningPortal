@@ -15,13 +15,14 @@
     <form id="regForm" action="/signUp" method="POST">
       <p>Already have an account? <span>Login here.</span></p>
       <div class="inputs">
-        <input type="text" placeholder="Full Name" />
-        <input type="text" name="mobile number" placeholder="Mobile Number" />
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="text" name="number" placeholder="Mobile Number" />
         <input type="email" id="email2" name="email" placeholder="Email" />
         <input
           class="last_input password"
           type="password"
           id="passwordReg"
+          name="password"
           oninput="password_validation()"
           placeholder="Password"
         />

@@ -50,8 +50,6 @@ def index():
     return render_template('launch.html')
 
 
-
-
 @app.route('/form')
 def form():
     return render_template('profile_form.html')
@@ -89,7 +87,7 @@ def setForm():
         }
 
         userProfileData(data)
-    return redirect(url_for('profile', id=id, isAuth=True))
+    return redirect(url_for('login'))
 
 
 @app.route('/profile', methods=['GET', 'POST'])
@@ -124,6 +122,7 @@ def authCheck():
 @app.route("/signUp", methods=['GET','POST'])
 def signUp():
     if request.method =='POST':
+        print(request.form)
         email = request.form['email']
         password = request.form['password']
         name = request.form['name']

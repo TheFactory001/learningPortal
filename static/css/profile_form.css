@@ -14,6 +14,13 @@
     margin-top: 50px;
     
 }
+
+.form-item {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 10px;
+}
+
 #imageInput{
     width: 200px;
 }
