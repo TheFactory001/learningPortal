@@ -20,7 +20,7 @@ def search():
     artists = response.json()['data']
 
     # Render the search_results.html template and pass the artists data
-    return render_template('search_results.html', artists=artists)
+    return render_template('search.html', artists=artists)
 
 
 if __name__ == '__main__':
