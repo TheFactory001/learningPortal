@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deezer Api</title>
+</head>
+<body>
+    <form action="" method="post" onsubmit="event.preventDefault">
+        <div>
+            <label for="artist">Artist Name</label>
+            <input name="artist_name" type="text">
+        </div>
+        <Button type="submit" >Submit</Button>
+    </form>
+    <div  class="result_object" style="background-color: aqua; min-height: 50px; min-width: 50px;">
+    <a href="{{artist_info['artist_link']}}">
+        <p id="artist">{{artist_info['artist_name']}}</p>
+        <img style="border-radius: 50%;" src="{{artist_info['artist_image']}}" alt="" srcset=""></a>
+
+
+     
+    </div>
+    <div class="tracks">
+        <h3>Top TRACKS</h3>
+        {% for track in artist_info['top_5_tracks']%}
+        <li style="list-style: none;"><span>{{loop.index }}</span> {{ track.title}} </li>
+        <audio controls ><source src="{{ track.preview}}" type="audio/mpeg"/></audio>
+        {%endfor%}
+     
+
+
+    </div>
+    <script>
+       
+        
+    </script>
+</body>
+</html>
