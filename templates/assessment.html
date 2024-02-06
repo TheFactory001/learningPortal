@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Factory Assessments</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      body {
+        background-image: url(../static/img/Ibadan.jpg);
+        background-position: center;
+        background-attachment: fixed;
+      }
+
+      .nav {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 128px;
+        border-bottom: 1px solid rgba(149, 149, 149, 0.567);
+        background: transparent;
+        color: #fff;
+        z-index: 10;
+      }
+
+      .navMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .navMenu li {
+        list-style-type: none;
+      }
+
+      .navMenu li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .navMenu .login {
+        border: 1px solid #fff;
+        padding: 6px 20px;
+        border-radius: 6px;
+      }
+
+      .blur {
+        background: rgba(255, 255, 255, 0.11);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        /* border: 1px solid rgba(255, 255, 255, 0.2); */
+      }
+
+      main {
+        height: 100%;
+        color: #fff;
+      }
+
+      .overlay {
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
+        background: rgba(0, 0, 0, 0.501);
+        height: 100%;
+        width: inherit;
+        padding: 100px 128px 40px;
+        margin: auto;
+        background-attachment: fixed;
+      }
+
+      .heroText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 400px;
+        width: 80%;
+        padding: 20px;
+        margin: auto;
+
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.11);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .welcome {
+        position: relative;
+        letter-spacing: 20px;
+      }
+
+      .welcome span {
+        position: relative;
+        display: inline-block;
+        font-size: 48px;
+        color: #fff;
+        text-transform: uppercase;
+        animation: flip 3s infinite;
+        animation-delay: calc(0.3s * var(--i));
+      }
+      @keyframes flip {
+        0%,
+        80% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .mainText {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        font-size: 18px;
+      }
+
+      .heroDot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      .questionWrapper {
+        background: #f0f0f0;
+        color: #0d0d0d;
+        margin: 40px -128px;
+        padding: 80px 128px;
+        font-size: 18px;
+      }
+
+      .instructions {
+        display: flex;
+        flex-direction: column;
+        color: rgb(0, 0, 255);
+        background-color: rgb(200, 219, 254);
+        color: rgb(151, 35, 0);
+        background-color: rgba(252, 148, 116, 0.25);
+        padding: 24px;
+        width: fit-content;
+        border-radius: 12px;
+        margin: 16px 0;
+      }
+
+      .instructions ul li {
+        list-style-type: square;
+      }
+
+      .question {
+        background-color: #e5e5e5;
+        padding: 18px;
+        margin: 0 0 16px 0;
+        font-size: 24px;
+        border-radius: 8px;
+      }
+
+      .examples {
+        margin-bottom: 20px;
+        border: 1px solid red;
+        background: #000;
+      }
+
+      /* TABS */
+      .tab {
+        display: flex;
+        overflow: hidden;
+        width: fit-content;
+        border: none;
+        /* border-radius: 20px; */
+        /* background-color: rgba(210, 223, 247, 0.555); */
+        background-color: none;
+      }
+
+      /* Style the buttons inside the tab */
+      .tab button {
+        background-color: inherit;
+        /* float: left; */
+        border: none;
+        color: rgb(0, 0, 255);
+        border-bottom: 2px solid rgb(98, 98, 252);
+        border-right: 2px solid rgb(98, 98, 252);
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: 0.3s;
+        font-size: 17px;
+        border-radius: 24px;
+      }
+
+      /* Change background color of buttons on hover */
+      .tab button:hover {
+        background-color: rgb(210, 223, 247);
+      }
+
+      /* Create an active/current tablink class */
+      .tab button.active {
+        background-color: rgb(200, 219, 254);
+      }
+      /* Style the tab content */
+      .tabcontent {
+        position: relative;
+        display: none;
+        width: 600px;
+        margin: 16px;
+        padding: 24px;
+        background: rgb(210, 223, 247);
+        border-radius: 12px;
+        -webkit-animation: fadeEffect 1s;
+        animation: fadeEffect 1s;
+      }
+
+      /* Fade in tabs */
+      @-webkit-keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeEffect {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .closeTab {
+        position: absolute;
+        top: 10px;
+        right: 16px;
+        color: rgb(0, 0, 255);
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <h3>TheFactory</h3>
+      <ul class="navMenu">
+        <li><a href="{{ url_for('launch') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('programs') }}">Programs</a></li>
+        <li><a class="login" href="{{ url_for('login') }}">Login</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="overlay">
+        <div class="heroText">
+          <div class="welcome">
+            <span style="--i: 1">T</span>
+            <span style="--i: 2">h</span>
+            <span style="--i: 3">e</span>
+            <span style="--i: 4">F</span>
+            <span style="--i: 5">a</span>
+            <span style="--i: 6">c</span>
+            <span style="--i: 7">t</span>
+            <span style="--i: 8">o</span>
+            <span style="--i: 9">r</span>
+            <span style="--i: 10">y</span>
+          </div>
+
+          <p class="mainText">
+            Think<span class="heroDot"></span> Build <span class="heroDot"></span> Simplify.
+          </p>
+        </div>
+
+        <div class="questionWrapper" id="questions">
+          <h3 id="section">Section 1</h3>
+          <p class="instructions" id="attempt">
+            Attempt the following. It is important to show your workings (*comments are accepted.)
+          </p>
+          <div id="questionHolder"></div>
+          <h3 id="section">Section 2</h3>
+          <div class="instructions" id="attempt">
+            <p>
+              In this section you will work on a simple syntax. Follow the examples and attempt the
+              following questions
+            </p>
+
+            <ul>
+              <li>We will examined two variable types Integer (number) and String (word)</li>
+              <li>Strings are specified by adding quotes (" ")</li>
+              <li>We can only add variables of the same type.</li>
+            </ul>
+          </div>
+          <div class="exapmles">
+            <div class="tab">
+              <button class="tablinks" onclick="openExample(event, 'example1')" id="defaultOpen">
+                Example 1
+              </button>
+              <button class="tablinks" onclick="openExample(event, 'example2')">Example 2</button>
+              <button class="tablinks" onclick="openExample(event, 'example3')">Example 3</button>
+              <button class="tablinks" onclick="openExample(event, 'example4')">Example 4</button>
+              <button class="tablinks" onclick="openExample(event, 'example5')">Example 5</button>
+              <button class="tablinks" onclick="openExample(event, 'example6')">Example 6</button>
+            </div>
+
+            <div class="tabcontent" id="example1">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+              <p>
+                If a variable <i>x = 5</i>, then x is an Integer <br />
+                If a variable <i>y = "John"</i>, then y is a String
+              </p>
+
+              <p>
+                Example 1: We define two variables x and y. x = 5; y = 6
+                <br /><i>print( x + y ) = 11</i> Result of print ( x + y ) is 11 Simple right? Let's
+                attempt more examples.
+              </p>
+            </div>
+
+            <div class="tabcontent" id="example2">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+
+              <p>
+                Example 2. Let's define two variables a and b. a = 15 b = 34 print( a + b ) = 49
+                Let's do one more...
+              </p>
+            </div>
+
+            <div class="tabcontent" id="example3">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+
+              <p>Example 3. x = 3, y = 6 print( x * y ) = 18 Simple math.</p>
+            </div>
+
+            <div class="tabcontent" id="example4">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+              <div>
+                <p>
+                  Let's try something different. Remember variable type String mentioned previously
+                </p>
+                <p>
+                  Example 4. Let's define two String variables x and y. x = "Hello " y = "my name is
+                  Joe" print( x + y ) = ? Let's add the two variables x and y. We'd get: print( x +
+                  y ) = "Hello my name is Joe"
+                </p>
+              </div>
+            </div>
+
+            <div class="tabcontent" id="example5">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+              <p>
+                Another example. x = "The capital of Oyo State is ", y = "Ibadan" print( x + y ) = ?
+                Let's add the two variables x and y. We'd get: print( x + y ) = The capital of Oyo
+                State is Ibadan
+              </p>
+            </div>
+
+            <div class="tabcontent" id="example6">
+              <span onclick="this.parentElement.style.display='none'" class="closeTab"
+                >&times;</span
+              >
+              <p>
+                Something of note. Take a look at this example. We have two variables of different
+                types. x = "How old is Tony?", y = 4 print( x + y ) = ? Let's add the two variables
+                x and y. Result: This is not allowed. We cannot add two different variable types.
+                Why? We can only add variables of the same type.
+              </p>
+
+              <p>
+                So, in this case. We can covert y into a String type by simple putting quotes around
+                it ("4") x = "How old is Tony?", y = "4" print( x + y ) = ? Let's add the two
+                variables x and y. Result: "How old is Tony? 4"
+              </p>
+            </div>
+          </div>
+
+          <p>Nothing too difficult right? Now, it's your turn to attempt some questions.</p>
+          <div id="qualitativeHolder"></div>
+          <div class="instructions">
+            <h4>How to submit assessment</h4>
+            <ul>
+              <li>
+                Write your workings on paper with your name and email address/phone number and scan
+                your answers.
+              </li>
+              <li>Click the "Login to Submit" icon on the top right of the page.</li>
+              <li>Sign in or Sign up for a new account and fill out required information</li>
+              <li>
+                On the profile page, click icon "Upload assessment" icon and choose the PDF file you
+                scanned.
+              </li>
+            </ul>
+            <br />
+            <p>You will hear from us in <b>3 - 5 days</b> from the date of submission.</p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="foot">
+      <div class="foot-menu">
+        <div class="foot-brand">
+          <a href="#" class="text-gray"><i class="fas fa-contact">Contact Us</i></a>
+        </div>
+        <div class="social">
+          <a href="#"><i class="fas fa-location"></i></a>
+          <a href="#"><i class="fas fa-envelope"></i></a>
+          <a href="#"><i class="fas fa-phone"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../static/js/questions.js"></script>
+    <script>
+      function openExample(event, exampleNumber) {
+        let i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (let i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(exampleNumber).style.display = "block";
+        event.currentTarget.className += " active";
+      }
+      document.getElementById("defaultOpen").click();
+    </script>
+  </body>
+</html>

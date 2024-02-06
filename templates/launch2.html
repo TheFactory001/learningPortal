@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Factory</title>
+
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+      }
+
+      body {
+        /* cursor: url("../static/img/icons8-factory-64.png"), auto; */
+      }
+
+      .nav {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 128px;
+        border-bottom: 1px solid rgba(149, 149, 149, 0.567);
+        background: transparent;
+        color: #fff;
+      }
+
+      .navMenu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .navMenu li {
+        list-style-type: none;
+      }
+
+      .navMenu li a {
+        text-decoration: none;
+        color: #fff;
+      }
+
+      .navMenu .login {
+        border: 1px solid #fff;
+        padding: 6px 20px;
+        border-radius: 6px;
+      }
+
+      .hero {
+        background-image: url(../static/img/Ibadan.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        /* padding-top: 40px; */
+        height: 100vh;
+        color: #fff;
+      }
+
+      .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 40px;
+        background: rgba(0, 0, 0, 0.501);
+        height: inherit;
+        width: inherit;
+      }
+
+      .heroText {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 80%;
+        width: 80%;
+        padding: 20px;
+
+        /* From https://css.glass */
+        background: rgba(255, 255, 255, 0.11);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .welcome {
+        position: relative;
+        letter-spacing: 20px;
+      }
+
+      .welcome span {
+        position: relative;
+        display: inline-block;
+        font-size: 48px;
+        color: #fff;
+        text-transform: uppercase;
+        animation: flip 3s infinite;
+        animation-delay: calc(0.3s * var(--i));
+      }
+      @keyframes flip {
+        0%,
+        80% {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .mainText {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 8px;
+        font-size: 18px;
+      }
+
+      .heroDot {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        background-color: #fff;
+        border-radius: 50%;
+      }
+
+      .description {
+        margin-top: 20px;
+        color: #e9e9e9;
+        width: 50%;
+        font-size: 16px;
+        text-align: justify;
+      }
+
+      .joinButton {
+        display: flex;
+        width: fit-content;
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        padding: 12px;
+        margin-top: 20px;
+        border: 1px solid #fff;
+        border-radius: 8px;
+      }
+
+      .joinButton:hover {
+        color: black;
+        background: #fff;
+        border: 1px solid #000;
+      }
+
+      @media screen and (max-width: 769px) {
+        .welcome {
+          letter-spacing: 16px;
+        }
+        .heroText {
+          padding: 24px;
+        }
+        .welcome span {
+          font-size: 28px;
+        }
+
+        .mainText {
+          font-size: 16px;
+        }
+
+        .description {
+          margin-top: 40px;
+          text-justify: inter-word;
+          color: #e9e9e9;
+          width: 90%;
+          font-size: 16px;
+          text-align: justify;
+        }
+
+        .joinButton {
+          display: flex;
+          width: fit-content;
+          text-decoration: none;
+          color: #fff;
+          font-size: 18px;
+          padding: 12px;
+          margin-top: 20px;
+          border: 1px solid #fff;
+          border-radius: 8px;
+        }
+
+        .joinButton:hover {
+          color: black;
+          background: #fff;
+          border: 1px solid #000;
+        }
+      }
+
+      @media screen and (max-width: 426px) {
+        .heroText {
+          height: 60%;
+          width: 90%;
+          padding: 16px;
+        }
+
+        .welcome {
+          letter-spacing: 6px;
+        }
+
+        .welcome span {
+          font-size: 18px;
+        }
+
+        .mainText {
+          font-size: 16px;
+        }
+
+        .description {
+          margin-top: 40px;
+          text-justify: inter-word;
+          color: #e9e9e9;
+          width: 100%;
+          font-size: 16px;
+          text-align: justify;
+        }
+
+        .joinButton {
+          font-size: 16px;
+        }
+      }
+
+      @media screen and (max-width: 326px) {
+        .welcome {
+          letter-spacing: 4px;
+        }
+
+        .description {
+          margin-top: 40px;
+
+          font-size: 14px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <h3>TheFactory</h3>
+      <ul class="navMenu">
+        <li><a href="{{ url_for('launch') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('programs') }}">Programs</a></li>
+        <li><a class="login" href="{{ url_for('login') }}">Login</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="hero">
+        <div class="overlay">
+          <div class="heroText">
+            <div class="welcome">
+              <span style="--i: 1">T</span>
+              <span style="--i: 2">h</span>
+              <span style="--i: 3">e</span>
+              <span style="--i: 4">F</span>
+              <span style="--i: 5">a</span>
+              <span style="--i: 6">c</span>
+              <span style="--i: 7">t</span>
+              <span style="--i: 8">o</span>
+              <span style="--i: 9">r</span>
+              <span style="--i: 10">y</span>
+            </div>
+
+            <p class="mainText">
+              Think<span class="heroDot"></span> Build <span class="heroDot"></span> Simplify.
+            </p>
+            <p class="description">
+              A vibrant city with the potential of becoming the new hub of innovation. We are
+              committed to providing an environment where learning and practical implementations of
+              Mathematics, Computer Science, Physics, and Finance can thrive. We will start small
+              but our mission is to be pacesetters who build scalable and innovative solutions.
+            </p>
+
+            <a href="./assessment.html" class="joinButton">Take our assessment</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,102 @@
+{% extends 'base.html' %} {% block stylesheet %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='css/aboutPage.css') }}"
+/>
+{% endblock stylesheet %} {% block body_content %}
+<div class="container">
+  <div class="about">
+    <p class="intro">
+      Using resources available to us, we will develop innovative systems and
+      solutions. <br />
+      Our areas of focus include and is not limited to the following fields.
+    </p>
+    <div class="topics">
+      <div class="topic">
+        <h3 id="headers" onclick="h3Clicker()">Computational Mathematics</h3>
+        <div class="defs">
+          <p>
+            Computational Math deals with the design of algorithms to perform
+            mathematical calculations on a computer. The goal of computational
+            mathematics, put simply, is to find or develop algorithms that solve
+            mathematical problems computationally.
+          </p>
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers" onclick="h3ClickerML()">Machine Learning</h3>
+        <div class="defs">
+          Machine learning (ML) is a branch of artificial intelligence (AI) that
+          enables computers to “self-learn” from training data and improve over
+          time, without being explicitly programmed. Machine learning algorithms
+          are able to detect patterns in data and learn from them, in order to
+          make their own predictions. In short, machine learning algorithms and
+          models learn through experience.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Artificial Intelligence</h3>
+        <div class="defs">
+          Artificial Intelligence is the ability of a digital computer or
+          computer-controlled robot to perform tasks commonly associated with
+          intelligent beings.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Cyber Security</h3>
+        <div class="defs">
+          Cybersecurity is the protection of internet-connected systems such as
+          hardware, software and data from cyberthreats. The practice is used by
+          individuals and enterprises to protect against unauthorized access to
+          data centers and other computerized systems.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Data Analytics</h3>
+        <div class="defs">
+          Data Analytics refers to the techniques used to analyze data to
+          enhance productivity and business gain. Data is extracted from various
+          sources and is cleaned and categorized to analyze various behavioral
+          patterns
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Embedded Systems</h3>
+        <div class="defs">
+          An embedded system is an electronic system that has a software and is
+          embedded in computer hardware. It is programmable or nonprogrammable
+          depending on the application. An embedded system is defined as a way
+          of working, organizing, performing single or multiple tasks according
+          to a set of rules.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Autonomous Robotics</h3>
+        <div class="defs">
+          An introduction to computational fundamentals behind the design and
+          control of autonomous robots. Robots are considered to be autonomous
+          when they make decisions in response to their environment (rather than
+          simply following a pre-programmed set of motions). They achieve this
+          using a multitude of modern techniques ranging from signal processing,
+          control theory, artificial intelligence, and more.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Computer Networking</h3>
+        <div class="defs">
+          Computer networking is a means by which computers are interconnected
+          to share data and information, resources, and all other network
+          devices such as printers.
+        </div>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Operating Systems.</h3>
+      </div>
+      <div class="topic">
+        <h3 id="headers">Computational Finance.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/js/login.js"></script>
+{% endblock body_content %}
